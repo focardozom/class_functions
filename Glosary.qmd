@@ -16,7 +16,7 @@ reactable(the_data,
   columns = list(
     Notes = colDef(cell = function(value, index) {
       url <- sprintf(
-        "/notes/%s.html",
+        "class_functions/notes/%s.html",
         the_data$Notes[index], value
       )
       htmltools::tags$a(href = url, as.character(value))
