@@ -1,0 +1,5 @@
+---
+title: "Welcome"
+---
+
+Welcome to the BST623 R Programming resource page! This site provides a collection of functions commonly used in the BST623 class, making it easier for you to access and utilize R programming tools in your coursework. Whether you're a seasoned programmer or new to R, this page is designed to provide a comprehensive and user-friendly experience. Happy coding!
