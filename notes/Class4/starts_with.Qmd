@@ -1,0 +1,2 @@
+# Notes for: starts_with()
+Empty

@@ -1,2 +1,9 @@
 # Notes for: rm()
-empty
+# [`rm()`]
+[[`rm`]`(*things*)`]
++ The [`rm()`] function removes an object from R's working memory.
+```{r eval=FALSE}
+life_the_universe_and_everything <- 42
+rm(life_the_universe_and_everything)
+```
+---

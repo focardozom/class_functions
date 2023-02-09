@@ -1,0 +1,14 @@
+# Notes for: transmute()
+# [`transmute()`] only keeps the mutation.
+This is just way too much typing:
+```{r eval = FALSE}
+laryngectomy %>%
+   select(nk_dissection)  %>%
+   mutate(hadND = 2 - nk_dissection)
+```
+Instead, just transmute. It will drop all the other variables:
+```{r eval = FALSE}
+laryngectomy %>%
+  `transmute(hadND = 2 - nk_dissection)` 
+```
+---

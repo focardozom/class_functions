@@ -1,0 +1,19 @@
+# Notes for: mutate()
+# [`mutate()`] to Add New Columns/Variables $_1$
+[[`mutate`](*dataset*, *variable* = *expression*)]
+The original data used 1 to mean *yes* and 2 to mean *no*.  
+Data should .red[***always***] use 1 to code *yes* and 0 to code *no*. Fix it!  
+Binary indicator variables should .red[***always***] start with a verb.
+```{r, eval = FALSE}
+laryngectomy %>%  # start with everybody with a laryngectomy then     
+   select(nk_dissection)  `%>%`  # keep only one variable then  
+   `mutate(hadND = 2 - nk_dissection)`  # add a had neck dissection indicator
+```
+```{r, eval=FALSE, echo = FALSE}
+library(lr4ds)
+laryngectomy %>%  # start with everybody with a laryngectomy then     
+   select(nk_dissection)  %>%  # keep only one variable then  
+   mutate(hadND = 2 - nk_dissection ) %>% 
+   head(6) # add a had neck dissection indicator
+```
+---

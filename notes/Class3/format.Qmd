@@ -1,2 +1,2 @@
 # Notes for: format()
-empty
+Empty

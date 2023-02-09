@@ -1,0 +1,16 @@
+# Notes for: %>%
+# [`%>%`]
+[ $thing_1$ [`%>%`]  
+ $thing_2$
+]
++ The symbol [`%>%`] is called a pipe.  When describing a workflow, it is spoken as "then".
++ It sends the output from $thing_1$ to the first argument of $thing_2$.
+```{r eval=FALSE}
+nrow(medicaldata::covid_testing) %>% 
+  scales::comma() %>% 
+  print()
+```
++ Many functions can be connected in a pipeline.
++ Start code after a pipe on a new line.
++ Indent all lines of code two spaces after the first pipe.
+---

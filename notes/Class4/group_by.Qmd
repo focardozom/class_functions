@@ -1,0 +1,15 @@
+# Notes for: group_by()
+# [`group_by()`] $_1$
+[[`group_by`]`(tableName, groupingVariable)`]
+Before dplyr 1.1 to get groups you would tag the dataset as having a grouping variable:
+```{r eval = FALSE}
+laryngectomy %>%
+  select(gender, length_fu) %>% 
+  `group_by(gender)` # marks the grouping variable
+```
+```{r eval=FALSE, echo = FALSE}
+laryngectomy %>%
+  select(gender, length_fu) %>% 
+  group_by(gender) # marks the grouping variable
+```
+---

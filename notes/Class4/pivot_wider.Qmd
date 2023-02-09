@@ -1,0 +1,5 @@
+# Notes for: pivot_wider()
+# [`pivot_wider()`] is a thing. 
++ There is function called `pivot_wider()` that will take long data and make it wider.
++ I rarely use it.  Know it exists.
+---

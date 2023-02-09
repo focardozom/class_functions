@@ -1,0 +1,11 @@
+# Notes for: pull()
+# [`pull()`] makes a vector.
+[[`pull`]`(tableName, variableName)`]
+Rarely, you will want to pull a column out of a data frame and save it as a vector. [`pull()`] is the only `dplyr`o verb that does not return a tibble.
+```{r eval = FALSE}
+yes_no_ND <- laryngectomy %>%
+  mutate(hadND = 2 - nk_dissection) %>% 
+  pull(hadND)
+```
+[![](images/pull.png)]
+---

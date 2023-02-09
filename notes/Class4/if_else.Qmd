@@ -1,0 +1,14 @@
+# Notes for: if_else()
+# [`dplyr::if_else()`]
+[[`if_else`]`(*check*, *true*, *false*)`]
++ `if_else()` checks the truth of a logic *check* on a variable/vector and returns the *true* argument if it is true or the *false* argument if it is not true.
+```{r eval=FALSE}
+laryngectomy %>%
+  mutate(  # does the initial stage agree with final pathology staging?
+    path_result = if_else(int_stg != path_stg, "Changed", "Same")
+  ) %>%
+  select(int_stg, path_stg, path_result)
+```
++ The logic check can involve any number of variables.
++ [`if_else()`] is dangerous because unexpected values can be binned in the *false* level/group.
+---

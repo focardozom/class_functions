@@ -5,7 +5,7 @@
 ```{r eval=FALSE}
 library(survial)
 ```
-+ There are a few meta packages, like `tidymodels` and `tidyverse`, which load many packages from a single [`library()`] function call.
++ There are a few "meta" packages, like `tidymodels` and `tidyverse`, which load many packages from a single [`library()`] function call.
 ???
 stats::filter and dplyr::filter
 ---

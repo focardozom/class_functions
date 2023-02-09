@@ -1,0 +1,14 @@
+# Notes for: R.Version()
+# [`R.Version()`]
+[[`R.Version`]`()`]
++ [`R.Version()`] returns a list of details about the version of that is currently running.
+```{r eval=FALSE}
+R.Version()
+```
+[[`R.version.string`]]
++ [`R.version.string`] is an easier to work with description of your version of R:
+```{r eval=FALSE}
+R.version.string
+```
++ This is useful for extracting the version of R for publications: `stringr::word(R.version.string, 1, 3)`
+---

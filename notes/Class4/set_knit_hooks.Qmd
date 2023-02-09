@@ -1,0 +1,2 @@
+# Notes for: set_knit_hooks()
+Empty
