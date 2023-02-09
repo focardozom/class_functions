@@ -13,12 +13,12 @@ library(glue)
 ```
 
 ```{r}
-the_data <- readRDS('data/the_data.rds')
+super_data <- readRDS('data/super_data.rds') |> select(-content)
 
-reactable(the_data,
+reactable(super_data,
   columns = list(
     Notes = colDef(cell = function(value, index) {
-      url <- glue("/notes/{the_data$Class[index]}/{the_data$Notes[index]}.html")
+      url <- glue("/class_functions/notes/{super_data$Class[index]}/{super_data$Notes[index]}.html")
       htmltools::tags$a(href = url, as.character(value))
     },
     filterable = TRUE)
