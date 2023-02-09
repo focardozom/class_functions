@@ -18,7 +18,7 @@ the_data <- readRDS('data/the_data.rds')
 reactable(the_data,
   columns = list(
     Notes = colDef(cell = function(value, index) {
-      url <- glue("/class_functions/notes/{the_data$Class[index]}/{the_data$Notes[index]}.html")
+      url <- glue("/notes/{the_data$Class[index]}/{the_data$Notes[index]}.html")
       htmltools::tags$a(href = url, as.character(value))
     },
     filterable = TRUE)
