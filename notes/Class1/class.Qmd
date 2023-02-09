@@ -1,0 +1,7 @@
+# Notes for: class()
+# [`class()`]
+[[`class`]`(_thingy_)`]
+If you are not sure what something is, you can check its class by typing using the [`class()`] function in the console windowpane. For example, to check the class of the mysterious `iris` object type this:
+.pull-left[[![:scale 100%](images/class1.jpg)]]
+.pull-right[[![:scale 100%](images/class2.jpg)]]
+---

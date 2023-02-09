@@ -13,8 +13,9 @@ website:
 
 format:
   html:
-    theme: cosmo
-    css: styles.css
+    theme: 
+      - cosmo
+      - assets/style.scss
     toc: true
 
 editor: source

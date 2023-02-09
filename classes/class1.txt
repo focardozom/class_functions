@@ -1,0 +1,1215 @@
+---
+
+---
+
+```{r setup, echo = FALSE}
+knitr::opts_chunk$set(include = TRUE)
+
+source("../../helpers/color_funs.R")
+
+xaringanExtra::use_tile_view()
+```
+
+```{r, eval=FALSE, echo=FALSE}
+# make pdf of slides
+xaringanBuilder::build_pdf("./01_Introduction/lectures/01_Introduction.Rmd")
+```
+
+```{r, echo=FALSE}
+# Helper packages - need dplyr and ggplot
+library(conflicted)
+tidymodels::tidymodels_prefer()
+suppressPackageStartupMessages(library(tidyverse))
+library(ggthemes)
+
+suppressPackageStartupMessages(library(tidymodels))
+
+
+library(knitr)
+```
+
+## A HUGE Percentage of Research Articles Do Not Replicate
+
+Your first assignment includes reading the Wikipedia page on the "Replication Crisis" and highlighting the most bothersome statistics. 
+
++ 70% of scientists had failed to reproduce at least one other scientist's experiment.  
++ 50% had failed to reproduce one of their own experiments.
++ 20% had ever been contacted by another researcher unable to reproduce their work. 
++ Only 11% of 53 pre-clinical cancer studies could be replicated.
++ A survey on cancer researchers found that half of them had been unable to reproduce a published result.
+
+---
+## Fundamental Replication/Reproducibility Questions
+
++ Do you see different results when you try to .red[repeat the results] from a paper using a .red[new, independent] sample?
+    + What could possibly go wrong?
++ Can you .red[repeat] the analyses in a published paper .red[if you are given the data]?
++ Can you .red[repeat] the analyses from .red[your own paper] with the original data? 
+
+???
+doi:10.1038/533452a
+
+---
+## Replication vs Reproducibility
+
+The last two slides were about replication and this class is about reproducibility.
+
+**Replication**: Do you get similar results on a new sample.
+
+**Reproducibility**: Do you get the same results on the original sample.
+
+---
+
+## I Want to:
+
++ End the endless remaking of tables/figures when data change
++ Make sure researchers have an audit trail from raw data to a paper
++ Give advice on how to get through publication reviews unscathed
++ Make sure UM biostatistics graduates:
+    + know how to use modern R
+    + know best practices for software development
+    + have the skills to get paid a LOT of money
+    + have the publications needed to open doors
++ Do research that will save lives
+
+---
+
+## I Don't Want to:
+
++ Lose students by assuming they know things they have not been taught, therefore
+    + There will be very little-to-no-algebra.
+    + I assume you have never written a computer program before.
++ Teach difficult techniques when there are easy solutions.
+
+---
+
+## I Assume:
+
++ You have mastered both point and click with a mouse/trackpad.
++ You know how to make folders (directories) on your computer.
++ You know how to find files you created on your computer.
++ Your internet connection is not garbage.
+
+---
+
+## The Plan
+.small[
++ I will show you how to build a manuscript. 
+ 
++ You will take what you learn and apply it to writing a manuscript on the people who use the Miami needle exchange.
+
++ You will be working with .red[real data] in this class.  You will be asked to sign a non-disclosure agreement and you must agree to release/publish on the data if and only if you include Raymond Balise and/or Tyler Bartholomew, and/or Hansel Tookes MD as coauthor(s).
+  + Watch [this](https://www.youtube.com/watch?v=ldTxMIblePk) then watch [this](https://www.youtube.com/watch?v=dD_A-sTxFCk) to learn about IDEA.
+  
++ This class will have lectures and programming labs (most using the RStudio Primers found on **posit** Cloud).
+  + Plan on .red[5-6 hours per week] with fingers on keyboard doing exercises.
+
++ There will be lots of assignments.  Each will add a bit of information to your paper.
+
++ At the end of the class, you will have (most of) the content for a paper that is ready to be submitted for publication.
+]
+
+---
+
+# Grades and Stuff
+
+| Task                                                     | Points |
+|----------------------------------------------------------|:------:|
+| 10 take-home coding assignments (points 5 each) which you can work on with your classmates | 50 |  
+| In-class midterm (multiple choice, true/false, etc.) which you will work on alone | 15 |
+| In-class final (multiple choice, true/false, etc.) which you will work on alone | 15 |
+| You will submit a final paper which you can work on with your classmates.  | 20 |
+
+---
+class: segue
+
+What Could Possibly Go Wrong ... 
+
+When You Try to Replicate a Paper?
+
+---
+# .center[Why is My Answer Different?!]
+
+```{r, echo=FALSE}
+library("emo")
+```
+
+### .center[What could possibly go wrong when you try to replicate a paper?]<br/>
+
+| Problem                        | Solution                         | Taught                        |
+|:-----------------------------|:---------------------------------|:------------------------------|
+| Used old/wrong data set      | Make a package .blue[`{usethis}`]       | `r ji("check")`               |
+| Point-and-click data changes | Write code .blue[{`tidyverse`}]         | `r ji("check")`               |
+| Wrong program                | .blue[`{rmarkdown}`]                    | `r ji("check")`               | 
+| Package changed              | .blue[`{renv}`]                         | `r ji("check")`               |
+| R version changed            | posit Cloud / Rocker Project   | `r ji("check")` / `r ji("x")` |
+| Services outside R changed   | posit Cloud / Rocker Project   | `r ji("check")` / `r ji("x")` |
+| Operating system changed     | posit Cloud / Rocker Project   | `r ji("check")` / `r ji("x")` |
+
+Note: The names of R add-on packages are frequently written inside of .blue[`{ }`].
+
+???
+stringsAsFactors
+Rmarkdown depends on pandoc
+
+---
+
+class: segue
+
+Writing Papers
+
+---
+
+# The Best Advice I Got in Graduate School
+
+> Start every project by drawing the tables and figures that you want to include in your paper.
+
+Every interventional biomedical paper has two tables and two figures.
+
++ Table 1 - Describes the participants
++ Table 2 - Describes the results/impact of treatment
++ Figure 1 - A CONSORT diagram (flowchart)
++ Figure 2 - Shows the impact of treatment across the groups
+
+---
+
+# Advice I Wish I Got in Graduate School
+
+Make each table and figure a self contained story.  Plan on your tables and figures being tweeted/tooted.  So, .red[your figure/table captions need to say]:
+
++ Who
++ What 
++ When
++ Where
+
+---
+
+# Table 1 - Describes the Participants
+
++ It allows people to assess .red["Are these people like my people?"]
++ The .red[number] of people in each group is typically at the .red[top].
++ There is a .red[row for each bit] of demographic information.
++ If there are treatment groups, typically there are .red[columns for each group] (and sometimes a column with the overall information).
++ .red[Categorical] variables are shown with .red[counts/percents].
+  + The percentages total to 100 within the columns/groups.
++ .red[Numeric] (continuous) variables are shown with an .red[average or median] (and variability).
+
+---
+# Random Article from NEJM - Table 1
+
+.pull-left-36[Ticagrelor versus Clopidogrel in CYP2C19 Loss-of-Function Carriers with Stroke or TIA
+December 30, 2021, N Engl J Med 2021; 385:2520-2530
+]
+.pull-right-60[
+.center[
+![:scale 60%](images/nejm_table1.jpg)
+]]
+
+???
+DOI: 10.1056/NEJMoa2111749
+https://www-nejm-org.access.library.miami.edu/doi/full/10.1056/NEJMoa2111749
+
+---
+
+# Table 2 - Describes the Results/Impact of Interventions
+
++ Typically, it has columns for treatment groups.
++ Typically, it has $p$-values on the right margin (or effect sizes and $p$-values in good articles).
+
+---
+# Random Article from NEJM - Table 2
+
+Ticagrelor versus Clopidogrel in CYP2C19 Loss-of-Function Carriers with Stroke or TIA
+December 30, 2021, N Engl J Med 2021; 385:2520-2530
+
+.center[
+![:scale 90%](images/nejm_table2.jpg)
+]
+
+---
+
+# Figure 1 - A Consort Diagram (Flowchart)
+
++ It starts with people .red[recruited].
++ It shows .red[exclusion] criteria (and how many people were lost).
++ It shows how people were .red[split] into groups (randomization).
+
+
+---
+# Random Article from NEJM - Figure 1
+
+.pull-left-36[
+Ticagrelor versus Clopidogrel in CYP2C19 Loss-of-Function Carriers with Stroke or TIA
+December 30, 2021, N Engl J Med 2021; 385:2520-2530
+]
+
+.pull-right-60[
+.center[
+![:scale 40%](images/nejm_fig1.jpg)
+]]
+
+---
+
+# Figure 2 - The Results
+
++ It typically shows:
+    + The central tendency and variability for outcome measures
+        + Bar charts with whiskers `r emo::ji("nauseated_face")`
+        + Histograms `r emo::ji("grin")`
+        + Boxplots `r emo::ji("sunglasses")`
+        + Violin plots `r emo::ji("heart_eyes")`
+    + Patterns through time
+        + Line plots without information on variability `r emo::ji("neutral_face")`
+        + Line plots with clearly labeled confidence/credible intervals  `r emo::ji("grin")`
+        + Line plots with whiskers `r emo::ji("nauseated_face")`
+
+---
+# Random Article from NEJM - Figure 2
+
+Ticagrelor versus Clopidogrel in CYP2C19 Loss-of-Function Carriers with Stroke or TIA
+December 30, 2021, N Engl J Med 2021; 385:2520-2530
+
+.center[
+![:scale 50%](images/nejm_fig2.jpg)
+]
+
+---
+
+# Why Bother Focusing on Tables and Figures?
+
+The structure of research papers is *tightly* controlled. There are five sections:
+
++ The .red[Introduction] says "why bother" collect the data in the tables and figures.
++ The .red[Methods] section describes where the data for the tables and figures came from.
++ The .red[Results] section describes what you found in the tables and figures.
++ The .red[Discussion] section explains how your tables and figures agree/disagree with what you and others have shown.
++ The .red[Conclusion] section describes the important findings in the tables and what you want to put in the tables and figures in your next paper.
+
+---
+
+# Guidelines for Different Kinds of Projects
+
+*THE* place to start when you want to write a paper is:  https://www.equator-network.org/
+
+There are guidelines and checklists for what you need to include for every kind of research paper in every area/discipline.
+.center[
+![:scale 50%](images/equator.jpg)
+]
+
+---
+
+# CONSORT
+
+The most famous guidance comes is CONSORT.  It is the standard used for reporting in clinical trials (i.e., research on new drugs/devices that will go inside humans).
+
+.center[
+![:scale 60%](images/consort.jpg)
+]
+
+---
+
+# Observational/Epidemiological Papers are Similar
+
+The structures of observational papers are very similar. 
+
+Learn about the structures of epidemiological/observational studies here: https://www.strobe-statement.org/
+
+.center[
+![:scale 50%](images/strobe.jpg)
+]
+
+---
+# Read About the Structure of Interventional Papers
+
+https://www.nature.com/scitable/topicpage/scientific-papers-13815490/
+
+---
+class: segue
+
+Academic Data Science Workflows
+
+---
+background-image: url(images/dive.png)
+background-position: bottom
+background-size: 78%
+
+
+# Plan for Diving Molokini 
+
+--
+
+.subtitle[
+Plan for Prospective Trials]
+
+--
+
+.right[0) Talk to a statistician]
+
+--
+
+<br>
+.right[1) Outline tables and sketch graphics]
+--
+
+<br>
+.right[2) Collect structured data]
+--
+
+<br>
+.right[3) Do reproducible research]
+--
+
+<br>
+.right[4) Finish on Day 0]
+--
+
+<br>
+.right[5) Visualize Everything]
+
+---
+
+# 0) Talk to a Statistician Early
+
++ I .red[***hate***] doing postmortems on papers that should never have been started.
+
++ I will ask you about …
+    + quantifying the endpoint
+    + meaningful differences
+    + if you have an analysis plan that includes Exploratory Data Analysis (EDA) methods
+    + the number of people you can actually assess
+    + the next study
+
+---
+
+# Real Analyses 
+### (20% of your time)
+
+.pull-left-36[
+![:scale 85%](images/Tukey.png)
+]
+
+.pull-right-60[
++ Every type of study should have planned analyses that are accompanied by a heavy dose of EDA.
+
+  + How do you summarize a categorical variable?  
+  + How about two categorical variables?
+  + How do you summarize a continuous variable?
+  + How about two continuous variables?
+]
+
+---
+
+# 1) Outline Tables and Sketch Graphics
+
+.pull-left-36[
++ Draw a paper’s tables and figures before day 0 of the study.
+]
+
+.pull-right[
+![:scale 80%](images/pengy.png)
+]
+
+---
+
+# 2) Collect Structured Data $_{(a)}$
+## Structured vs. Unstructured
+
++ Unstructured data
+  + Text-like dictations, operation notes, data entry comments
+  + Difficult to process
++ Structured data
+  + Build/use ontologies
+  + Dates
+  + Pick lists (multiple choice)
+  + Relatively easy to process
+
+---
+# 2) Collect Structured Data $_{(b)}$
+## Types of Structured Data
+.small[
++ Numeric
+  + Discrete (number of pregnancies)
+  + Continuous (weight)
+     + Can be made discrete but it is really as precise as your measuring device
+  + Dates
++ Categorical 
+  + Nominal (named categories)
+      + Strings vs. Factors
+  + Ordinal (ordered categories)
+  + Binary/Dichotomous (two-level, named categories)
+]
+---
+
+# 2) Collect Structured Data $_{(c)}$
+## Dates
+.small[
++ Spreadsheets and databases store dates as numbers (integers) that count the number of days since some start date.
+  + Modern Excel:  
+      + Jan $1^{st}$ 1900 is day 0, Jan $2^{nd}$ 1990 is day 1, etc.
+  + R:              
+      + Dec $31^{st}$ 1969 is day -1, Jan $1^{st}$ 1970 is day 0, Jan $2^{nd}$ 1970 is day 1, etc.
+
++ The columns of data are just formatted to look nice.
+  + MM/DD/YYYY tends to import cleanly but causes headaches in international studies. 
+  + Use 3 columns for each date if it is even remotely possible to have missing information.
+]
+---
+
+# 2) Collect Structured Data $_{(d)}$
+## Binary Data
+
++ A binary variable takes on two values.
+  + Married is yes or no
+
++ Label every binary variable .red[with a verb] and code the values with a 0 or a 1.
+  + 1 = yes 
+  + 0 = no
+
++ What is a good name here?
+
+--
+
+  + I would use: .red[is_married]
+
+---
+.center[
+![:scale 80%](images/coding_cases.png)
+]
+
+---
+# 2) Collect Structured Data $_{(e)}$
+## Popular .red[Ontologies] for Structuring Biomedical Data
+
+.smaller[
++ RxNORM for drug ingredients / brand names
++ ICD-9 for billing diagnostic and procedure codes
+  + Fairly coarse but nicely hierarchical
++ ICD-10 (since October 1st, 2015)
+  + Many categories
++ ICD-O for detailed cancer pathology
++ CPT for procedures 
+  + No hierarchical structure, difficult to search
++ SNOMED-CT 
+  + General purpose clinical terms
+  + Hierarchical, detailed and vast but with some gaps
++ OMOP Common Data Model
+  + Standardizes databases (for biomedical research)
+]
+
+---
+# 2) Collect Structured Data $_{(f)}$
+## Structuring Your Data
++ Minimize free text as much as you can.
++ A question without an answer is a problem.
++ A “choose all that apply” question is actually a series of questions.
++ A date is not a date unless you know the month, day and year.
+
+---
+# 2) Collect Structured Data $_{(g)}$
+## A variable should hold only one bit of information.
+
++ A variable called “Blood Pressure” or “BP” holding the text 120/80 is not good. It is .red[not tidy]! 
+  + Systolic and Diastolic Blood Pressure are two different things.
+  + How do you calculate the average BP for your sample with those values in a single variable?
+  
+A tidy dataset has each thing/feature/attribute in its own column/variable.  If something is measured twice, the measurements go into a single column and you add a second column indicating the measurement number.
+
+---
+# 2) Collect Structured Data $_{(h)}$
+## Before You Start a Data Collection/Entry Program
+
++ Give each question on your questionnaire/case-report form a name that is easy to type.
+  + Use no spaces.
+  + Use only lowercase letters, numbers oro _.
+  + Do not start the names with digits.
+
+---
+
+.center[![:scale 70%](images/GI.png)]
+
+---
+
+# 2) Collect Structured Data $_{(i)}$
+## Fill in the blanks
+
+![:scale 80%](images/study1.png)
+
+--
+
+![:scale 80%](images/study2.png)
+
+--
+
+![:scale 80%](images/study3.png)
+
+--
+
+![:scale 80%](images/study4.png)
+
+
+---
+
+# 2) Collect Structured Data  $_{(j)}$
+
+![:scale 80%](images/menu1.png)
+
+--
+
+![:scale 80%](images/other.png)
+
+--
+
+![:scale 80%](images/AE.png)
+
+---
+
+# 2) Collect Structured Data $_{(k)}$
+
+
+REDCap is your friend!
+
+Later in the semester, you will watch my training video:
+
+.center[![:scale 50%](images/SDR.png)]
+
+.center[https://vimeo.com/494437451]
+
+---
+# 2) Collect Structured Data $_{(l)}$
+## How Data is Stored
+.small[
++ In a traditional database, each thing you collect will be stored as a separate “variable.”
+  + First name
+  + Age at diagnosis
+  + Age at disease progression
+  
++ Variables are marked for the “type” of information.
++ R makes distinctions between: 
+  + various .red[atomic types of vectors]
+      + character, integer, double, complex, logical
+  + the .red[class] of different types of object
+      + a data set, a linear model, a saved plot
+]
+
+---
+# .blue[`class()`]
+
+.center[.blue[`class`]`(_thingy_)`]
+
+If you are not sure what something is, you can check its class by typing using the .blue[`class()`] function in the console windowpane. For example, to check the class of the mysterious `iris` object type this:
+
+.pull-left[.center[![:scale 100%](images/class1.jpg)]]
+.pull-right[.center[![:scale 100%](images/class2.jpg)]]
+
+
+---
+# 2) Collect Structured Data $_{(m)}$
+## The type determines:
+
++ hard drive space needed to store it
+
++ the logical operations for the object
+  + Can you capitalize a number?
+  + Can you get the average country of birth?
+
++ relevant analyses
+
+With R, the key "type" attribute is the .red[class].  R automatically uses the class to “know” how to summarize (and plot) an object.
+
+???
+# 2) Collect Structured Data $_{(n)}$
+## What is data coding?
+
++ A question such as, “What is your current age in years?” is going to generate numeric data.
+
++ A question such as, “At what age did you first contract a sexually transmitted disease?” is going to generate numeric data... 
+
+x--
+
+  + ...but you are going to need to allow for the possibility that somebody has never contracted a sexually transmitted disease
+
+x--
+
+  + ... and you always need to allow for people who never knew or do not remember information or who may be dishonest in their answers.
+
+???
+
+# 2) Collect Structured Data $_{(o)}$
+## What is data coding?
+
++  When you have a question that generates numeric data and your subject’s response is not a “real number” you can code a bogus value.
+  + “Not applicable” can be coded as age –1000000.
+  + “Do not know” can be coded as –2000000.
+
+  + The better way to deal with this problem is to use the value “NULL.”
+
++ SAS allows you to code 27 different types of NULL.
+  + Null values make your job easier when you try to do math on the values.
+
++ R a different kind of NULL for each atomic type but it does not allow you to use different kinds of null (like SAS).
+
+---
+# 2) Collect Structured Data $(p)$
+
+Most of the work you do will be on tibbles (modern _tidyverse_ tables) that have many variables:
+
++ Rather than focusing on the details of atomic types you will care about:
+  + .red[logical] variables which hold `TRUE` or `FALSE`.
+  + .red[numeric] variables which hold information you could do math on.
+  + .red[character] variables which contain text that does not describe categories.
+  + .red[factor] variables which hold categorical information.
+
+
+---
+
+# 3) Do Reproducible Research $_{(a)}$
+
++ Computer programs are recipes that turn out exactly the same results every time you cook with them.
++ Every time code runs, it does the same thing.
++ You will write scripts/programs to clean, analyze and report your results.
+
+---
+
+# 3) Do Reproducible Research $_{(b)}$
++ Use any language you want but write code to clean and process .red[*everything*].
+.center[![:scale 60%](images/hello.png)]
+
+---
+# 3) Do Reproducible Research $_{(c)}$
+### Infrastructure for Reproducible Research
+
++ Web compendium with final data
++ The complete computing environment
+  + Data scientists will talk about programs called [Docker](https://www.docker.com/) or [Kubernetes](https://kubernetes.io/) for this task.
+      + raw data
+      + programs/scripts to clean and analyze the data
+      + exact programming environment that did the analysis
+      + ability to push “run”
++ Happy medium 
+    + nearly raw data
+    + programs/scripts
+    + description of the exact version of the software
+
+---
+
+# 4) Before Day 0 ….
+
++ Make case report forms with data type validation and outer bounds checks.
+
++ Add three realistic, fake patients.
+    + Why three?
+    
++ Write code to:
+    + make a warning report
+    + make the graphics
+    + make the tables
+
+---
+
+# 5) Visualize Everything
+
++ Continuous variables
+    + histograms and/or boxplots
++ Categorical variables
+    + bar charts
++ Sets of continuous variables
+    + scatter plots
++ Sets of categorical variables
+    + Jitter plots
+    + Sunflower plots
+---
+
+class: segue
+
+What is a pipeline?
+
+---
+# How does data move through a pipeline?
+Your goal is to setup a data processing workflow/pipeline that will do these steps when you push a single button
+
+1. Read data from a source
+1. Document any weird/problematic values
+1. Clean up any problems
+1. Tidy the data into an analysis dataset
+1. Do analyses
+1. Add analyses results into a paper
+
+---
+# What software can help with this?
+
+Perhaps the best solution to help with this is an add-on package for the R programming language called `rmarkdown`.
+
+.center[
+![:scale 60%](images/rmarkdown.jpg)
+]
+
+---
+# Why bother with a pipeline?
+
++ Organizations like the FDA demand an audit trail to be able to detect fraud.
++ Data change and redoing tables/figures is a *horrible* time sink. 
++ It *nearly* guarantees reproducibility.
+
+---
+# When will a pipeline not be reproducible and what to do about it?
+
++ Whenever software updates, you run the risk of encountering bugs or intentional changes.
++ It is critical to stash your final data and perhaps add ".red[unit tests]" that will compare the output of a pipeline vs. saved "truth".
++ Save a snapshot of your analysis software (and ideally all the software).
+  + The complete set of software, including the operating system (e.g., MacOS Version 11.6 (20G165)), any database software and analysis software is called the *.red[stack]*.
+
+---
+class: segue
+
+What is This R Thing I Keep Hearing About?
+
+---
+
+# R
+
++ It is an old (1993) but popular analytics .red[engine].
++ .red[Everything is an object].
+    + Datasets, analysis functions, saved graphics
++ R is optimized to process vectors of data.
+  + It is a vectorized language.
++ You use .red[functions] to accomplish tasks.
+    + You can easily add new functions.
+    + You can modify existing functions.
++ It grew out of the S language.
+     + Its "guts" have changed though time.
+       + S3 - How most functions work
+       + S4 - How a lot of "omics" functions work
+
+---
+# The R Interface
+
++ R ships with a user interface where you can type instructions. 
++ It is missing tools to help novices and tools that professional programmers expect. 
++ It makes R unnecessarily difficult to learn.
+  
+.center[
+![:scale 50%](images/r_display.jpg)
+]
+
+---
+# RStudio is Now Posit
+
++ It is a company. It is a [B Corp](https://bcorporation.net/about-b-corps)!
++ They make a software program called the RStudio IDE.
+  + If R is the .red[engine], RStudio IDE is the .red[rest of the car].
+
+.center[
+![:scale 50%](images/logos.jpg)
+]
+
+---
+# What is an Integrated Development Environment (IDE)?
+
++ A place to:
+    + write code (with tools like pop-up tool tips and autocomplete)
+    + see output
+    + manage settings
+
++ Be sure your RStudio is up to date.
+
+![:scale 70%](images/update.png)
+
+---
+# Working with RStudio
+
+.center[![:scale 60%](images/GUI.png)]
+
+Spend time exploring the random buttons.  If you hover the mouse over a button, it will show you the keyboard shortcut.  Learn them!
+
+---
+# Explore $_1$
+
+.center[![:scale 80%](images/explore.jpg)]
+
+---
+# Explore $_2$
+
+.center[![:scale 80%](images/explore2.jpg)]
+
+---
+# Explore $_{2A}$
+
+If you push the broom button:
+
+.center[![:scale 80%](images/explore_delete_all.jpg)]
+
+Just say no...
+
+---
+
+# Explore $_3$
+
+After shifting to the Grid view:
+
+.center[![:scale 80%](images/explore3.jpg)]
+
+---
+# Explore $_{3A}$
+
+If you push the broom button:
+
+.center[![:scale 80%](images/explore_delete_one.jpg)]
+
+Just say yes...
+
+---
+# Explore $_{4}$
+
+.center[![:scale 80%](images/explore_rm.jpg)]
+
+If you hate using the mouse, your can memorize the command to delete.  It is: .blue[`rm()`]
+
+---
+# .blue[`rm()`]
+
+.center[.blue[`rm`]`(*things*)`]
+
++ The .blue[`rm()`] function removes an object from R's working memory.
+
+```{r eval=FALSE}
+life_the_universe_and_everything <- 42
+rm(life_the_universe_and_everything)
+```
+
+---
+
+# Configuring R/RStudio on a UM machine
+
+.pull-left[After following the Installing and Configuring posts on https://derailment.netlify.app/ make one more change. This tweak will make your life easier when you start to make summary reports using the `rmarkdown` package.]  
+
+.pull-right[![](images/global.png)]
+
+<br>
+
+.center[![](images/spaces.png)]
+
+---
+class: segue
+
+How R Works:
+
+There is a package for that.
+
+---
+
+# What is a package?
+
++ A collection of R functions for doing a task.
++ It can contain datasets.
++ It should have documentation.
+
+???
+
+# What is a package? $_2$
++ Make a folder... add a child folder called `R` and a text file called `DESCRIPTION`.  In the DESCRIPTION file add this text:
+
+```
+Package: thingy
+Version: 0.1
+```
+
+A real package probably has:
++ A set of functions (in the `R` folder)
+    + Some functions users can easily see, other are hidden
++ Code to write help files automatically
++ A set of `man` style help files (the `man` folder )
++ Possibly:
+    + a `vignettes` folder full of markdown files with helpful "use cases"
+    + a `data` folder
+    + a `inst` folder with extra stuff
+    + a `tests` folder with checks on the functions
+
+---
+# Package Design
+
+R has been designed to modularize code into packages. The packages are stored as folders someplace on your computer's hard disk or SSD.  When you do a typical install, you get all the packages shown in blue.
+
+
+.pull-left[![:scale 80%](images/base.png)]
+
+--
+
+.pull-right-36[![:scale 40%](images/basePlus.png)]
+
+.pull-down[If you don’t work hard to prevent their installation, you also get many recommended packages, shown in gray.]
+
+---
+# Loaded Packages
+
++ When R starts up it loads a few packages into it's working/thinking memory.
+
+.center[![:scale 50%](images/package_list.jpg)]
+
+---
+# Why Care?
+
++ You will need to install packages to do tasks. 
++ R ships with packages to do many things but the real magic of R is the add-on packages that have been developed outside of the R core team.
+  + Don't get me wrong.... The R core team does godlike work.  There are just other deities that deserve a bit of your time. 
++ You will spend time asking experts for a "good" package to do a task.
+
+---
+# Dowloading a Package $_{(a)}$
+
+You can download a package using the Packages tab in RStudio.
+
+.pull-left-36[![:scale 100%](images/installGUI.png)]
+
+--
+
+.pull-right-60[
+
+![:scale 35%](images/installDialog.png)
+
+You can also install a package saved on your machine:
+
+![:scale 35%](images/installDialog2.png)
+]
+
+---
+# .blue[`remotes::install_cran()`]
+
+A better way to add packages is to use the .blue[`install_cran()`] function from the .blue[`remotes`] package:
+
+.center[.blue[`remotes::install\_cran`]`("*thingy*")`]
+
+For example to install the "DOPE" package:
+
+```{r, eval=FALSE}
+remotes::install_cran("DOPE")
+```
+
+Paste that line into the Console windowpane (bottom left corner) and tap the return or enter key on your keyboard.
+
+It will check to see the package has been updated before it bothers to do the download.
+
+---
+# Viewing a Package
+
+After you have downloaded a package, look at it. Instead of scrolling through all your packages, you can search for it.  Then click on the package name to see the documentation:
+
+.center[![:scale 55%](images/packageGUI.png)]
+
+--
+
+.center[![:scale 55%](images/packageGUI2.png)]
+
+---
+# Learn About a Package $_{(a)}$
+
+When you click on the package title, you see a summary of what is in the package:
+
+.center[![:scale 40%](images/docs.png)]
+
+---
+# Learn About a Package $_{(b)}$
+
+If you click on the DESCRIPTION, you can see the authors and their email addresses.
+
+.pull-left[![:scale 70%](images/description.png)]
+.pull-right[
++ The person whose author role is "cre" is the maintainer. You can write to them with questions.
++ Sometimes there will be a URL for where to report bugs. If in doubt, start an issue on GitHub.
+]
+
+---
+
+# Learn About a Package $_{(c)}$
+
+Look in the description for a list of URLs
+
+.center[![:scale 100%](images/descriptionURL.png)]
+
+---
+# Learn About a Package $_{(d)}$
+
+Nearly all modern packages have their source code on GitHub. Often the GitHub page will have a link to a dedicated site.
+
+.center[![:scale 50%](images/dopeGitHub.png)]
+
+---
+# Ecosystems
+
+There are a couple well known .red[sets of packages] that work well together. The most famous are:
+
++ **posit** supported/developed
+  + `tidyverse` - packages for data processing
+  + `tidymodels` - packages for modeling
+
++ `mlr3` - packages for modeling
+
+---
+# The `tidyverse` Packages
+
+There are eight main packages in the tidyverse, like `tidyr` and `dplyr` (show in blue). These libraries depend on other packages, like `broom` (shown in gray).
+
+.center[![:scale 30%](images/tidypackages.png)]
+
+---
+
+# Stickers!
+
+.center[![:scale 80%](images/stickers.png)]
+
+---
+# More Stickers!
+.center[![:scale 80%](images/stickers2.png)]
+
+---
+# What Does This Mean?
+
+.pull-left-60[
++ I normally load many packages into working memory.
++ Almost all my code includes this set of .blue[`library()`] function calls:
+
+```{r eval=FALSE, echo=TRUE}
+library(conflicted)
+tidymodels::tidymodels_prefer()
+suppressPackageStartupMessages(library(tidyverse))
+suppressPackageStartupMessages(library(tidymodels))
+
+library(ggthemes)
+library(knitr)
+```
+
++ The `conflicted` package will let you know if a package you are loading (with .blue[`library()`]) contains a function name that is already in working memory. More later....
+]
+.pull-right-36[
+.center[![:scale 70%](images/packages_loaded.jpg)]
+]
+
+
+---
+# .blue[`library()`]
+
+.center[.blue[`library`]`(*package*)`]
+
++ The library .blue[`library()`] function loads a package into working memory (from long term storage on your hard disk drive or solid state drive).
+
+```{r eval=FALSE}
+library(survial)
+```
+
++ There are a few "meta" packages, like `tidymodels` and `tidyverse`, which load many packages from a single .blue[`library()`] function call.
+
+
+???
+stats::filter and dplyr::filter
+
+---
+class: segue
+
+What is version control?
+
+---
+
+# Professional programmers take "snap shots" of their code.
+
++ Professional programmers use "version control" software to take snapshots of their code.
++ The most popular program is `git`. There are point-and-click options.
++ Version control software makes it easy to:
+  + see/track what you recently changed
+  + roll back code when somebody makes mistakes
++ These tools also allow users to combine snapshots (when multiple people are working on the same project).
+
+
+---
+# Version Control Using `git` in RStudio
+
+.center[
+![:scale 60%](images/version_control.jpg)
+]
+
+---
+class:segue
+
+# Ummm What...
+
+---
+# .blue[`%>%`] from the .blue[`magrittr`] Package
+
+.center[ $thing_1$ .blue[`%>%`]  
+ $thing_2$
+]
+
++ The symbol .blue[`%>%`] is called a pipe.  When describing a workflow, it is spoken as "then".
++ It normally sends the output from $thing_1$ to the first argument of $thing_2$.
+
+```{r eval=FALSE}
+mtcars %>% 
+  filter(mpg == 30.4) 
+```
+
++ Many functions can be connected in a pipeline.
++ Start code after a pipe on a new line.
++ Indent all lines of code two spaces after the first pipe.
+
+---
+# .blue[`dplyr::filter()`]
+
+.center[.blue[`filter`]`(tableName, logical test)`]
+
++ Use .blue[`filter()`] to pick rows/records.
++ Inside the .blue[`()`] you put a logic check. 
++ .blue[`filter()`] keeps rows/records where the logic check is true.  
+
+```{r, eval=FALSE}
+filter(mtcars, am == 0)  # cars with automatic transmission
+
+filter(mtcars, is.na(mpg))  # cars missing miles per gallon information
+
+filter(mtcars, !is.na(mpg))  # cars not missing miles per gallon information
+```
+
+---
+# .blue[`dplyr::pull()`]
+
+.center[.blue[`pull`]`(*dataset*, *variable*)`]
+
++ The .blue[`pull()`] is used to copy of a variable out of a dataset into a new object.  
+
+```{r eval=FALSE}
+pull(mtcars, mpg)
+```
+
++ When it is used with the .blue[`filter()`] function, .blue[`pull()`] can be used to extract a single value from a dataset. This is useful when you need to extract a number,  like an odds ratio or a *p*-value, for a report.
++ .blue[`pull()`] is the only .blue[`dplyr`] function that does not return a `tibble`.
+
+---
+# .blue[`suppressPackageStartupMessages()`]
+
+.center[.blue[`suppressPackageStartupMessages`]`(library(*package*))`]
+
++ Load a package without printing its greeting message.
+
+```{r eval=FALSE}
+suppressPackageStartupMessages(library(tidyverse))
+```
+
++ This is very useful with the .blue[`tidyverse`] and .blue[`tidymodels`].  Use this if and only if you are also using the .blue[`conflicted`] package (to avoid function name conflicts).
+
+
+---
+#.blue[`tidymodels::tidymodels_prefer()`]
+
+.center[.blue[`tidymodels_prefer`]`()`]
+.small[
++ Tell the .blue[`conflicted`] package to prefer the .blue[`tidyverse`] and .blue[`tidymodels`] packages for many functions:
+  + dplyr: filter, select, slice, rename
+  + dials: neighbors
+  + parsnip: fit, bart, pls
+  + purrr: map
+  + recipes: step
+  + themis: step_downsample, step_upsample
+  + tune: tune
+  + yardstick: precision, recall
+  
+```{r eval=FALSE}
+tidymodels::tidymodels_prefer()
+```
+]

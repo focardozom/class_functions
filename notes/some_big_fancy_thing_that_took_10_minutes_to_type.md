@@ -1,1 +1,0 @@
-# Notes for:some_big_fancy_thing_that_took_10_minutes_to_type

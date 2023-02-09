@@ -14,332 +14,423 @@
     "text": "BST623 Software Tools for Manuscript Development and Reproducible Research is a course at the University of Miami, offered by the Biostatistics program. This class is taught by professor, Dr. Raymond Balise. The course focus on the use of software tools for creating professional-quality manuscripts and conducting reproducible research. Whether you’re an experienced researcher or just starting out, BST 623 will provide valuable skills and knowledge to use R for your research."
   },
   {
-    "objectID": "notes/ref.html",
-    "href": "notes/ref.html",
+    "objectID": "notes/Class2/library.html",
+    "href": "notes/Class2/library.html",
     "title": "BST623 functions",
     "section": "",
-    "text": "Notes for:ref"
+    "text": "Notes for: library()\n\n\n[library()]\n[[library](*package*)] + The library [library()] function loads a package into working memory (from long term storage on your hard disk drive or solid state drive).\n\nlibrary(survial)\n\n\nThere are a few meta packages, like tidymodels and tidyverse, which load many packages from a single [library()] function call. ??? stats::filter and dplyr::filter"
   },
   {
-    "objectID": "notes/class.html",
-    "href": "notes/class.html",
+    "objectID": "notes/Class2/function.html",
+    "href": "notes/Class2/function.html",
     "title": "BST623 functions",
     "section": "",
-    "text": "Notes for:class"
+    "text": "Notes for: function()\nempty"
   },
   {
-    "objectID": "notes/install_cran.html",
-    "href": "notes/install_cran.html",
+    "objectID": "notes/Class2/suppressMessages.html",
+    "href": "notes/Class2/suppressMessages.html",
     "title": "BST623 functions",
     "section": "",
-    "text": "Notes for:install_cran"
+    "text": "Notes for: suppressMessages()\nempty"
   },
   {
-    "objectID": "notes/Bigg.html",
-    "href": "notes/Bigg.html",
+    "objectID": "notes/Class2/conflicted_prefer.html",
+    "href": "notes/Class2/conflicted_prefer.html",
     "title": "BST623 functions",
     "section": "",
-    "text": "Notes for:Bigg"
+    "text": "Notes for: conflicted_prefer()\nempty"
   },
   {
-    "objectID": "notes/print.html",
-    "href": "notes/print.html",
+    "objectID": "notes/Class2/Bigg.html",
+    "href": "notes/Class2/Bigg.html",
     "title": "BST623 functions",
     "section": "",
-    "text": "Notes for:print"
+    "text": "Notes for: Bigg()\nempty"
   },
   {
-    "objectID": "notes/filter.html",
-    "href": "notes/filter.html",
+    "objectID": "notes/Class2/norw.html",
+    "href": "notes/Class2/norw.html",
     "title": "BST623 functions",
     "section": "",
-    "text": "Notes for:filter"
+    "text": "Notes for: norw()\nempty"
   },
   {
-    "objectID": "notes/build_pdf.html",
-    "href": "notes/build_pdf.html",
+    "objectID": "notes/Class2/some_big_fancy_thing_that_took_10_minutes_to_type.html",
+    "href": "notes/Class2/some_big_fancy_thing_that_took_10_minutes_to_type.html",
     "title": "BST623 functions",
     "section": "",
-    "text": "Notes for:build_pdf"
+    "text": "Notes for: some_big_fancy_thing_that_took_10_minutes_to_type()\nempty"
   },
   {
-    "objectID": "notes/f.html",
-    "href": "notes/f.html",
+    "objectID": "notes/Class2/install_cran.html",
+    "href": "notes/Class2/install_cran.html",
     "title": "BST623 functions",
     "section": "",
-    "text": "Notes for:f"
+    "text": "Notes for: install_cran()\n\n\n[remotes::install_cran()]\nA better way to add packages is to use the [install_cran()] function from the [remotes] package: [[remotes::install\\_cran](*thingy*)] For example to install the DOPE package:\n\nremotes::install_cran(DOPE)\n\nPaste that line into the Console windowpane (bottom left corner) and tap the return or enter key on your keyboard. It will check to see the package has been updated before it bothers to do the download."
   },
   {
-    "objectID": "notes/use_tile_view.html",
-    "href": "notes/use_tile_view.html",
+    "objectID": "notes/Class2/summarise.html",
+    "href": "notes/Class2/summarise.html",
     "title": "BST623 functions",
     "section": "",
-    "text": "Notes for:use_tile_view"
+    "text": "Notes for: summarise()\nempty"
   },
   {
-    "objectID": "notes/summarise.html",
-    "href": "notes/summarise.html",
+    "objectID": "notes/Class2/Class.html",
+    "href": "notes/Class2/Class.html",
     "title": "BST623 functions",
     "section": "",
-    "text": "Notes for:summarise"
+    "text": "Notes for: Class()\nempty"
   },
   {
-    "objectID": "notes/norw.html",
-    "href": "notes/norw.html",
+    "objectID": "notes/Class2/comma.html",
+    "href": "notes/Class2/comma.html",
     "title": "BST623 functions",
     "section": "",
-    "text": "Notes for:norw"
+    "text": "Notes for: comma()\nempty"
   },
   {
-    "objectID": "notes/glue.html",
-    "href": "notes/glue.html",
+    "objectID": "notes/Class2/time.html",
+    "href": "notes/Class2/time.html",
     "title": "BST623 functions",
     "section": "",
-    "text": "Notes for:glue"
+    "text": "Notes for: time()\nempty"
   },
   {
-    "objectID": "notes/ji.html",
-    "href": "notes/ji.html",
+    "objectID": "notes/Class2/paste.html",
+    "href": "notes/Class2/paste.html",
     "title": "BST623 functions",
     "section": "",
-    "text": "Notes for:ji"
+    "text": "Notes for: paste()\nempty"
   },
   {
-    "objectID": "notes/mean.html",
-    "href": "notes/mean.html",
+    "objectID": "notes/Class2/tidymodels_prefer.html",
+    "href": "notes/Class2/tidymodels_prefer.html",
     "title": "BST623 functions",
     "section": "",
-    "text": "Notes for:mean"
+    "text": "Notes for: tidymodels_prefer()\nempty"
   },
   {
-    "objectID": "notes/url.html",
-    "href": "notes/url.html",
+    "objectID": "notes/Class2/c.html",
+    "href": "notes/Class2/c.html",
     "title": "BST623 functions",
     "section": "",
-    "text": "Notes for:url"
+    "text": "Notes for: c()\nempty"
   },
   {
-    "objectID": "notes/c.html",
-    "href": "notes/c.html",
+    "objectID": "notes/Class2/paste0.html",
+    "href": "notes/Class2/paste0.html",
     "title": "BST623 functions",
     "section": "",
-    "text": "Notes for:c"
+    "text": "Notes for: paste0()\nempty"
   },
   {
-    "objectID": "notes/conflict_prefer.html",
-    "href": "notes/conflict_prefer.html",
+    "objectID": "notes/Class2/source.html",
+    "href": "notes/Class2/source.html",
     "title": "BST623 functions",
     "section": "",
-    "text": "Notes for:conflict_prefer"
+    "text": "Notes for: source()\nempty"
   },
   {
-    "objectID": "notes/word.html",
-    "href": "notes/word.html",
+    "objectID": "notes/Class2/suppressPackageStartupMessages.html",
+    "href": "notes/Class2/suppressPackageStartupMessages.html",
     "title": "BST623 functions",
     "section": "",
-    "text": "Notes for:word"
+    "text": "Notes for: suppressPackageStartupMessages()\n\n\n[suppressPackageStartupMessages()]\n[[suppressPackageStartupMessages](library(*package*))] + Load a package without printing its greeting message.\n\nsuppressPackageStartupMessages(library(tidyverse))\n\n\nThis is very useful with the [tidyverse] and [tidymodels]. Use this if and only if you are also using the [conflicted] package (to avoid function name conflicts)."
   },
   {
-    "objectID": "notes/suppressMessages.html",
-    "href": "notes/suppressMessages.html",
+    "objectID": "notes/Class2/use_tile_view.html",
+    "href": "notes/Class2/use_tile_view.html",
     "title": "BST623 functions",
     "section": "",
-    "text": "Notes for:suppressMessages"
+    "text": "Notes for: use_tile_view()\nempty"
   },
   {
-    "objectID": "notes/source.html",
-    "href": "notes/source.html",
+    "objectID": "notes/Class2/f.html",
+    "href": "notes/Class2/f.html",
     "title": "BST623 functions",
     "section": "",
-    "text": "Notes for:source"
+    "text": "Notes for: f()\nempty"
   },
   {
-    "objectID": "notes/function.html",
-    "href": "notes/function.html",
+    "objectID": "notes/Class2/build_pdf.html",
+    "href": "notes/Class2/build_pdf.html",
     "title": "BST623 functions",
     "section": "",
-    "text": "Notes for:function"
+    "text": "Notes for: build_pdf()\nempty"
   },
   {
-    "objectID": "notes/paste.html",
-    "href": "notes/paste.html",
+    "objectID": "notes/Class2/format.html",
+    "href": "notes/Class2/format.html",
     "title": "BST623 functions",
     "section": "",
-    "text": "Notes for:paste"
+    "text": "Notes for: format()\nempty"
   },
   {
-    "objectID": "notes/nrow.html",
-    "href": "notes/nrow.html",
+    "objectID": "notes/Class2/word.html",
+    "href": "notes/Class2/word.html",
     "title": "BST623 functions",
     "section": "",
-    "text": "Notes for:nrow"
+    "text": "Notes for: word()\nempty"
   },
   {
-    "objectID": "notes/set.html",
-    "href": "notes/set.html",
+    "objectID": "notes/Class2/ref.html",
+    "href": "notes/Class2/ref.html",
     "title": "BST623 functions",
     "section": "",
-    "text": "Notes for:set"
+    "text": "Notes for: ref()\nempty"
   },
   {
-    "objectID": "notes/tidymodels_prefer.html",
-    "href": "notes/tidymodels_prefer.html",
+    "objectID": "notes/Class2/nrow.html",
+    "href": "notes/Class2/nrow.html",
     "title": "BST623 functions",
     "section": "",
-    "text": "Notes for:tidymodels_prefer"
+    "text": "Notes for: nrow()\nempty"
   },
   {
-    "objectID": "notes/some_big_fancy_thing_that_took_10_minutes_to_type.html",
-    "href": "notes/some_big_fancy_thing_that_took_10_minutes_to_type.html",
+    "objectID": "notes/Class2/ji.html",
+    "href": "notes/Class2/ji.html",
     "title": "BST623 functions",
     "section": "",
-    "text": "Notes for:some_big_fancy_thing_that_took_10_minutes_to_type"
+    "text": "Notes for: ji()\nempty"
   },
   {
-    "objectID": "notes/library.html",
-    "href": "notes/library.html",
+    "objectID": "notes/Class2/Version.html",
+    "href": "notes/Class2/Version.html",
     "title": "BST623 functions",
     "section": "",
-    "text": "Notes for:library"
+    "text": "Notes for: Version()\nempty"
   },
   {
-    "objectID": "notes/Version.html",
-    "href": "notes/Version.html",
+    "objectID": "notes/Class2/cat.html",
+    "href": "notes/Class2/cat.html",
     "title": "BST623 functions",
     "section": "",
-    "text": "Notes for:Version"
+    "text": "Notes for: cat()\nempty"
   },
   {
-    "objectID": "notes/na.html",
-    "href": "notes/na.html",
+    "objectID": "notes/Class2/packages.html",
+    "href": "notes/Class2/packages.html",
     "title": "BST623 functions",
     "section": "",
-    "text": "Notes for:na"
+    "text": "Notes for: packages()\nempty"
   },
   {
-    "objectID": "notes/pull.html",
-    "href": "notes/pull.html",
+    "objectID": "notes/Class2/print.html",
+    "href": "notes/Class2/print.html",
     "title": "BST623 functions",
     "section": "",
-    "text": "Notes for:pull"
+    "text": "Notes for: print()\nempty"
   },
   {
-    "objectID": "notes/ggplotlibrary.html",
-    "href": "notes/ggplotlibrary.html",
+    "objectID": "notes/Class2/set.html",
+    "href": "notes/Class2/set.html",
     "title": "BST623 functions",
     "section": "",
-    "text": "Notes for:ggplotlibrary"
+    "text": "Notes for: set()\nempty"
   },
   {
-    "objectID": "notes/time.html",
-    "href": "notes/time.html",
+    "objectID": "notes/Class2/mean.html",
+    "href": "notes/Class2/mean.html",
     "title": "BST623 functions",
     "section": "",
-    "text": "Notes for:time"
+    "text": "Notes for: mean()\nempty"
   },
   {
-    "objectID": "notes/paste0.html",
-    "href": "notes/paste0.html",
+    "objectID": "notes/Class2/options.html",
+    "href": "notes/Class2/options.html",
     "title": "BST623 functions",
     "section": "",
-    "text": "Notes for:paste0"
+    "text": "Notes for: options()\nempty"
   },
   {
-    "objectID": "notes/suppressPackageStartupMessages.html",
-    "href": "notes/suppressPackageStartupMessages.html",
+    "objectID": "notes/Class2/ggplotlibrary.html",
+    "href": "notes/Class2/ggplotlibrary.html",
     "title": "BST623 functions",
     "section": "",
-    "text": "Notes for:suppressPackageStartupMessages"
+    "text": "Notes for: ggplotlibrary()\nempty"
   },
   {
-    "objectID": "notes/options.html",
-    "href": "notes/options.html",
+    "objectID": "notes/Class2/make_project.html",
+    "href": "notes/Class2/make_project.html",
     "title": "BST623 functions",
     "section": "",
-    "text": "Notes for:options"
+    "text": "Notes for: make_project()\nempty"
   },
   {
-    "objectID": "notes/make_project.html",
-    "href": "notes/make_project.html",
+    "objectID": "notes/Class2/install_github.html",
+    "href": "notes/Class2/install_github.html",
     "title": "BST623 functions",
     "section": "",
-    "text": "Notes for:make_project"
+    "text": "Notes for: install_github()\nempty"
   },
   {
-    "objectID": "notes/conflicted_prefer.html",
-    "href": "notes/conflicted_prefer.html",
+    "objectID": "notes/Class2/conflict_prefer.html",
+    "href": "notes/Class2/conflict_prefer.html",
     "title": "BST623 functions",
     "section": "",
-    "text": "Notes for:conflicted_prefer"
+    "text": "Notes for: conflict_prefer()\nempty"
   },
   {
-    "objectID": "notes/packages.html",
-    "href": "notes/packages.html",
+    "objectID": "notes/Class2/glue.html",
+    "href": "notes/Class2/glue.html",
     "title": "BST623 functions",
     "section": "",
-    "text": "Notes for:packages"
+    "text": "Notes for: glue()\nempty"
   },
   {
-    "objectID": "notes/format.html",
-    "href": "notes/format.html",
+    "objectID": "notes/Class1/library.html",
+    "href": "notes/Class1/library.html",
     "title": "BST623 functions",
     "section": "",
-    "text": "Notes for:format"
+    "text": "Notes for: library()\n\n\n[library()]\n[[library](*package*)] + The library [library()] function loads a package into working memory (from long term storage on your hard disk drive or solid state drive).\n\nlibrary(survial)\n\n\nThere are a few meta packages, like tidymodels and tidyverse, which load many packages from a single [library()] function call. ??? stats::filter and dplyr::filter"
   },
   {
-    "objectID": "notes/install_github.html",
-    "href": "notes/install_github.html",
+    "objectID": "notes/Class1/informationfilter.html",
+    "href": "notes/Class1/informationfilter.html",
     "title": "BST623 functions",
     "section": "",
-    "text": "Notes for:install_github"
+    "text": "Notes for: informationfilter()\nempty"
   },
   {
-    "objectID": "notes/42rm.html",
-    "href": "notes/42rm.html",
+    "objectID": "notes/Class1/install_cran.html",
+    "href": "notes/Class1/install_cran.html",
     "title": "BST623 functions",
     "section": "",
-    "text": "Notes for:42rm"
+    "text": "Notes for: install_cran()\n\n\n[remotes::install_cran()]\nA better way to add packages is to use the [install_cran()] function from the [remotes] package: [[remotes::install\\_cran](*thingy*)] For example to install the DOPE package:\n\nremotes::install_cran(DOPE)\n\nPaste that line into the Console windowpane (bottom left corner) and tap the return or enter key on your keyboard. It will check to see the package has been updated before it bothers to do the download."
   },
   {
-    "objectID": "notes/transmissionfilter.html",
-    "href": "notes/transmissionfilter.html",
+    "objectID": "notes/Class1/transmissionfilter.html",
+    "href": "notes/Class1/transmissionfilter.html",
     "title": "BST623 functions",
     "section": "",
-    "text": "Notes for:transmissionfilter"
+    "text": "Notes for: transmissionfilter()\nempty"
   },
   {
-    "objectID": "notes/comma.html",
-    "href": "notes/comma.html",
+    "objectID": "notes/Class1/class.html",
+    "href": "notes/Class1/class.html",
     "title": "BST623 functions",
     "section": "",
-    "text": "Notes for:comma"
+    "text": "Notes for: class()\n\n\n[class()]\n[[class](_thingy_)] If you are not sure what something is, you can check its class by typing using the [class()] function in the console windowpane. For example, to check the class of the mysterious iris object type this: .pull-left[[]] .pull-right[[]]"
   },
   {
-    "objectID": "notes/rm.html",
-    "href": "notes/rm.html",
+    "objectID": "notes/Class1/time.html",
+    "href": "notes/Class1/time.html",
     "title": "BST623 functions",
     "section": "",
-    "text": "Notes for:rm"
+    "text": "Notes for: time()\nempty"
   },
   {
-    "objectID": "notes/informationfilter.html",
-    "href": "notes/informationfilter.html",
+    "objectID": "notes/Class1/tidymodels_prefer.html",
+    "href": "notes/Class1/tidymodels_prefer.html",
     "title": "BST623 functions",
     "section": "",
-    "text": "Notes for:informationfilter"
+    "text": "Notes for: tidymodels_prefer()\nempty"
   },
   {
-    "objectID": "notes/cat.html",
-    "href": "notes/cat.html",
+    "objectID": "notes/Class1/42rm.html",
+    "href": "notes/Class1/42rm.html",
     "title": "BST623 functions",
     "section": "",
-    "text": "Notes for:cat"
+    "text": "Notes for: 42rm()\nempty"
   },
   {
-    "objectID": "notes/coauthor.html",
-    "href": "notes/coauthor.html",
+    "objectID": "notes/Class1/na.html",
+    "href": "notes/Class1/na.html",
     "title": "BST623 functions",
     "section": "",
-    "text": "Notes for:coauthor"
+    "text": "Notes for: na()\nempty"
+  },
+  {
+    "objectID": "notes/Class1/source.html",
+    "href": "notes/Class1/source.html",
+    "title": "BST623 functions",
+    "section": "",
+    "text": "Notes for: source()\nempty"
+  },
+  {
+    "objectID": "notes/Class1/pull.html",
+    "href": "notes/Class1/pull.html",
+    "title": "BST623 functions",
+    "section": "",
+    "text": "Notes for: pull()\n\n\n[dplyr::pull()]\n[[pull](*dataset*, *variable*)] + The [pull()] is used to copy of a variable out of a dataset into a new object.\n\npull(mtcars, mpg)\n\n\nWhen it is used with the [filter()] function, [pull()] can be used to extract a single value from a dataset. This is useful when you need to extract a number, like an odds ratio or a p-value, for a report.\n[pull()] is the only [dplyr] function that does not return a tibble."
+  },
+  {
+    "objectID": "notes/Class1/suppressPackageStartupMessages.html",
+    "href": "notes/Class1/suppressPackageStartupMessages.html",
+    "title": "BST623 functions",
+    "section": "",
+    "text": "Notes for: suppressPackageStartupMessages()\n\n\n[suppressPackageStartupMessages()]\n[[suppressPackageStartupMessages](library(*package*))] + Load a package without printing its greeting message.\n\nsuppressPackageStartupMessages(library(tidyverse))\n\n\nThis is very useful with the [tidyverse] and [tidymodels]. Use this if and only if you are also using the [conflicted] package (to avoid function name conflicts)."
+  },
+  {
+    "objectID": "notes/Class1/use_tile_view.html",
+    "href": "notes/Class1/use_tile_view.html",
+    "title": "BST623 functions",
+    "section": "",
+    "text": "Notes for: use_tile_view()\nempty"
+  },
+  {
+    "objectID": "notes/Class1/build_pdf.html",
+    "href": "notes/Class1/build_pdf.html",
+    "title": "BST623 functions",
+    "section": "",
+    "text": "Notes for: build_pdf()\nempty"
+  },
+  {
+    "objectID": "notes/Class1/format.html",
+    "href": "notes/Class1/format.html",
+    "title": "BST623 functions",
+    "section": "",
+    "text": "Notes for: format()\nempty"
+  },
+  {
+    "objectID": "notes/Class1/coauthor.html",
+    "href": "notes/Class1/coauthor.html",
+    "title": "BST623 functions",
+    "section": "",
+    "text": "Notes for: coauthor()\nempty"
+  },
+  {
+    "objectID": "notes/Class1/ji.html",
+    "href": "notes/Class1/ji.html",
+    "title": "BST623 functions",
+    "section": "",
+    "text": "Notes for: ji()\nempty"
+  },
+  {
+    "objectID": "notes/Class1/url.html",
+    "href": "notes/Class1/url.html",
+    "title": "BST623 functions",
+    "section": "",
+    "text": "Notes for: url()\nempty"
+  },
+  {
+    "objectID": "notes/Class1/set.html",
+    "href": "notes/Class1/set.html",
+    "title": "BST623 functions",
+    "section": "",
+    "text": "Notes for: set()\nempty"
+  },
+  {
+    "objectID": "notes/Class1/rm.html",
+    "href": "notes/Class1/rm.html",
+    "title": "BST623 functions",
+    "section": "",
+    "text": "Notes for: rm()\nempty"
+  },
+  {
+    "objectID": "notes/Class1/ggplotlibrary.html",
+    "href": "notes/Class1/ggplotlibrary.html",
+    "title": "BST623 functions",
+    "section": "",
+    "text": "Notes for: ggplotlibrary()\nempty"
+  },
+  {
+    "objectID": "notes/Class1/filter.html",
+    "href": "notes/Class1/filter.html",
+    "title": "BST623 functions",
+    "section": "",
+    "text": "Notes for: filter()\n\n\n[dplyr::filter()]\n[[filter](tableName, logical test)] + Use [filter()] to pick rows/records. + Inside the [()] you put a logic check. + [filter()] keeps rows/records where the logic check is true.\n\nfilter(mtcars, am == 0)  # cars with automatic transmission\nfilter(mtcars, is.na(mpg))  # cars missing miles per gallon information\nfilter(mtcars, !is.na(mpg))  # cars not missing miles per gallon information"
   }
 ]

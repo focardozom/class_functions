@@ -1,0 +1,2 @@
+# Notes for: make_project()
+empty

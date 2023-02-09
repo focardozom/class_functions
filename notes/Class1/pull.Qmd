@@ -1,0 +1,10 @@
+# Notes for: pull()
+# [`dplyr::pull()`]
+[[`pull`]`(*dataset*, *variable*)`]
++ The [`pull()`] is used to copy of a variable out of a dataset into a new object.  
+```{r eval=FALSE}
+pull(mtcars, mpg)
+```
++ When it is used with the [`filter()`] function, [`pull()`] can be used to extract a single value from a dataset. This is useful when you need to extract a number,  like an odds ratio or a *p*-value, for a report.
++ [`pull()`] is the only [`dplyr`] function that does not return a `tibble`.
+---

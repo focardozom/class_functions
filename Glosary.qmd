@@ -2,14 +2,48 @@
 title: "Glosary"
 echo: false
 warning: false
+editor_options: 
+  chunk_output_type: console
 ---
 
 ```{r}
 library(reactable)
 library(tidyverse)
+library(glue)
 ```
 
 ```{r}
+the_data <- readRDS('data/the_data.rds')
+
+reactable(the_data,
+  columns = list(
+    Notes = colDef(cell = function(value, index) {
+      url <- glue("/notes/{the_data$Class[index]}/{the_data$Notes[index]}.html")
+      htmltools::tags$a(href = url, as.character(value))
+    },
+    filterable = TRUE)
+  )
+)
+```
+
+```{r to-web2, eval=FALSE}
+the_data <- readRDS('data/the_data.rds')
+
+reactable(the_data,
+  columns = list(
+    Notes = colDef(cell = function(value, index, index2) {
+      url <- sprintf(
+        "/notes/Class1/%s.html",
+        the_data$Notes[index], value
+      )
+      htmltools::tags$a(href = url, as.character(value))
+    },
+    filterable = TRUE)
+  )
+)
+```
+
+```{r to-web, eval=FALSE}
 the_data <- readRDS('data/the_data.rds')
 
 reactable(the_data,
