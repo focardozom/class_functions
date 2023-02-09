@@ -1,2 +1,2 @@
 # Notes for: print()
-empty
+Empty

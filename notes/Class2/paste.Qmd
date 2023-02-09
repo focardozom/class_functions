@@ -1,2 +1,2 @@
 # Notes for: paste()
-empty
+Empty
