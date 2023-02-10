@@ -1,4 +1,25 @@
-# Function name: paste0()
+# Function name: paste0
 # Notes:
-Empty
-NA
+#.blue[`paste0()`]
+.center[.blue[`paste0`]`(*things*)`]
+.small[
++ It pastes together character strings without adding spaces. 
++ The .blue[`paste0()`] function prints a slash before quotes.
+.pull-left[
+```{r, comment=""}
+paste0("The cyberman", " cried.")
+paste0('The cyberman said "error."')
+words <- "Hi Mom"
+paste0("Ray said ", '"', words, '".')
+```
+]
+.pull-right[
++ The .blue[`paste()`] function puts a space between words.
++ The .blue[`glue::glue()`] function is an excellent alternative.
+```{r, comment=""}
+words <- "Hi Mom"
+glue::glue('Ray said "{words}".')
+```
+]
+]
+---

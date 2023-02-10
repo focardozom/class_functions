@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>BST623 functions – install_cran</title>
+<title>BST623 functions – dplyrfilter</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -168,9 +168,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#function-name-install_cran" id="toc-function-name-install_cran" class="nav-link active" data-scroll-target="#function-name-install_cran">Function name: install_cran()</a></li>
+  <li><a href="#function-name-dplyrfilter" id="toc-function-name-dplyrfilter" class="nav-link active" data-scroll-target="#function-name-dplyrfilter">Function name: dplyr::filter</a></li>
   <li><a href="#notes" id="toc-notes" class="nav-link" data-scroll-target="#notes">Notes:</a></li>
-  <li><a href="#remotesinstall_cran" id="toc-remotesinstall_cran" class="nav-link" data-scroll-target="#remotesinstall_cran">[<code>remotes::install_cran()</code>]</a></li>
+  <li><a href="#bluedplyrfilter" id="toc-bluedplyrfilter" class="nav-link" data-scroll-target="#bluedplyrfilter">.blue[<code>dplyr::filter()</code>]</a></li>
   </ul>
 </nav>
     </div>
@@ -179,21 +179,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 
 
-<section id="function-name-install_cran" class="level1">
-<h1>Function name: install_cran()</h1>
+<section id="function-name-dplyrfilter" class="level1">
+<h1>Function name: dplyr::filter</h1>
 </section>
 <section id="notes" class="level1">
 <h1>Notes:</h1>
 </section>
-<section id="remotesinstall_cran" class="level1">
-<h1>[<code>remotes::install_cran()</code>]</h1>
-<p>A better way to add packages is to use the [<code>install_cran()</code>] function from the [<code>remotes</code>] package: [[<code>remotes::install\_cran</code>]<code>("*thingy*")</code>] For example to install the “DOPE” package:</p>
+<section id="bluedplyrfilter" class="level1">
+<h1>.blue[<code>dplyr::filter()</code>]</h1>
+<p>.center[.blue[<code>filter</code>]<code>(tableName, logical test)</code>] + Use .blue[<code>filter()</code>] to pick rows/records. + Inside the .blue[<code>()</code>] you put a logic check. + .blue[<code>filter()</code>] keeps rows/records where the logic check is true.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_cran</span>(<span class="st">"DOPE"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">filter</span>(mtcars, am <span class="sc">==</span> <span class="dv">0</span>)  <span class="co"># cars with automatic transmission</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">filter</span>(mtcars, <span class="fu">is.na</span>(mpg))  <span class="co"># cars missing miles per gallon information</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">filter</span>(mtcars, <span class="sc">!</span><span class="fu">is.na</span>(mpg))  <span class="co"># cars not missing miles per gallon information</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Paste that line into the Console windowpane (bottom left corner) and tap the return or enter key on your keyboard. It will check to see the package has been updated before it bothers to do the download.</p>
 <hr>
-<p>NA</p>
 
 
 </section>

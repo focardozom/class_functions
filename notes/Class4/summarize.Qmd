@@ -1,8 +1,8 @@
-# Function name: summarize()
+# Function name: summarize
 # Notes:
-# [`summarize()`] to make rows/records with statistics. $_1$
-.small[[[`summarize`]`(tableName, newName = aggregateFunction)`  
-[`summarize`]`(tableName, aSum = sum(a), anAvg = mean(b), theVar = var(b))`]
+# .blue[`summarize()`] to make rows/records with statistics. $_1$
+.small[.center[.blue[`summarize`]`(tableName, newName = aggregateFunction)`  
+.blue[`summarize`]`(tableName, aSum = sum(a), anAvg = mean(b), theVar = var(b))`]
 + Make a new dataset with summary statistics
 + Use it to take a vector and output a single number
 + Only keeps the new variables
@@ -19,7 +19,7 @@ laryngectomy %>%
 ```
 ]
 .pull-right-36[
-```{r theSummarizeTableOut, eval = FALSE, echo=FALSE}
+```{r theSummarizeTableOut, eval=FALSE, echo=FALSE}
 laryngectomy %>%
   summarize(theMinFU = min(length_fu),
             theMeanFU = mean(length_fu),
@@ -28,12 +28,3 @@ laryngectomy %>%
 ]
 ]
 ---
-
-
-# Summarize Function
-
-The summarize function is used to provide a concise summary of a dataset or a part of a dataset. It is often used to get an overall statistical summary of a dataset without having to look through all the individual values.
-
-The summarize function can be found in the 'tidyverse' package. This package is widely used for data wrangling and contains a range of useful functions for data manipulation.
-
-The summarize function should be used when a user wants to get a summary of a dataset, such as the number of observations and the mean, median
