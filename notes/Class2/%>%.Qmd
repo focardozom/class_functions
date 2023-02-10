@@ -1,10 +1,10 @@
 # Function name: %>%
 # Notes:
-# [`%>%`]
-[ $thing_1$ [`%>%`]  
+# .blue[`%>%`]
+.center[ $thing_1$ .blue[`%>%`]  
  $thing_2$
 ]
-+ The symbol [`%>%`] is called a pipe.  When describing a workflow, it is spoken as "then".
++ The symbol .blue[`%>%`] is called a pipe.  When describing a workflow, it is spoken as "then".
 + It sends the output from $thing_1$ to the first argument of $thing_2$.
 ```{r eval=FALSE}
 nrow(medicaldata::covid_testing) %>% 
@@ -15,4 +15,3 @@ nrow(medicaldata::covid_testing) %>%
 + Start code after a pipe on a new line.
 + Indent all lines of code two spaces after the first pipe.
 ---
-NA

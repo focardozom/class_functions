@@ -1,0 +1,12 @@
+# Function name: remotes::install_cran
+# Notes:
+# .blue[`remotes::install_cran()`]
+A better way to add packages is to use the .blue[`install_cran()`] function from the .blue[`remotes`] package:
+.center[.blue[`remotes::install\_cran`]`("*thingy*")`]
+For example to install the "DOPE" package:
+```{r, eval=FALSE}
+remotes::install_cran("DOPE")
+```
+Paste that line into the Console windowpane (bottom left corner) and tap the return or enter key on your keyboard.
+It will check to see the package has been updated before it bothers to do the download.
+---

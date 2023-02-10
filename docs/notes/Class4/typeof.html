@@ -168,10 +168,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#function-name-typeof" id="toc-function-name-typeof" class="nav-link active" data-scroll-target="#function-name-typeof">Function name: typeof()</a></li>
+  <li><a href="#function-name-typeof" id="toc-function-name-typeof" class="nav-link active" data-scroll-target="#function-name-typeof">Function name: typeof</a></li>
   <li><a href="#notes" id="toc-notes" class="nav-link" data-scroll-target="#notes">Notes:</a></li>
-  <li><a href="#typeof" id="toc-typeof" class="nav-link" data-scroll-target="#typeof">[<code>typeof()</code>]</a></li>
-  <li><a href="#typeof-function" id="toc-typeof-function" class="nav-link" data-scroll-target="#typeof-function">typeof function</a></li>
+  <li><a href="#bluetypeof" id="toc-bluetypeof" class="nav-link" data-scroll-target="#bluetypeof">.blue[<code>typeof()</code>]</a></li>
   </ul>
 </nav>
     </div>
@@ -181,14 +180,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 
 <section id="function-name-typeof" class="level1">
-<h1>Function name: typeof()</h1>
+<h1>Function name: typeof</h1>
 </section>
 <section id="notes" class="level1">
 <h1>Notes:</h1>
 </section>
-<section id="typeof" class="level1">
-<h1>[<code>typeof()</code>]</h1>
-<p>.small[ [[<code>typeof</code>]<code>(*vector*)</code>] [[<code>typeof</code>]<code>(*dataset$variable*)</code>] + The “type” of an object helps determine what behaviors an object can do.<br>
+<section id="bluetypeof" class="level1">
+<h1>.blue[<code>typeof()</code>]</h1>
+<p>.small[ .center[.blue[<code>typeof</code>]<code>(*vector*)</code>] .center[.blue[<code>typeof</code>]<code>(*dataset$variable*)</code>] + The “type” of an object helps determine what behaviors an object can do.<br>
 + You can not take the mean of a character variable. + These are the typical types that are used in datasets: .pull-left[ + int = “integer” for numbers without decimals + dbl = “double” for numbers with decimals + lgl = “logical” for true/false + date = “date”] .pull-right[ + chr = “character” for character string + fct = “factor” for categories that are not ordered + ord = “ordered” for ordered categories]</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">typeof</span>(pi)</span>
@@ -196,17 +195,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <ul>
 <li>Other “types” are used to categorize functions and other complex objects.</li>
-<li><code>R</code> also uses [<code>mode()</code>] to describe type. It groups “integer” and “double” as “numeric”. ]</li>
+<li><code>R</code> also uses .blue[<code>mode()</code>] to describe type. It groups “integer” and “double” as “numeric”. ]</li>
 </ul>
 <hr>
-</section>
-<section id="typeof-function" class="level1">
-<h1>typeof function</h1>
-<p>The typeof function is a basic R function that determines the type of object passed to it.</p>
-<p>The typeof function belongs to the base package of R.</p>
-<p>The typeof function should be used when you need to determine the class of an object. This is important to know because each class of object has specific methods and functions that can be used on them.</p>
-<p>An example of how to use the typeof function in R is as follows:</p>
-<p>```R # Determine the type of the object ‘x’</p>
 
 
 </section>

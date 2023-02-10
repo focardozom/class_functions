@@ -1,4 +1,0 @@
-# Function name: Bigg()
-# Notes:
-Empty
-NA

@@ -1,4 +1,0 @@
-# Function name: norw()
-# Notes:
-Empty
-NA

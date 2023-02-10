@@ -1,12 +1,12 @@
-# Function name: cat()
+# Function name: cat
 # Notes:
-# [`cat()`]
-[[`cat`]`(*things*)`]
+# .blue[`cat()`]
+.center[.blue[`cat`]`(*things*)`]
 .pull-left-60[
-+ [`cat()`] is simpler version of the [`paste()`] function.
++ .blue[`cat()`] is simpler version of the .blue[`paste()`] function.
   + It does not print the vector position, like [1].
   + It does not prints a slash before quotes.
-+ The [`glue::glue()`] is an excellent alternative.
++ The .blue[`glue::glue()`] is an excellent alternative.
 ]
 .pull-right-36[
 ```{r}
@@ -17,4 +17,3 @@ cat("Ray said ", '"', words, '".')
 ```
 ]
 ---
-NA

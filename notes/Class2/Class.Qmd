@@ -1,4 +1,0 @@
-# Function name: Class()
-# Notes:
-Empty
-NA

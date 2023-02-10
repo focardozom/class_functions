@@ -1,4 +1,0 @@
-# Function name: install_github()
-# Notes:
-Empty
-NA

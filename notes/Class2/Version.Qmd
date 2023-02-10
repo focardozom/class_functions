@@ -1,4 +1,0 @@
-# Function name: Version()
-# Notes:
-Empty
-NA

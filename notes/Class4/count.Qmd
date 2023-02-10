@@ -1,8 +1,8 @@
-# Function name: count()
+# Function name: count
 # Notes:
-# [`count()`]
-[[`count`]`(table, variables)`]
-`dplyr` can do fancy summary statistics but [`count()`] is quick, easy and useful for frequency counts:
+# .blue[`count()`]
+.center[.blue[`count`]`(table, variables)`]
+`dplyr` can do fancy summary statistics but .blue[`count()`] is quick, easy and useful for frequency counts:
 .pull-left-60[
 ```{r theCountTable, eval = FALSE}
 laryngectomy %>%
@@ -22,7 +22,7 @@ laryngectomy %>%
 ```
 ]
 .pull-right-36[
-```{r eval = FALSE, echo=FALSE}
+```{r eval=FALSE, echo=FALSE}
 laryngectomy %>%
   mutate(isMale = 2 - gender ) %>%
   mutate(sex = as.character(isMale)) %>%
@@ -40,12 +40,3 @@ laryngectomy %>%
 ```
 ]
 ---
-
-
-# The count Function 
-
-The count function is a useful tool for summarizing data in R. It allows you to quickly count the number of occurrences of an item or items in a vector. It is particularly helpful when working with categorical data. 
-
-The count function is contained in the dplyr package. It is important to ensure that the dplyr package is loaded before you try to use the count function.
-
-It is best to use the count function when you have categorical data or data that can be easily divided into categories and you want to quickly

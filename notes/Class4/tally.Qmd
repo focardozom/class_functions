@@ -1,7 +1,7 @@
-# Function name: tally()
+# Function name: tally
 # Notes:
-# [`tally()`]
-[[`tally`]`(dataset, variable)`]
+# .blue[`tally()`]
+.center[.blue[`tally`]`(dataset, variable)`]
 It adds up the values:
 .pull-left-60[
 ```{r theTallyTable, eval = FALSE}
@@ -17,7 +17,7 @@ sexVars <- laryngectomy %>%
 ```
 ]
 .pull-right-36[
-```{r theTallyTableOut, eval = FALSE, echo=FALSE}
+```{r theTallyTableOut,eval=FALSE,  echo=FALSE}
 sexVars <- laryngectomy %>%
   mutate(isMale = 2 - gender ) %>%
   mutate(sex = as.character(isMale)) %>%
@@ -33,16 +33,3 @@ This was a good trick...
 r theTallyTable, eval = FALSE
 r theTallyTableOut, ref.label="theTallyTable", echo=FALSE
 ---
-
-
-# Overview of Tally Function
-
-Tally is a function in R programming that allows users to quickly count the number of occurrences of an element in a data vector or table. It is used to easily summarize data and calculate frequencies in a data set. It is located in the dplyr package.
-
-## What Package Contain It
-
-The tally function is found in the dplyr package which is widely used in data wrangling and is part of the tidyverse collection of packages.
-
-## When to Use It
-
-The usage of tally is often when summar

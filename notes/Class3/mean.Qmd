@@ -1,7 +1,7 @@
-# Function name: mean()
+# Function name: mean
 # Notes:
-# [`mean()`]
-[[`mean`]`(*vector*, na.rm = *value*)`]
+# .blue[`mean()`]
+.center[.blue[`mean`]`(*vector*, na.rm = *value*)`]
 + It calculates an average. 
 + By default it returns `NA` is any value is missing.
 + You normally use this on a typical numeric variable but it can be use for other types of data if it can convert them to numbers (like dates/times). 
@@ -13,16 +13,3 @@ mean(TRUE)
 ```
 ]
 ---
-
-
-# Introduction to the mean function
-
-The mean function is a commonly used statistical tool for calculating the average from a set of numerical data. This summary measure can be used to provide insights into the overall pattern of the data.
-
-## What package contains it 
-
-The mean function is included in the base R package and can be accessed by typing `mean`. 
-
-## When to use it
-
-The mean function is most commonly used to get a measure of the center of a data set. It is useful in summarizing large data sets and can be used to compare

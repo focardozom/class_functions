@@ -1,4 +1,0 @@
-# Function name: function()
-# Notes:
-Empty
-NA

@@ -1,4 +1,0 @@
-# Function name: 42rm()
-# Notes:
-Empty
-NA

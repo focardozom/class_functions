@@ -1,14 +1,13 @@
 # Function name: <-
 # Notes:
-# [`<-`]
-[[`*thingy* <- *something*`]]
-+ You use [`<-`] to assign an object (e.g., *thingy*) a value (e.g., *something*).
-+ The [`<-`] operator is pronounced "gets."
+# .blue[`<-`]
+.center[.blue[`*thingy* <- *something*`]]
++ You use .blue[`<-`] to assign an object (e.g., *thingy*) a value (e.g., *something*).
++ The .blue[`<-`] operator is pronounced "gets."
 + In other languages this would be an `=`.
 ```{r eval=FALSE}
 everything <- 42
 ```
-+ Use an [`=`], not [`<-`] , to assign values to an argument in a function call.
-+ You can also use  [`->`] (e.g., *`something`* [`->`] *`thingy`*) but it violates all style guides.
++ Use an .blue[`=`], not .blue[`<-`] , to assign values to an argument in a function call.
++ You can also use  .blue[`->`] (e.g., *`something`* .blue[`->`] *`thingy`*) but it violates all style guides.
 ---
-NA

@@ -1,4 +1,0 @@
-# Function name: install_cran()
-# Notes:
-Empty
-NA

@@ -1,4 +1,0 @@
-# Function name: f()
-# Notes:
-Empty
-NA

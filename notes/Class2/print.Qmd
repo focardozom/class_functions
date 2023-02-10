@@ -1,4 +1,0 @@
-# Function name: print()
-# Notes:
-Empty
-NA

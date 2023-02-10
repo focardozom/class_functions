@@ -1,0 +1,11 @@
+# Function name: dplyr::pull
+# Notes:
+# .blue[`dplyr::pull()`]
+.center[.blue[`pull`]`(*dataset*, *variable*)`]
++ The .blue[`pull()`] is used to copy of a variable out of a dataset into a new object.  
+```{r eval=FALSE}
+pull(mtcars, mpg)
+```
++ When it is used with the .blue[`filter()`] function, .blue[`pull()`] can be used to extract a single value from a dataset. This is useful when you need to extract a number,  like an odds ratio or a *p*-value, for a report.
++ .blue[`pull()`] is the only .blue[`dplyr`] function that does not return a `tibble`.
+---

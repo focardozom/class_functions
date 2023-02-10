@@ -1,4 +1,0 @@
-# Function name: summarise()
-# Notes:
-Empty
-NA

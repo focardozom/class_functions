@@ -1,15 +1,13 @@
-# Function name: suppressMessages()
+# Function name: suppressMessages
 # Notes:
-Empty
-
-
-# suppressMessages() Function
-
-## Brief Description
-The suppressMessages() function is used to suppress printed messages to the R console from a given expression.
-
-## What Package Contains It?
-The function is a part of the base R package.
-
-## When to Use It
-The suppressMessages() function is useful for avoiding non-useful or cluttered output when using complex packages or functions. For example, when running multiple simulations or intensive computations within a loop, running suppressMessages() on each step can prevent your R console from becoming overly clut
+#.blue[`suppressMessages()`]
+.center[.blue[`suppressMessages`]`(*function*)`]
++ This will muffle messages produced by a chatty function.  
+  
+```{r eval=FALSE}
+suppressMessages(library(h2o))
+```
++ It may be clearer to write: .blue[`library(*package*, quietly = TRUE)`].
++ This helps with packages that are chatty even when using the `quietly = TRUE` argument to .blue[`library()`].
++ This prevents many messages from showing up in R Markdown output without suppressing other critical messages.
+---

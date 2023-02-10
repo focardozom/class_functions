@@ -168,18 +168,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#function-name-pull" id="toc-function-name-pull" class="nav-link active" data-scroll-target="#function-name-pull">Function name: pull()</a></li>
+  <li><a href="#function-name-pull" id="toc-function-name-pull" class="nav-link active" data-scroll-target="#function-name-pull">Function name: pull</a></li>
   <li><a href="#notes" id="toc-notes" class="nav-link" data-scroll-target="#notes">Notes:</a></li>
-  <li><a href="#pull-makes-a-vector." id="toc-pull-makes-a-vector." class="nav-link" data-scroll-target="#pull-makes-a-vector.">[<code>pull()</code>] makes a vector.</a>
-  <ul class="collapse">
-  <li><a href="#pull-function" id="toc-pull-function" class="nav-link" data-scroll-target="#pull-function">Pull Function</a>
-  <ul class="collapse">
-  <li><a href="#brief-description" id="toc-brief-description" class="nav-link" data-scroll-target="#brief-description">Brief Description</a></li>
-  <li><a href="#what-package-contains-it" id="toc-what-package-contains-it" class="nav-link" data-scroll-target="#what-package-contains-it">What Package Contains It</a></li>
-  <li><a href="#when-to-use-it" id="toc-when-to-use-it" class="nav-link" data-scroll-target="#when-to-use-it">When to Use It</a></li>
-  <li><a href="#an-example-of-how-to-use-it-in-r" id="toc-an-example-of-how-to-use-it-in-r" class="nav-link" data-scroll-target="#an-example-of-how-to-use-it-in-r">An Example of How to Use It in R</a></li>
-  </ul></li>
-  </ul></li>
+  <li><a href="#bluepull-makes-a-vector." id="toc-bluepull-makes-a-vector." class="nav-link" data-scroll-target="#bluepull-makes-a-vector.">.blue[<code>pull()</code>] makes a vector.</a></li>
   </ul>
 </nav>
     </div>
@@ -189,42 +180,23 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 
 <section id="function-name-pull" class="level1">
-<h1>Function name: pull()</h1>
+<h1>Function name: pull</h1>
 </section>
 <section id="notes" class="level1">
 <h1>Notes:</h1>
 </section>
-<section id="pull-makes-a-vector." class="level1">
-<h1>[<code>pull()</code>] makes a vector.</h1>
-<p>[[<code>pull</code>]<code>(tableName, variableName)</code>] Rarely, you will want to pull a column out of a data frame and save it as a vector. [<code>pull()</code>] is the only <code>dplyr</code>o verb that does not return a tibble.</p>
+<section id="bluepull-makes-a-vector." class="level1">
+<h1>.blue[<code>pull()</code>] makes a vector.</h1>
+<p>.center[.blue[<code>pull</code>]<code>(tableName, variableName)</code>] Rarely, you will want to pull a column out of a data frame and save it as a vector. .blue[<code>pull()</code>] is the only <code>dplyr</code>o verb that does not return a tibble.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>yes_no_ND <span class="ot">&lt;-</span> laryngectomy <span class="sc">%&gt;%</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">hadND =</span> <span class="dv">2</span> <span class="sc">-</span> nk_dissection) <span class="sc">%&gt;%</span> </span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pull</span>(hadND)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>[<img src="images/pull.png" class="img-fluid">]</p>
+<p>.center[<img src="images/pull.png" class="img-fluid">]</p>
 <hr>
-<section id="pull-function" class="level2">
-<h2 class="anchored" data-anchor-id="pull-function">Pull Function</h2>
-<section id="brief-description" class="level3">
-<h3 class="anchored" data-anchor-id="brief-description">Brief Description</h3>
-<p>The <code>pull()</code> function is a convenience function for quickly extracting values out of a list-like object. It works similarly to <code>[</code>, but is especially useful for extracting values by name.</p>
-</section>
-<section id="what-package-contains-it" class="level3">
-<h3 class="anchored" data-anchor-id="what-package-contains-it">What Package Contains It</h3>
-<p>The <code>pull()</code> function is in the <code>dplyr</code> package.</p>
-</section>
-<section id="when-to-use-it" class="level3">
-<h3 class="anchored" data-anchor-id="when-to-use-it">When to Use It</h3>
-<p>This is a great function for quickly extracting values from lists, data frames, and tibbles.</p>
-</section>
-<section id="an-example-of-how-to-use-it-in-r" class="level3">
-<h3 class="anchored" data-anchor-id="an-example-of-how-to-use-it-in-r">An Example of How to Use It in R</h3>
-<p>If you have a `</p>
 
 
-</section>
-</section>
 </section>
 
 </main> <!-- /main -->

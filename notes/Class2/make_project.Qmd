@@ -1,4 +1,0 @@
-# Function name: make_project()
-# Notes:
-Empty
-NA

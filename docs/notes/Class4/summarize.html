@@ -169,10 +169,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#function-name-summarize" id="toc-function-name-summarize" class="nav-link active" data-scroll-target="#function-name-summarize">Function name: summarize()</a></li>
+  <li><a href="#function-name-summarize" id="toc-function-name-summarize" class="nav-link active" data-scroll-target="#function-name-summarize">Function name: summarize</a></li>
   <li><a href="#notes" id="toc-notes" class="nav-link" data-scroll-target="#notes">Notes:</a></li>
-  <li><a href="#summarize-to-make-rowsrecords-with-statistics.-_1" id="toc-summarize-to-make-rowsrecords-with-statistics.-_1" class="nav-link" data-scroll-target="#summarize-to-make-rowsrecords-with-statistics.-_1">[<code>summarize()</code>] to make rows/records with statistics. <span class="math inline">\(_1\)</span></a></li>
-  <li><a href="#summarize-function" id="toc-summarize-function" class="nav-link" data-scroll-target="#summarize-function">Summarize Function</a></li>
+  <li><a href="#bluesummarize-to-make-rowsrecords-with-statistics.-_1" id="toc-bluesummarize-to-make-rowsrecords-with-statistics.-_1" class="nav-link" data-scroll-target="#bluesummarize-to-make-rowsrecords-with-statistics.-_1">.blue[<code>summarize()</code>] to make rows/records with statistics. <span class="math inline">\(_1\)</span></a></li>
   </ul>
 </nav>
     </div>
@@ -182,15 +181,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 
 <section id="function-name-summarize" class="level1">
-<h1>Function name: summarize()</h1>
+<h1>Function name: summarize</h1>
 </section>
 <section id="notes" class="level1">
 <h1>Notes:</h1>
 </section>
-<section id="summarize-to-make-rowsrecords-with-statistics.-_1" class="level1">
-<h1>[<code>summarize()</code>] to make rows/records with statistics. <span class="math inline">\(_1\)</span></h1>
-<p>.small[[[<code>summarize</code>]<code>(tableName, newName = aggregateFunction)</code><br>
-[<code>summarize</code>]<code>(tableName, aSum = sum(a), anAvg = mean(b), theVar = var(b))</code>] + Make a new dataset with summary statistics + Use it to take a vector and output a single number + Only keeps the new variables + Base aggregate functions + min max mean median quantile sd var IQR diff length sum + dplyr aggregate functions + first last nth n n_distinct .pull-left-60[</p>
+<section id="bluesummarize-to-make-rowsrecords-with-statistics.-_1" class="level1">
+<h1>.blue[<code>summarize()</code>] to make rows/records with statistics. <span class="math inline">\(_1\)</span></h1>
+<p>.small[.center[.blue[<code>summarize</code>]<code>(tableName, newName = aggregateFunction)</code><br>
+.blue[<code>summarize</code>]<code>(tableName, aSum = sum(a), anAvg = mean(b), theVar = var(b))</code>] + Make a new dataset with summary statistics + Use it to take a vector and output a single number + Only keeps the new variables + Base aggregate functions + min max mean median quantile sd var IQR diff length sum + dplyr aggregate functions + first last nth n n_distinct .pull-left-60[</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>laryngectomy <span class="sc">%&gt;%</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>{{  <span class="fu">summarize</span>(<span class="at">theMinFU =</span> <span class="fu">min</span>(length_fu),<span class="er">}}</span></span>
@@ -203,12 +202,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <p>] ]</p>
 <hr>
-</section>
-<section id="summarize-function" class="level1">
-<h1>Summarize Function</h1>
-<p>The summarize function is used to provide a concise summary of a dataset or a part of a dataset. It is often used to get an overall statistical summary of a dataset without having to look through all the individual values.</p>
-<p>The summarize function can be found in the ‘tidyverse’ package. This package is widely used for data wrangling and contains a range of useful functions for data manipulation.</p>
-<p>The summarize function should be used when a user wants to get a summary of a dataset, such as the number of observations and the mean, median</p>
 
 
 </section>

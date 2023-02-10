@@ -1,4 +1,0 @@
-# Function name: informationfilter()
-# Notes:
-Empty
-NA

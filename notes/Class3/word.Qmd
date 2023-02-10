@@ -1,4 +1,0 @@
-# Function name: word()
-# Notes:
-Empty
-NA

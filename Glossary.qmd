@@ -13,7 +13,8 @@ library(glue)
 ```
 
 ```{r}
-super_data <- readRDS('data/super_data.rds') |> select(-Content)
+super_data <- readRDS('data/notes_data.rds') |> 
+  select(-Content)
 
 reactable(super_data,
   columns = list(

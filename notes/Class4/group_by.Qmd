@@ -1,31 +1,16 @@
-# Function name: group_by()
+# Function name: group_by
 # Notes:
-# [`group_by()`] $_1$
-[[`group_by`]`(tableName, groupingVariable)`]
+# .blue[`group_by()`] $_1$
+.center[.blue[`group_by`]`(tableName, groupingVariable)`]
 Before dplyr 1.1 to get groups you would tag the dataset as having a grouping variable:
 ```{r eval = FALSE}
 laryngectomy %>%
   select(gender, length_fu) %>% 
   `group_by(gender)` # marks the grouping variable
 ```
-```{r eval = FALSE, echo = FALSE}
+```{r eval=FALSE, echo = FALSE}
 laryngectomy %>%
   select(gender, length_fu) %>% 
   group_by(gender) # marks the grouping variable
 ```
 ---
-
-
-# Group_By Function
-
-### 1. Brief Description
-The group_by function is a versatile and powerful function in R that allows users to assign observations into groups and apply analysis or transformations within these groups.
-
-### 2. What Package Does It Belong To
-The group_by function is retrieved from the `dplyr` package.
-
-### 3. When To Use It
-This function should be used when you want to apply analysis or transformations to single or multiple groups of similar observations. 
-
-### 4. An Example of How To Use
-
