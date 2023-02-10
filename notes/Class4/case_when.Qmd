@@ -1,4 +1,5 @@
-# Notes for: case_when()
+# Function name: case_when()
+# Notes:
 # [`dplyr::case_when()`]
 .small[
 [[`case_when`] (`*check* ~ *response*, ..., *check* ~ *repsonse*`)]
@@ -20,7 +21,7 @@ laryngectomy %>%
 ```
 ]
 .pull-right[
-```{r eval=FALSE, echo=FALSE}
+```{r eval = FALSE, echo=FALSE}
 laryngectomy %>%
   mutate(
     `Pathological Stage` =
@@ -39,3 +40,12 @@ laryngectomy %>%
 + Use [`case_when()`] instead of [`if_else()`] if there is *any* chance the data has unexpected values.
 ]
 ---
+
+
+# Introduction to R's case_when Function
+
+The R programming language offers many useful functions, one of which is case_when. This function can be used to evaluate multiple conditions, and act on the outcome of them. In this article, we will look at the purpose of case_when, the package containing it, common uses, and an example of how to use it in R.
+
+## What Package Contains case_when?
+
+The case_when function is part of the dplyr package. This package is an efficient data manipulation tool that has become a

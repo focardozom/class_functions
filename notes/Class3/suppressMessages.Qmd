@@ -1,2 +1,15 @@
-# Notes for: suppressMessages()
+# Function name: suppressMessages()
+# Notes:
 Empty
+
+
+# suppressMessages() Function
+
+## Brief Description
+The suppressMessages() function is used to suppress printed messages to the R console from a given expression.
+
+## What Package Contains It?
+The function is a part of the base R package.
+
+## When to Use It
+The suppressMessages() function is useful for avoiding non-useful or cluttered output when using complex packages or functions. For example, when running multiple simulations or intensive computations within a loop, running suppressMessages() on each step can prevent your R console from becoming overly clut

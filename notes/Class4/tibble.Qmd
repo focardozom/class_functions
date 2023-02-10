@@ -1,2 +1,15 @@
-# Notes for: tibble()
+# Function name: tibble()
+# Notes:
 Empty
+
+
+# Tibble Function
+
+## 1. Brief description
+Tibble is a native data structure in R that helps to display data in a form that is easy to read and manipulate. The tibble function provides R users with an easier way to interact with a data frame.
+
+## 2. What package contains it
+The tibble function is part of the dplyr package.
+
+## 3. When to use it
+The tibble function should be used when viewing, tidying, and transforming data stored in a data frame. It is especially useful when dealing with large

@@ -1,2 +1,18 @@
-# Notes for: min()
+# Function name: min()
+# Notes:
 Empty
+
+
+# The min Function
+
+## Brief Description
+The min function returns the minimum element from a given set or input. This is typically an array or vector. The min function scans through the set of values and finds the smallest number.
+
+## What Package Contains It
+The min function is contained in the base R package.
+
+## When to Use It
+The min function should be used when it is necessary to find the minimum element in a given set of data.
+
+## An Example of How to Use in R
+Let's assume we have the following array of numbers

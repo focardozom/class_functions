@@ -1,4 +1,5 @@
-# Notes for: typeof()
+# Function name: typeof()
+# Notes:
 # [`typeof()`]
 .small[
 [[`typeof`]`(*vector*)`]
@@ -24,3 +25,17 @@ typeof(R.version$nickname)
 + `R` also uses [`mode()`] to describe type.  It groups "integer" and "double" as "numeric".
 ]
 ---
+
+
+# typeof function 
+
+The typeof function is a basic R function that determines the type of object passed to it. 
+
+The typeof function belongs to the base package of R.
+
+The typeof function should be used when you need to determine the class of an object. This is important to know because each class of object has specific methods and functions that can be used on them.
+
+An example of how to use the typeof function in R is as follows:
+
+```R
+# Determine the type of the object 'x'

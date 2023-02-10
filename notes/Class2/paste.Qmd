@@ -1,2 +1,4 @@
-# Notes for: paste()
+# Function name: paste()
+# Notes:
 Empty
+NA

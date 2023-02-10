@@ -1,2 +1,4 @@
-# Notes for: coauthor()
+# Function name: coauthor()
+# Notes:
 Empty
+NA

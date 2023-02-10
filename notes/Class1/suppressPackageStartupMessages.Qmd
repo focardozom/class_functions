@@ -1,4 +1,5 @@
-# Notes for: suppressPackageStartupMessages()
+# Function name: suppressPackageStartupMessages()
+# Notes:
 # [`suppressPackageStartupMessages()`]
 [[`suppressPackageStartupMessages`]`(library(*package*))`]
 + Load a package without printing its greeting message.
@@ -7,3 +8,18 @@ suppressPackageStartupMessages(library(tidyverse))
 ```
 + This is very useful with the [`tidyverse`] and [`tidymodels`].  Use this if and only if you are also using the [`conflicted`] package (to avoid function name conflicts).
 ---
+
+
+# SuppressPackageStartupMessages Function
+
+## Brief Description 
+
+The `suppressPackageStartupMessages()` function can be used to suppress all messages related to the loading of a package.
+
+## Package Containing the Function 
+
+The `suppressPackageStartupMessages()` function is part of the utils package.
+
+## When To Use It
+
+The `suppressPackageStartupMessages()` function should be used to suppress startup messages when a package is being loaded.  If the package is being called from

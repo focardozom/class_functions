@@ -1,2 +1,4 @@
-# Notes for: install_github()
+# Function name: install_github()
+# Notes:
 Empty
+NA

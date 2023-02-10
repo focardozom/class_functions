@@ -1,4 +1,5 @@
-# Notes for: %>%
+# Function name: %>%
+# Notes:
 # [`%>%`]
 [ $thing_1$ [`%>%`]  
  $thing_2$
@@ -14,3 +15,4 @@ nrow(medicaldata::covid_testing) %>%
 + Start code after a pipe on a new line.
 + Indent all lines of code two spaces after the first pipe.
 ---
+NA

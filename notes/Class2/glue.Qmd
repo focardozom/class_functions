@@ -1,2 +1,4 @@
-# Notes for: glue()
+# Function name: glue()
+# Notes:
 Empty
+NA

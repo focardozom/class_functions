@@ -1,2 +1,20 @@
-# Notes for: c()
+# Function name: c()
+# Notes:
 Empty
+
+
+# C Function
+
+## Brief Description
+
+The `C()` function is used to combine multiple vectors or lists into one composite vector or list.  
+
+## What Package Contains It
+
+The `C()` function is included in the basic R installation and is part of the language core. 
+
+## When to Use It
+
+The `C()` function is useful when combining multiple vectors or lists into one composite vector or list. It's also often used when creating factors from existing vectors. 
+
+## An Example of How to Use It in R

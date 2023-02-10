@@ -1,4 +1,5 @@
-# Notes for: library()
+# Function name: library()
+# Notes:
 # [`library()`]
 [[`library`]`(*package*)`]
 + The library [`library()`] function loads a package into working memory (from long term storage on your hard disk drive or solid state drive).
@@ -9,3 +10,12 @@ library(survial)
 ???
 stats::filter and dplyr::filter
 ---
+
+
+## The Library Function 
+
+The library function is used in R to load packages from installed libraries into the active R session. It helps to prevent a user from needing to type multiple lines of code for a single package. This can be useful for saving time when loading multiple packages into the active R session.  
+
+### What Package Does It Contain? 
+
+The library function contains packages found in the default libraries of R and user-installed packages. Packages can be specified as either a full name or partial names if the user cannot remember the full name. 

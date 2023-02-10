@@ -1,2 +1,18 @@
-# Notes for: inner_join()
+# Function name: inner_join()
+# Notes:
 Empty
+
+
+#inner_join
+
+##1. brief description
+inner_join is a function used to combine two data frames or tibbles based on common values within their respective columns.
+
+##2. what package contain it
+inner_join is a function within the dplyr package. 
+
+##3. when to use it
+The inner_join function is most useful when trying to combine a set of data with its metadata. It can also be used to compare two separate data sets.
+
+##4. an example of how to use in R
+Supp

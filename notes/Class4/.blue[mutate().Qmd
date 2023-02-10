@@ -1,4 +1,5 @@
-# Notes for: .blue[mutate()
+# Function name: .blue[mutate()
+# Notes:
 # [dplyr::mutate()] for Errors and Secret Codes
 ```{r}
 analysis <- balise %>% 
@@ -8,3 +9,14 @@ analysis
 ```
 Notice the print method for black and white puts NA inside of <>.  I prefer the print method used in the console.
 ---
+
+
+# Mutate() Function
+
+The R programming language has a mutate() function which by definition allows for mutation, or the alteration of an existing data frame by adding new columns. It is part of the “dplyr” package, and is also known as the “mutate() verb” in the R language.
+
+## What Package Contains It 
+The `mutate()` function is part of the `dplyr` package. 
+
+## When To Use It
+It is used to add or change existing variables in a data

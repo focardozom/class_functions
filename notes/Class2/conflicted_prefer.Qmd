@@ -1,4 +1,5 @@
-# Notes for: conflicted_prefer()
+# Function name: conflicted_prefer()
+# Notes:
 # [`conflicted::conflicted_prefer()`]
 .small[
 [[`conflicted_prefer`]`("*function*", "*winning package*", quiet = TRUE)`]
@@ -10,3 +11,4 @@ conflict_prefer("filter", "dplyr", quiet = TRUE)
 ```
 + You can overwrite this default with `package::function()`.
 ---
+NA

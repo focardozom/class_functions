@@ -1,2 +1,14 @@
-# Notes for: _join()
+# Function name: _join()
+# Notes:
 Empty
+
+
+# The Join Function
+
+The join function is a powerful tool for data management and manipulation, merging large datasets efficiently. It is used to combine datasets across observations (rows) and/or variables (columns). 
+
+The join function is most commonly found in packages such as dplyr or data.table, as well as other packages.
+
+The join function is particularly useful when you need to combine two or more datasets. It is also a useful way to create a backup copy of a dataset without saving the entire dataset in memory.
+
+An example of using the

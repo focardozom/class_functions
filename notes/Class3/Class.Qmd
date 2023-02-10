@@ -1,2 +1,4 @@
-# Notes for: Class()
+# Function name: Class()
+# Notes:
 Empty
+NA

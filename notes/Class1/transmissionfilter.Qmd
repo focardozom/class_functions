@@ -1,2 +1,4 @@
-# Notes for: transmissionfilter()
+# Function name: transmissionfilter()
+# Notes:
 Empty
+NA

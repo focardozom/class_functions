@@ -1,4 +1,5 @@
-# Notes for: %>%
+# Function name: %>%
+# Notes:
 # [`%>%`] from the [`magrittr`] Package
 [ $thing_1$ [`%>%`]  
  $thing_2$
@@ -13,3 +14,4 @@ mtcars %>%
 + Start code after a pipe on a new line.
 + Indent all lines of code two spaces after the first pipe.
 ---
+NA

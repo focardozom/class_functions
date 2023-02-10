@@ -1,2 +1,16 @@
-# Notes for: head()
+# Function name: head()
+# Notes:
 Empty
+
+
+# Introduction to `head()` Function in R
+
+`head()` is a convenient function in R used to display the first few elements of an object or list. It is part of the base R package and is widely used by R developers.
+
+## What Package Contains It
+
+`head()` is part of the `base` R package, and is not part of any additional library. 
+
+## When to Use It
+
+When exploring data or new datasets, `head()` is a simple and convenient command that can be used to quickly check the

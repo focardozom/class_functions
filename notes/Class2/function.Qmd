@@ -1,2 +1,4 @@
-# Notes for: function()
+# Function name: function()
+# Notes:
 Empty
+NA

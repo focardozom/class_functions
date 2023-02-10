@@ -1,2 +1,4 @@
-# Notes for: make_project()
+# Function name: make_project()
+# Notes:
 Empty
+NA

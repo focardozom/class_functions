@@ -1,4 +1,5 @@
-# Notes for: nrow()
+# Function name: nrow()
+# Notes:
 # [`nrow()`]
 [[`nrow`]`(*dataset*)`]
 + [`nrow()`] reports the number of rows/records in a dataset (or matrix).
@@ -12,3 +13,4 @@ scales::comma(
 )
 ```
 ---
+NA

@@ -1,4 +1,5 @@
-# Notes for: pull()
+# Function name: pull()
+# Notes:
 # [`pull()`] makes a vector.
 [[`pull`]`(tableName, variableName)`]
 Rarely, you will want to pull a column out of a data frame and save it as a vector. [`pull()`] is the only `dplyr`o verb that does not return a tibble.
@@ -9,3 +10,18 @@ yes_no_ND <- laryngectomy %>%
 ```
 [![](images/pull.png)]
 ---
+
+
+## Pull Function
+
+### Brief Description
+The `pull()` function is a convenience function for quickly extracting values out of a list-like object. It works similarly to `[`, but is especially useful for extracting values by name.
+
+### What Package Contains It
+The `pull()` function is in the `dplyr` package.
+
+### When to Use It
+This is a great function for quickly extracting values from lists, data frames, and tibbles.
+
+### An Example of How to Use It in R
+If you have a `

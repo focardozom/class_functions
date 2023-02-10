@@ -1,2 +1,15 @@
-# Notes for: rownames_to_column()
+# Function name: rownames_to_column()
+# Notes:
 Empty
+
+
+# Rownames_to_column
+ 
+## Brief Description
+Rownames_to_column is a function to convert the row names of a data frame, matrix, or table into a character vector.  
+
+## What Package Contain It
+The Rownames_to_column function is contained within the dplyr package.           
+
+## When to Use It
+This function is used when the row names of a data frame, matrix, or table need to be extracted in order to identify and perform operations on a subset of the data. 

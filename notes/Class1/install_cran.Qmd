@@ -1,4 +1,5 @@
-# Notes for: install_cran()
+# Function name: install_cran()
+# Notes:
 # [`remotes::install_cran()`]
 A better way to add packages is to use the [`install_cran()`] function from the [`remotes`] package:
 [[`remotes::install\_cran`]`("*thingy*")`]
@@ -9,3 +10,4 @@ remotes::install_cran("DOPE")
 Paste that line into the Console windowpane (bottom left corner) and tap the return or enter key on your keyboard.
 It will check to see the package has been updated before it bothers to do the download.
 ---
+NA

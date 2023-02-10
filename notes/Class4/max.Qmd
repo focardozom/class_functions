@@ -1,2 +1,16 @@
-# Notes for: max()
+# Function name: max()
+# Notes:
 Empty
+
+
+# Introduction to the Max Function
+
+The max function is a useful tool in finding the maximum value or element in a given set of data or within one vector.
+
+## What Package Contains It
+
+The max function is primarily found in the base R package. This is part of R’s standard library and functions without loading any additional packages. 
+
+## When to Use It
+
+The max function is best used when finding the maximum value from a vector or data set. This can be the maximum value of one column from a dataset, or the maximum of several

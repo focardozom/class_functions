@@ -1,2 +1,17 @@
-# Notes for: starts_with()
+# Function name: starts_with()
+# Notes:
 Empty
+
+
+# Introduction to the starts_with Function
+
+The starts_with function is a powerful tool used to test whether character strings within a vector begins with a given pattern.
+
+## What Package Contains it?
+
+The starts_with function is located within the base package of R, making it readily available to use.
+
+## When to use it? 
+
+The starts_with function is particularly useful when you need to search for character strings with specific beginning patterns or elements. For example, it can be used for searching for text strings with particular prefixes.
+

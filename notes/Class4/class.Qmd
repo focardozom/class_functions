@@ -1,2 +1,12 @@
-# Notes for: class()
+# Function name: class()
+# Notes:
 Empty
+
+
+# Class Function 
+
+Class functions are a set of methods in R, the language of statistical computing, to combine data types into a single object. It is part of the S3 generic system in R and allows the users to use methods to modify or create objects. 
+
+Class functions are part of the stats package in R and can help users create simple as well as more sophisticated objects. The stats package also includes basic tools for projecting and analyzing data.
+
+When it comes to using class functions, there are different cases that may require different levels of complexity. For example

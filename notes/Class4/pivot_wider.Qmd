@@ -1,5 +1,15 @@
-# Notes for: pivot_wider()
+# Function name: pivot_wider()
+# Notes:
 # [`pivot_wider()`] is a thing. 
 + There is function called `pivot_wider()` that will take long data and make it wider.
 + I rarely use it.  Know it exists.
 ---
+
+
+# The pivot_wider() Function
+
+The pivot_wider function is a useful tool for transforming tidy data into a wider format. It is an improved version of the spread() operation from the tidyr package and expands to more than two columns from the input data.
+
+The pivot_wider() function is a part of the tidyr package version 1.0.0 and above.
+
+The pivot_wider() function should be used to transform a dataset with a one-column key into a wider format, where the rows and column names refer to the

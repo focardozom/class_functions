@@ -1,2 +1,16 @@
-# Notes for: ggplotlibrary()
+# Function name: ggplotlibrary()
+# Notes:
 Empty
+
+
+# GGPlot Library Function
+
+GGPlot is a popular data visualization library for the R programming language that allows users to create quality plots quickly and easily. It is a powerful tool for creating high-level graphics from data stored in data frames that has been used extensively to create informative and effective visualizations.
+
+## What package contains it
+
+The library is part of the `ggplot2` package and can be used to create powerful graphics from data stored in data frames.
+
+## When to Use it
+
+GGplot is best used for making statistical graphs and plots,

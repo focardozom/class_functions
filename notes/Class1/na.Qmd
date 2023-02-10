@@ -1,2 +1,4 @@
-# Notes for: na()
+# Function name: na()
+# Notes:
 Empty
+NA

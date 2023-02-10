@@ -1,2 +1,16 @@
-# Notes for: sum()
+# Function name: sum()
+# Notes:
 Empty
+
+
+# The sum Function
+
+The sum function is a numerical function available in many programming languages. It is used to calculate the sum of a set of numbers, from both numeric and non-numeric values.
+
+## What Package Contains It
+
+The sum function is a part of the base R language, meaning that it does not need to be installed; it is available for use as soon as R is installed.
+
+## When to Use It
+
+The sum function is most often used in situations where the sum of an array of numbers needs to be quickly and easily calculated

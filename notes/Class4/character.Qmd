@@ -1,2 +1,17 @@
-# Notes for: character()
+# Function name: character()
+# Notes:
 Empty
+
+
+# The Character Function
+
+The character function is one of the most fundamental functions R has to offer and is used to perform key operations on character strings throughout the programming language. 
+
+The character function is found in the base package within the R programming language. 
+
+Character Function should be used throughout your programming whenever you are dealing with character strings and manipulating them. 
+
+Here is an example of how you can use the character function in R:
+
+`characterString <- "Hello World"
+ characterString <- chartr( "l","q",characterString)

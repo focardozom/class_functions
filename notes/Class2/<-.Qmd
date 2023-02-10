@@ -1,4 +1,5 @@
-# Notes for: <-
+# Function name: <-
+# Notes:
 # [`<-`]
 [[`*thingy* <- *something*`]]
 + You use [`<-`] to assign an object (e.g., *thingy*) a value (e.g., *something*).
@@ -10,3 +11,4 @@ everything <- 42
 + Use an [`=`], not [`<-`] , to assign values to an argument in a function call.
 + You can also use  [`->`] (e.g., *`something`* [`->`] *`thingy`*) but it violates all style guides.
 ---
+NA

@@ -1,4 +1,5 @@
-# Notes for: coalesce()
+# Function name: coalesce()
+# Notes:
 # [`dplyr::coalesce()`]
 [[`coalesce`]`(varaible(s))`]
 + The [`coalesce()`] function chooses the first not-missing value from a set of variables.
@@ -11,3 +12,16 @@ laryngectomy %>%
 ```
 + If you include a huge outlier as the last option, it will make it easy to spot missing values.
 ---
+
+
+# The Coalesce Function
+
+## Brief Description
+
+The coalesce function is a powerful tool used to retrieve the first non-missing value from a vector, dataframe, or list of values. It can be used as an alternative to IF-ELSE statements and is particularly useful when dealing with multiple, potentially missing values.
+
+## What Package Contains It
+
+The coalesce function is available in the [dplyr](https://dplyr.tidyverse.org/reference/coalesce.html) package. 
+
+## When to

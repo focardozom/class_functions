@@ -1,2 +1,10 @@
-# Notes for: kable()
+# Function name: kable()
+# Notes:
 Empty
+
+
+# Kable Function 
+
+Kable is a function that creates a data frame object in the R programming language. It creates the object and enables users to display the data frame in a nice looking table in the RStudio console or a Jupyter Notebook.
+
+The `kable` function is contained in the [knitr](https://cran.r-project.org/web/packages/knitr/index.html) package. This package provides a collection of functions that can be used to produce beautiful tables in both html and other formats. 

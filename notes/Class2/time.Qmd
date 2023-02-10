@@ -1,2 +1,16 @@
-# Notes for: time()
+# Function name: time()
+# Notes:
 Empty
+
+
+# Introduction to the Time Function in R
+
+The time function is a powerful tool in R for manipulating and transforming time data. It allows you to handle different representations of time and create new variables out of existing ones. 
+
+## What Package Contains the Time Function?
+
+The time function is found in the **lubridate** package. This package allows you to work with dates and times in R and is part of the tidyverse package family.
+
+## When To Use The Time Function?
+
+The time function is useful when you are working with time objects

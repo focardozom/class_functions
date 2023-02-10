@@ -1,2 +1,15 @@
-# Notes for: tribble()
+# Function name: tribble()
+# Notes:
 Empty
+
+
+# The tribble() Function
+
+## Brief Description
+The tribble() function is used to create a tibble, which is a modern take on the traditional data frame. Tibbles are a reimagined version of data frames that are easier to use, better aligned with modern principles of tidy data and often better suited for working with data in R.
+
+## What Package Contains It
+The tribble() function is part of the {tibble} package, which is part of the tidyverse.
+
+## When to Use It
+The tribble() function is best

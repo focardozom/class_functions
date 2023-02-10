@@ -1,2 +1,4 @@
-# Notes for: informationfilter()
+# Function name: informationfilter()
+# Notes:
 Empty
+NA

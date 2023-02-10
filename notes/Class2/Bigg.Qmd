@@ -1,2 +1,4 @@
-# Notes for: Bigg()
+# Function name: Bigg()
+# Notes:
 Empty
+NA

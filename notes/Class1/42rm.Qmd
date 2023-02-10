@@ -1,2 +1,4 @@
-# Notes for: 42rm()
+# Function name: 42rm()
+# Notes:
 Empty
+NA

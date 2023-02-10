@@ -1,2 +1,4 @@
-# Notes for: summarise()
+# Function name: summarise()
+# Notes:
 Empty
+NA

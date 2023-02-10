@@ -1,2 +1,14 @@
-# Notes for: options()
+# Function name: options()
+# Notes:
 Empty
+
+
+# Options Function
+
+The `options` function is a powerful utility provided in R to help configure the environment of your R session. It allows users to customize various settings, from printing to memory limits.
+
+This function can be found in the `base` package.
+
+The `options` function is useful when you need to adjust the environment for specific tasks, for example, setting a specific seed for random number generation or adjust whether warnings will be printed or not.
+
+An example of how to use the `options` function would be to set a seed before running your

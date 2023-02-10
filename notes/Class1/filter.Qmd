@@ -1,4 +1,5 @@
-# Notes for: filter()
+# Function name: filter()
+# Notes:
 # [`dplyr::filter()`]
 [[`filter`]`(tableName, logical test)`]
 + Use [`filter()`] to pick rows/records.
@@ -10,3 +11,14 @@ filter(mtcars, is.na(mpg))  # cars missing miles per gallon information
 filter(mtcars, !is.na(mpg))  # cars not missing miles per gallon information
 ```
 ---
+
+
+# Introduction to the `filter` Function
+
+The `filter` function is a tool in R used for applying conditions over a dataset. This is a great way to quickly identify, extract, or modify information based on conditions.
+
+## What Package Does It Come From
+The `filter` function is contained as part of the `dplyr` package. This tool is very helpful in organizing and tabling datasets.
+
+## When to Use It
+The `filter` function is essential when needing to identify, modify, or extract data that meets specific conditions. This is

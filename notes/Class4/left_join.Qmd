@@ -1,2 +1,14 @@
-# Notes for: left_join()
+# Function name: left_join()
+# Notes:
 Empty
+
+
+# Left_join Function
+## 1. Brief Description
+The left_join function is used to combine two dataframes by matching values of one variable. It will only keep the rows in the left dataframe and merge in any matching rows in the right dataframe with additional user-specified columns.
+
+## 2. What Package Contain It
+The left_join function is part of the tidyverse package.
+
+## 3. When to Use It
+The left_join function is useful when you have two dataframes that you need to combine based on a certain column.

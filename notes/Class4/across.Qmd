@@ -1,4 +1,5 @@
-# Notes for: across()
+# Function name: across()
+# Notes:
 # [`dplyr::across()`] with [`dplyr::mutate()`] 
 [[`across`]`(varaibles), function`]
 + The [`across()`] function with [`mutate()`] does the same mutation to multiple variables.
@@ -11,3 +12,14 @@ laryngectomy %>%
 ```
 + The [`across()`] function is used with [`dplyr::summarise`] to apply the same summary statistics to many variables.
 ---
+
+
+# The across() Function
+
+## 1. Brief Description
+The `across()` function is used to apply a function to multiple columns of a dataframe with a concise syntax. It is in the `purrr` package, which is a part of the tidyr and tidyverse meta-packages. 
+
+## 2. What Package Contain It
+`across()` is located in the `purrr` package, which is a part of the larger `tidyr` and `tidyverse` packages. 
+
+## 3. When to

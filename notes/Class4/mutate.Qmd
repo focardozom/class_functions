@@ -1,4 +1,5 @@
-# Notes for: mutate()
+# Function name: mutate()
+# Notes:
 # [`mutate()`] to Add New Columns/Variables $_1$
 [[`mutate`](*dataset*, *variable* = *expression*)]
 The original data used 1 to mean *yes* and 2 to mean *no*.  
@@ -9,7 +10,7 @@ laryngectomy %>%  # start with everybody with a laryngectomy then
    select(nk_dissection)  `%>%`  # keep only one variable then  
    `mutate(hadND = 2 - nk_dissection)`  # add a had neck dissection indicator
 ```
-```{r, eval=FALSE, echo = FALSE}
+```{r, eval = FALSE, echo = FALSE}
 library(lr4ds)
 laryngectomy %>%  # start with everybody with a laryngectomy then     
    select(nk_dissection)  %>%  # keep only one variable then  
@@ -17,3 +18,15 @@ laryngectomy %>%  # start with everybody with a laryngectomy then
    head(6) # add a had neck dissection indicator
 ```
 ---
+
+
+# The Mutate Function
+
+## Brief Description
+The `mutate()` function is a powerful tool in R for adding new columns of data that are functions of existing columns. This can be used to create summary statistics and other transformations of data. 
+
+## What Package Contains It
+`mutate()` is part of the `dplyr` package, which is an efficient, user-friendly tool for manipulating data in R. 
+
+## When to Use It
+`mutate()` is useful when adding new columns of derived data, or when summar

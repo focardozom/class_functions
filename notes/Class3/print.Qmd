@@ -1,2 +1,4 @@
-# Notes for: print()
+# Function name: print()
+# Notes:
 Empty
+NA

@@ -1,4 +1,5 @@
-# Notes for: cat()
+# Function name: cat()
+# Notes:
 # [`cat()`]
 [[`cat`]`(*things*)`]
 .pull-left-60[
@@ -16,3 +17,4 @@ cat("Ray said ", '"', words, '".')
 ```
 ]
 ---
+NA

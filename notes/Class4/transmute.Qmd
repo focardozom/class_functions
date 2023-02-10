@@ -1,4 +1,5 @@
-# Notes for: transmute()
+# Function name: transmute()
+# Notes:
 # [`transmute()`] only keeps the mutation.
 This is just way too much typing:
 ```{r eval = FALSE}
@@ -12,3 +13,15 @@ laryngectomy %>%
   `transmute(hadND = 2 - nk_dissection)` 
 ```
 ---
+
+
+# Transmute in R
+
+## Brief Description
+Transmute is a powerful tool in R for transforming variables in a data frame from one form to another. It quickly mutates variables with a single line of code.   
+
+## What Package Contains It
+The dplyr package in R contains the transmute function. 
+
+## When to Use It
+Transmute in R is useful when transforming a variable from one form to another, such as updating a factor variable to a numeric variable or using a built-in transformation function, such as taking the log

@@ -1,4 +1,5 @@
-# Notes for: if_else()
+# Function name: if_else()
+# Notes:
 # [`dplyr::if_else()`]
 [[`if_else`]`(*check*, *true*, *false*)`]
 + `if_else()` checks the truth of a logic *check* on a variable/vector and returns the *true* argument if it is true or the *false* argument if it is not true.
@@ -12,3 +13,13 @@ laryngectomy %>%
 + The logic check can involve any number of variables.
 + [`if_else()`] is dangerous because unexpected values can be binned in the *false* level/group.
 ---
+
+
+# Introduction to If_Else Function
+If_Else is a language construct for programming in R. It is used for decision making processes and for executing a different code block depending on whether a condition is true or not.
+
+## What Package Contains It
+The If_Else function is part of the base R package and is included when users download the R program to their computers.
+
+## When To Use It
+If_Else is used to create an 'if-else' logic condition. This is used to execute one code block when a condition is TRUE and a different code

@@ -1,2 +1,4 @@
-# Notes for: install_cran()
+# Function name: install_cran()
+# Notes:
 Empty
+NA
