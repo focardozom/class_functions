@@ -1,5 +1,5 @@
 # [`dplyr::pull()`]{.blue}	
-	[`pull`]{.blue}`(*dataset*, *variable*)`{.center}
+###	[`pull`]{.blue}`(*dataset*, *variable*)`{.center}
 # What it does
 	+ The .blue[`pull()`] is used to copy of a variable out of a dataset into a new object.  	
 # Demo code

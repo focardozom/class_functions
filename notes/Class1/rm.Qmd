@@ -1,5 +1,5 @@
 # [`rm()`]{.blue}	
-	[`rm`]{.blue}`(*things*)`{.center}
+###	[`rm`]{.blue}`(*things*)`{.center}
 # What it does
 	The .blue[`rm()`] function removes an object from R's working memory.	
 # Demo code

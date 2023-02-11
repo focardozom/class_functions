@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>BST623 functions – library(</title>
+<title>BST623 functions – dplyrfilter</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -105,11 +105,13 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#library" id="toc-library" class="nav-link active" data-scroll-target="#library"><span class="blue"><code>library()</code></span></a></li>
+  <li><a href="#dplyrfilter" id="toc-dplyrfilter" class="nav-link active" data-scroll-target="#dplyrfilter"><span class="blue"><code>dplyr::filter()</code></span></a>
+  <ul class="collapse">
+  <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section"></a></li>
+  </ul></li>
   <li><a href="#what-it-does" id="toc-what-it-does" class="nav-link" data-scroll-target="#what-it-does">What it does</a></li>
   <li><a href="#demo-code" id="toc-demo-code" class="nav-link" data-scroll-target="#demo-code">Demo code</a></li>
   <li><a href="#useful-stuff" id="toc-useful-stuff" class="nav-link" data-scroll-target="#useful-stuff">Useful stuff</a></li>
-  <li><a href="#common-problems" id="toc-common-problems" class="nav-link" data-scroll-target="#common-problems">Common problems</a></li>
   </ul>
 </nav>
     </div>
@@ -118,25 +120,23 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<section id="library" class="level1">
-<h1><span class="blue"><code>library()</code></span></h1>
-<pre><code>[`library`]{.blue}`(*package*)`{.center}</code></pre>
+<section id="dplyrfilter" class="level1">
+<h1><span class="blue"><code>dplyr::filter()</code></span></h1>
+<section id="section" class="level3 center">
+<h3 class="center anchored" data-anchor-id="section"></h3>
+</section>
 </section>
 <section id="what-it-does" class="level1">
 <h1>What it does</h1>
-<pre><code>+ The library .blue[`library()`] function loads a package into working memory (from long term storage on your hard disk drive or solid state drive).    </code></pre>
+<pre><code>.center[.blue[`filter`]`(tableName, logical test)`] + Use .blue[`filter()`] to pick rows/records. Inside the .blue[`()`] you put a logic check. .blue[`filter()`] keeps rows/records where the logic check is true.     </code></pre>
 </section>
 <section id="demo-code" class="level1">
 <h1>Demo code</h1>
-<pre><code>```{r eval=FALSE}   library(survial)    ``` </code></pre>
+<pre><code>```{r, eval=FALSE}  filter(mtcars, am == 0)  # cars with automatic transmission filter(mtcars, is.na(mpg))  # cars missing miles per gallon information filter(mtcars, !is.na(mpg))  # cars not missing miles per gallon information    ``` ---</code></pre>
 </section>
 <section id="useful-stuff" class="level1">
 <h1>Useful stuff</h1>
-<pre><code>+ There are a few "meta" packages, like `tidymodels` and `tidyverse`, which load many packages from a single .blue[`library()`] function call.  ??? stats::filter and dplyr::filter ---</code></pre>
-</section>
-<section id="common-problems" class="level1">
-<h1>Common problems</h1>
-<p>NA # Related functions NA</p>
+<p>NA # Common problems NA # Related functions NA</p>
 
 
 </section>

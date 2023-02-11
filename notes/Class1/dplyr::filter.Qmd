@@ -1,5 +1,5 @@
 # [`dplyr::filter()`]{.blue}	
-	{.center}
+###	{.center}
 # What it does
 	.center[.blue[`filter`]`(tableName, logical test)`]	+ Use .blue[`filter()`] to pick rows/records. Inside the .blue[`()`] you put a logic check. .blue[`filter()`] keeps rows/records where the logic check is true.  	
 # Demo code

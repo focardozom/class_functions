@@ -1,5 +1,5 @@
 # [`suppressPackageStartupMessages()`]{.blue}	
-	[`suppressPackageStartupMessages`]{.blue}`(library(*package*))`{.center}
+###	[`suppressPackageStartupMessages`]{.blue}`(library(*package*))`{.center}
 # What it does
 	+ Load a package without printing its greeting message.	
 # Demo code

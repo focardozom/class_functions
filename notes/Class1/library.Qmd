@@ -1,5 +1,5 @@
 # [`library()`]{.blue}	
-	[`library`]{.blue}`(*package*)`{.center}
+###	[`library`]{.blue}`(*package*)`{.center}
 # What it does
 	+ The library .blue[`library()`] function loads a package into working memory (from long term storage on your hard disk drive or solid state drive).	
 # Demo code

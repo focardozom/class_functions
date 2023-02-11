@@ -1,5 +1,5 @@
 # [`remotes::install_cran()`]{.blue}	
-	[`remotes::install\_cran`]{.blue}`("*thingy*")`{.center}
+###	[`remotes::install\_cran`]{.blue}`("*thingy*")`{.center}
 # What it does
 	+ A better way to add packages is to use the .blue[`install_cran()`] function from the .blue[`remotes`] package.	
 # Demo code

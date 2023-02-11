@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>BST623 functions – remotesinstall_cran(</title>
+<title>BST623 functions – library</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -105,7 +105,10 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#remotesinstall_cran" id="toc-remotesinstall_cran" class="nav-link active" data-scroll-target="#remotesinstall_cran"><span class="blue"><code>remotes::install_cran()</code></span></a></li>
+  <li><a href="#library" id="toc-library" class="nav-link active" data-scroll-target="#library"><span class="blue"><code>library()</code></span></a>
+  <ul class="collapse">
+  <li><a href="#librarypackage" id="toc-librarypackage" class="nav-link" data-scroll-target="#librarypackage"><span class="blue"><code>library</code></span><code class="center">(*package*)</code></a></li>
+  </ul></li>
   <li><a href="#what-it-does" id="toc-what-it-does" class="nav-link" data-scroll-target="#what-it-does">What it does</a></li>
   <li><a href="#demo-code" id="toc-demo-code" class="nav-link" data-scroll-target="#demo-code">Demo code</a></li>
   <li><a href="#useful-stuff" id="toc-useful-stuff" class="nav-link" data-scroll-target="#useful-stuff">Useful stuff</a></li>
@@ -118,21 +121,23 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<section id="remotesinstall_cran" class="level1">
-<h1><span class="blue"><code>remotes::install_cran()</code></span></h1>
-<pre><code>[`remotes::install\_cran`]{.blue}`("*thingy*")`{.center}</code></pre>
+<section id="library" class="level1">
+<h1><span class="blue"><code>library()</code></span></h1>
+<section id="librarypackage" class="level3">
+<h3 class="anchored" data-anchor-id="librarypackage"><span class="blue"><code>library</code></span><code class="center">(*package*)</code></h3>
+</section>
 </section>
 <section id="what-it-does" class="level1">
 <h1>What it does</h1>
-<pre><code>+ A better way to add packages is to use the .blue[`install_cran()`] function from the .blue[`remotes`] package.    </code></pre>
+<pre><code>+ The library .blue[`library()`] function loads a package into working memory (from long term storage on your hard disk drive or solid state drive).    </code></pre>
 </section>
 <section id="demo-code" class="level1">
 <h1>Demo code</h1>
-<pre><code>```{r, eval=FALSE}  remotes::install_cran("DOPE")   ``` Paste that line into the Console windowpane (bottom left corner) and tap the return or enter key on your keyboard.  </code></pre>
+<pre><code>```{r eval=FALSE}   library(survial)    ``` </code></pre>
 </section>
 <section id="useful-stuff" class="level1">
 <h1>Useful stuff</h1>
-<pre><code>+ It will check to see the package has been updated before it bothers to do the download.   ---</code></pre>
+<pre><code>+ There are a few "meta" packages, like `tidymodels` and `tidyverse`, which load many packages from a single .blue[`library()`] function call.  ??? stats::filter and dplyr::filter ---</code></pre>
 </section>
 <section id="common-problems" class="level1">
 <h1>Common problems</h1>
