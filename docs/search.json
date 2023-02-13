@@ -18,55 +18,55 @@
     "href": "notes/Class1/library.html",
     "title": "BST623 functions",
     "section": "",
-    "text": "library()\n\nlibrary(*package*)\n\n\n\nWhat it does\n+ The library .blue[`library()`] function loads a package into working memory (from long term storage on your hard disk drive or solid state drive).    \n\n\nDemo code\n```{r eval=FALSE}   library(survial)    ``` \n\n\nUseful stuff\n+ There are a few \"meta\" packages, like `tidymodels` and `tidyverse`, which load many packages from a single .blue[`library()`] function call.  ??? stats::filter and dplyr::filter ---\n\n\nCommon problems\nNA # Related functions NA"
+    "text": "library()\n[library]{.blue}(*package*){.center}\n\n\nwhat_it_does\n\nThe library .blue[library()] function loads a package into working memory (from long term storage on your hard disk drive or solid state drive)."
   },
   {
     "objectID": "notes/Class1/dplyr::pull.html",
     "href": "notes/Class1/dplyr::pull.html",
     "title": "BST623 functions",
     "section": "",
-    "text": "dplyr::pull()\n\npull(*dataset*, *variable*)\n\n\n\nWhat it does\n+ The .blue[`pull()`] is used to copy of a variable out of a dataset into a new object.     \n\n\nDemo code\n```{r eval=FALSE}   pull(mtcars, mpg)   ``` \n\n\nUseful stuff\n+ When it is used with the .blue[`filter()`] function, .blue[`pull()`] can be used to extract a single value from a dataset. This is useful when you need to extract a number,  like an odds ratio or a *p*-value, for a report.    + .blue[`pull()`] is the only .blue[`dplyr`] function that does not return a `tibble`.  ---\n\n\nCommon problems\nNA # Related functions NA"
+    "text": "dplyr::pull()\n[pull]{.blue}(*dataset*, *variable*){.center}\n\n\nwhat_it_does\n\nThe .blue[pull()] is used to copy of a variable out of a dataset into a new object."
   },
   {
     "objectID": "notes/Class1/class.html",
     "href": "notes/Class1/class.html",
     "title": "BST623 functions",
     "section": "",
-    "text": "class()\n\nclass(_thingy_)\n\n\n\nWhat it does\nIf you are not sure what something is, you can check its class by typing using the .blue[`class()`] function in the console windowpane.     \n\n\nDemo code\n```{r eval=FALSE}   class(iris) ``` \n\n\nUseful stuff\n.pull-left[.center[![:scale 100%](images/class1.jpg)]]  .pull-right[.center[![:scale 100%](images/class2.jpg)]] ---\n\n\nCommon problems\nNA # Related functions NA"
+    "text": "class()\n[class]{.blue}(_thingy_){.center}\n\n\nwhat_it_does\nIf you are not sure what something is, you can check its class by typing using the .blue[class()] function in the console windowpane."
   },
   {
     "objectID": "notes/Class1/%>%.html",
     "href": "notes/Class1/%>%.html",
     "title": "BST623 functions",
     "section": "",
-    "text": "%>% from the magrittr Package\n\n\\(thing_1\\) %>% \\(thing_2\\)\n\n\n\nWhat it does\n+ The symbol .blue[`%>%`] is called a pipe.  When describing a workflow, it is spoken as \"then\".    + It normally sends the output from $thing_1$ to the first argument of $thing_2$.   \n\n\nDemo code\n```{r eval=FALSE}   mtcars %>%    filter(mpg == 30.4)   ``` \n\n\nUseful stuff\n+ Many functions can be connected in a pipeline.    + Start code after a pipe on a new line.    + Indent all lines of code two spaces after the first pipe. ---\n\n\nCommon problems\nNA # Related functions NA"
+    "text": "%>% from the magrittr Package\n $thing_1$ [%>%]{.blue}      $thing_2$  {.center}\n\n\nwhat_it_does\n\nThe symbol .blue[%>%] is called a pipe. When describing a workflow, it is spoken as “then”.\nIt normally sends the output from \\(thing_1\\) to the first argument of \\(thing_2\\)."
   },
   {
     "objectID": "notes/Class1/dplyr::filter.html",
     "href": "notes/Class1/dplyr::filter.html",
     "title": "BST623 functions",
     "section": "",
-    "text": "dplyr::filter()\n\n\n\n\n\nWhat it does\n.center[.blue[`filter`]`(tableName, logical test)`] + Use .blue[`filter()`] to pick rows/records. Inside the .blue[`()`] you put a logic check. .blue[`filter()`] keeps rows/records where the logic check is true.     \n\n\nDemo code\n```{r, eval=FALSE}  filter(mtcars, am == 0)  # cars with automatic transmission filter(mtcars, is.na(mpg))  # cars missing miles per gallon information filter(mtcars, !is.na(mpg))  # cars not missing miles per gallon information    ``` ---\n\n\nUseful stuff\nNA # Common problems NA # Related functions NA"
+    "text": "dplyr::filter()\n{.center}\n\n\nwhat_it_does\n.center[.blue[filter](tableName, logical test)] + Use .blue[filter()] to pick rows/records. Inside the .blue[()] you put a logic check. .blue[filter()] keeps rows/records where the logic check is true."
   },
   {
     "objectID": "notes/Class1/suppressPackageStartupMessages.html",
     "href": "notes/Class1/suppressPackageStartupMessages.html",
     "title": "BST623 functions",
     "section": "",
-    "text": "suppressPackageStartupMessages()\n\nsuppressPackageStartupMessages(library(*package*))\n\n\n\nWhat it does\n+ Load a package without printing its greeting message. \n\n\nDemo code\n```{r eval=FALSE}   suppressPackageStartupMessages(library(tidyverse))  ``` \n\n\nUseful stuff\n+ This is very useful with the .blue[`tidyverse`] and .blue[`tidymodels`].  Use this if and only if you are also using the .blue[`conflicted`] package (to avoid function name conflicts).  ---\n\n\nCommon problems\nNA # Related functions NA"
+    "text": "suppressPackageStartupMessages()\n[suppressPackageStartupMessages]{.blue}(library(*package*)){.center}\n\n\nwhat_it_does\n\nLoad a package without printing its greeting message."
   },
   {
     "objectID": "notes/Class1/rm.html",
     "href": "notes/Class1/rm.html",
     "title": "BST623 functions",
     "section": "",
-    "text": "rm()\n\nrm(*things*)\n\n\n\nWhat it does\nThe .blue[`rm()`] function removes an object from R's working memory.   \n\n\nDemo code\n```{r eval=FALSE}   life_the_universe_and_everything <- 42  rm(life_the_universe_and_everything)    ``` ---\n\n\nUseful stuff\nNA # Common problems NA # Related functions NA"
+    "text": "rm()\n[rm]{.blue}(*things*){.center}\n\n\nwhat_it_does\nThe .blue[rm()] function removes an object from R’s working memory."
   },
   {
     "objectID": "notes/Class1/remotes::install_cran.html",
     "href": "notes/Class1/remotes::install_cran.html",
     "title": "BST623 functions",
     "section": "",
-    "text": "remotes::install_cran()\n\nremotes::install\\_cran(\"*thingy*\")\n\n\n\nWhat it does\n+ A better way to add packages is to use the .blue[`install_cran()`] function from the .blue[`remotes`] package.    \n\n\nDemo code\n```{r, eval=FALSE}  remotes::install_cran(\"DOPE\")   ``` Paste that line into the Console windowpane (bottom left corner) and tap the return or enter key on your keyboard.  \n\n\nUseful stuff\n+ It will check to see the package has been updated before it bothers to do the download.   ---\n\n\nCommon problems\nNA # Related functions NA"
+    "text": "remotes::install_cran()\n[remotes::install\\_cran]{.blue}(\"*thingy*\"){.center}\n\n\nwhat_it_does\n\nA better way to add packages is to use the .blue[install_cran()] function from the .blue[remotes] package."
   }
 ]

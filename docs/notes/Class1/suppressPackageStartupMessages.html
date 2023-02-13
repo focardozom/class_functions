@@ -105,14 +105,8 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#suppresspackagestartupmessages" id="toc-suppresspackagestartupmessages" class="nav-link active" data-scroll-target="#suppresspackagestartupmessages"><span class="blue"><code>suppressPackageStartupMessages()</code></span></a>
-  <ul class="collapse">
-  <li><a href="#suppresspackagestartupmessageslibrarypackage" id="toc-suppresspackagestartupmessageslibrarypackage" class="nav-link" data-scroll-target="#suppresspackagestartupmessageslibrarypackage"><span class="blue"><code>suppressPackageStartupMessages</code></span><code class="center">(library(*package*))</code></a></li>
-  </ul></li>
-  <li><a href="#what-it-does" id="toc-what-it-does" class="nav-link" data-scroll-target="#what-it-does">What it does</a></li>
-  <li><a href="#demo-code" id="toc-demo-code" class="nav-link" data-scroll-target="#demo-code">Demo code</a></li>
-  <li><a href="#useful-stuff" id="toc-useful-stuff" class="nav-link" data-scroll-target="#useful-stuff">Useful stuff</a></li>
-  <li><a href="#common-problems" id="toc-common-problems" class="nav-link" data-scroll-target="#common-problems">Common problems</a></li>
+  <li><a href="#suppresspackagestartupmessages" id="toc-suppresspackagestartupmessages" class="nav-link active" data-scroll-target="#suppresspackagestartupmessages"><span class="blue"><code>suppressPackageStartupMessages()</code></span></a></li>
+  <li><a href="#what_it_does" id="toc-what_it_does" class="nav-link" data-scroll-target="#what_it_does">what_it_does</a></li>
   </ul>
 </nav>
     </div>
@@ -123,25 +117,13 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="suppresspackagestartupmessages" class="level1">
 <h1><span class="blue"><code>suppressPackageStartupMessages()</code></span></h1>
-<section id="suppresspackagestartupmessageslibrarypackage" class="level3">
-<h3 class="anchored" data-anchor-id="suppresspackagestartupmessageslibrarypackage"><span class="blue"><code>suppressPackageStartupMessages</code></span><code class="center">(library(*package*))</code></h3>
+<pre><code>[suppressPackageStartupMessages]{.blue}(library(*package*)){.center}</code></pre>
 </section>
-</section>
-<section id="what-it-does" class="level1">
-<h1>What it does</h1>
-<pre><code>+ Load a package without printing its greeting message. </code></pre>
-</section>
-<section id="demo-code" class="level1">
-<h1>Demo code</h1>
-<pre><code>```{r eval=FALSE}   suppressPackageStartupMessages(library(tidyverse))  ``` </code></pre>
-</section>
-<section id="useful-stuff" class="level1">
-<h1>Useful stuff</h1>
-<pre><code>+ This is very useful with the .blue[`tidyverse`] and .blue[`tidymodels`].  Use this if and only if you are also using the .blue[`conflicted`] package (to avoid function name conflicts).  ---</code></pre>
-</section>
-<section id="common-problems" class="level1">
-<h1>Common problems</h1>
-<p>NA # Related functions NA</p>
+<section id="what_it_does" class="level1">
+<h1>what_it_does</h1>
+<ul>
+<li>Load a package without printing its greeting message.</li>
+</ul>
 
 
 </section>

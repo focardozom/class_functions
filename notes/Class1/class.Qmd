@@ -1,12 +1,7 @@
-# [`class()`]{.blue}	
-###	[`class`]{.blue}`(_thingy_)`{.center}
-# What it does
-	If you are not sure what something is, you can check its class by typing using the .blue[`class()`] function in the console windowpane. 	
-# Demo code
-	```{r eval=FALSE}	class(iris)	```	
-# Useful stuff
-	.pull-left[.center[![:scale 100%](images/class1.jpg)]]	.pull-right[.center[![:scale 100%](images/class2.jpg)]]	---
-# Common problems
-NA
-# Related functions
-NA
+# [`class()`]{.blue}
+
+	[class]{.blue}(_thingy_){.center}
+# what_it_does 
+
+If you are not sure what something is, you can check its class by typing using the .blue[`class()`] function in the console windowpane. 
+

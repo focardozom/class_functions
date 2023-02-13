@@ -1,12 +1,7 @@
-# [`suppressPackageStartupMessages()`]{.blue}	
-###	[`suppressPackageStartupMessages`]{.blue}`(library(*package*))`{.center}
-# What it does
-	+ Load a package without printing its greeting message.	
-# Demo code
-	```{r eval=FALSE}	suppressPackageStartupMessages(library(tidyverse))	```	
-# Useful stuff
-	+ This is very useful with the .blue[`tidyverse`] and .blue[`tidymodels`].  Use this if and only if you are also using the .blue[`conflicted`] package (to avoid function name conflicts).	---
-# Common problems
-NA
-# Related functions
-NA
+# [`suppressPackageStartupMessages()`]{.blue}
+
+	[suppressPackageStartupMessages]{.blue}(library(*package*)){.center}
+# what_it_does 
+
++ Load a package without printing its greeting message.
+
