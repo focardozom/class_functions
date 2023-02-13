@@ -106,7 +106,10 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#dplyrpull" id="toc-dplyrpull" class="nav-link active" data-scroll-target="#dplyrpull"><span class="blue"><code>dplyr::pull()</code></span></a></li>
-  <li><a href="#what_it_does" id="toc-what_it_does" class="nav-link" data-scroll-target="#what_it_does">what_it_does</a></li>
+  <li><a href="#what-it-does" id="toc-what-it-does" class="nav-link" data-scroll-target="#what-it-does">What it does</a></li>
+  <li><a href="#demo-code" id="toc-demo-code" class="nav-link" data-scroll-target="#demo-code">Demo code</a></li>
+  <li><a href="#usefull-stuff" id="toc-usefull-stuff" class="nav-link" data-scroll-target="#usefull-stuff">Usefull stuff</a></li>
+  <li><a href="#common-problems" id="toc-common-problems" class="nav-link" data-scroll-target="#common-problems">Common Problems</a></li>
   </ul>
 </nav>
     </div>
@@ -119,11 +122,23 @@ ul.task-list li input[type="checkbox"] {
 <h1><span class="blue"><code>dplyr::pull()</code></span></h1>
 <pre><code>[pull]{.blue}(*dataset*, *variable*){.center}</code></pre>
 </section>
-<section id="what_it_does" class="level1">
-<h1>what_it_does</h1>
+<section id="what-it-does" class="level1">
+<h1>What it does</h1>
 <ul>
-<li>The .blue[<code>pull()</code>] is used to copy of a variable out of a dataset into a new object.</li>
+<li>The <span class="blue"><code>pull()</code></span> is used to copy of a variable out of a dataset into a new object.</li>
 </ul>
+</section>
+<section id="demo-code" class="level1">
+<h1>Demo code</h1>
+<pre><code>```{r eval=FALSE}   pull(mtcars, mpg)   ```  </code></pre>
+</section>
+<section id="usefull-stuff" class="level1">
+<h1>Usefull stuff</h1>
+<pre><code>+ When it is used with the .blue[`filter()`] function, .blue[`pull()`] can be used to extract a single value from a dataset. This is useful when you need to extract a number,  like an odds ratio or a *p*-value, for a report.    + .blue[`pull()`] is the only .blue[`dplyr`] function that does not return a `tibble`.  --- </code></pre>
+</section>
+<section id="common-problems" class="level1">
+<h1>Common Problems</h1>
+<p>NA # Related Functions NA</p>
 
 
 </section>

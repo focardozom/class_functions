@@ -1,7 +1,15 @@
 # [`library()`]{.blue}
 
 	[library]{.blue}(*package*){.center}
-# what_it_does 
+# What it does 
 
-+ The library .blue[`library()`] function loads a package into working memory (from long term storage on your hard disk drive or solid state drive).
-
++ The library [`library()`]{.blue} function loads a package into working memory (from long term storage on your hard disk drive or solid state drive).
+ 
+# Demo code 
+	```{r eval=FALSE}	library(survial)	```	 
+# Usefull stuff 
+	+ There are a few "meta" packages, like `tidymodels` and `tidyverse`, which load many packages from a single .blue[`library()`] function call.	???	stats::filter and dplyr::filter	--- 
+# Common Problems 
+NA 
+# Related Functions 
+NA 

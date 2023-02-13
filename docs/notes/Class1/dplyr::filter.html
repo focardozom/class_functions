@@ -106,7 +106,9 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#dplyrfilter" id="toc-dplyrfilter" class="nav-link active" data-scroll-target="#dplyrfilter"><span class="blue"><code>dplyr::filter()</code></span></a></li>
-  <li><a href="#what_it_does" id="toc-what_it_does" class="nav-link" data-scroll-target="#what_it_does">what_it_does</a></li>
+  <li><a href="#what-it-does" id="toc-what-it-does" class="nav-link" data-scroll-target="#what-it-does">What it does</a></li>
+  <li><a href="#demo-code" id="toc-demo-code" class="nav-link" data-scroll-target="#demo-code">Demo code</a></li>
+  <li><a href="#usefull-stuff" id="toc-usefull-stuff" class="nav-link" data-scroll-target="#usefull-stuff">Usefull stuff</a></li>
   </ul>
 </nav>
     </div>
@@ -119,9 +121,17 @@ ul.task-list li input[type="checkbox"] {
 <h1><span class="blue"><code>dplyr::filter()</code></span></h1>
 <pre><code>{.center}</code></pre>
 </section>
-<section id="what_it_does" class="level1">
-<h1>what_it_does</h1>
-<p>.center[.blue[<code>filter</code>]<code>(tableName, logical test)</code>] + Use .blue[<code>filter()</code>] to pick rows/records. Inside the .blue[<code>()</code>] you put a logic check. .blue[<code>filter()</code>] keeps rows/records where the logic check is true.</p>
+<section id="what-it-does" class="level1">
+<h1>What it does</h1>
+<p>.center[<span class="blue"><code>filter</code></span><code>(tableName, logical test)</code>] + Use <span class="blue"><code>filter()</code></span> to pick rows/records. Inside the <span class="blue"><code>()</code></span> you put a logic check. <span class="blue"><code>filter()</code></span> keeps rows/records where the logic check is true.</p>
+</section>
+<section id="demo-code" class="level1">
+<h1>Demo code</h1>
+<pre><code>```{r, eval=FALSE}  filter(mtcars, am == 0)  # cars with automatic transmission filter(mtcars, is.na(mpg))  # cars missing miles per gallon information filter(mtcars, !is.na(mpg))  # cars not missing miles per gallon information    ``` --- </code></pre>
+</section>
+<section id="usefull-stuff" class="level1">
+<h1>Usefull stuff</h1>
+<p>NA # Common Problems NA # Related Functions NA</p>
 
 
 </section>

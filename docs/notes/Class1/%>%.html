@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>BST623 functions – quarto-inputb31bfc6d</title>
+<title>BST623 functions – quarto-input093a698e</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -107,7 +107,10 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#from-the-magrittr-package" id="toc-from-the-magrittr-package" class="nav-link active" data-scroll-target="#from-the-magrittr-package"><span class="blue"><code>%&gt;%</code></span> from the <span class="blue"><code>magrittr</code></span> Package</a></li>
-  <li><a href="#what_it_does" id="toc-what_it_does" class="nav-link" data-scroll-target="#what_it_does">what_it_does</a></li>
+  <li><a href="#what-it-does" id="toc-what-it-does" class="nav-link" data-scroll-target="#what-it-does">What it does</a></li>
+  <li><a href="#demo-code" id="toc-demo-code" class="nav-link" data-scroll-target="#demo-code">Demo code</a></li>
+  <li><a href="#usefull-stuff" id="toc-usefull-stuff" class="nav-link" data-scroll-target="#usefull-stuff">Usefull stuff</a></li>
+  <li><a href="#common-problems" id="toc-common-problems" class="nav-link" data-scroll-target="#common-problems">Common Problems</a></li>
   </ul>
 </nav>
     </div>
@@ -120,12 +123,24 @@ ul.task-list li input[type="checkbox"] {
 <h1><span class="blue"><code>%&gt;%</code></span> from the <span class="blue"><code>magrittr</code></span> Package</h1>
 <pre><code> $thing_1$ [%&gt;%]{.blue}      $thing_2$  {.center}</code></pre>
 </section>
-<section id="what_it_does" class="level1">
-<h1>what_it_does</h1>
+<section id="what-it-does" class="level1">
+<h1>What it does</h1>
 <ul>
-<li>The symbol .blue[<code>%&gt;%</code>] is called a pipe. When describing a workflow, it is spoken as “then”.</li>
+<li>The symbol <span class="blue"><code>%&gt;%</code></span> is called a pipe. When describing a workflow, it is spoken as “then”.</li>
 <li>It normally sends the output from <span class="math inline">\(thing_1\)</span> to the first argument of <span class="math inline">\(thing_2\)</span>.</li>
 </ul>
+</section>
+<section id="demo-code" class="level1">
+<h1>Demo code</h1>
+<pre><code>```{r eval=FALSE}   mtcars %&gt;%    filter(mpg == 30.4)   ```  </code></pre>
+</section>
+<section id="usefull-stuff" class="level1">
+<h1>Usefull stuff</h1>
+<pre><code>+ Many functions can be connected in a pipeline.    + Start code after a pipe on a new line.    + Indent all lines of code two spaces after the first pipe. --- </code></pre>
+</section>
+<section id="common-problems" class="level1">
+<h1>Common Problems</h1>
+<p>NA # Related Functions NA</p>
 
 
 </section>
