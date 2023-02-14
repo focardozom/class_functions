@@ -1,11 +1,14 @@
 # [`dplyr::filter()`]{.blue}
-
-
-{.center}
+ 
+ 
+### 
+{.center} 
+ 
 # What it does 
 
 .center[[`filter`]{.blue}`(tableName, logical test)`]
 + Use [`filter()`]{.blue} to pick rows/records. Inside the [`()`]{.blue} you put a logic check. [`filter()`]{.blue} keeps rows/records where the logic check is true.  
+  
  
 # Demo code 
 
@@ -14,10 +17,13 @@ filter(mtcars, am == 0)  # cars with automatic transmission
 filter(mtcars, is.na(mpg))  # cars missing miles per gallon information
 filter(mtcars, !is.na(mpg))  # cars not missing miles per gallon information
 ```
---- 
+  
+ 
 # Usefull stuff 
-NA 
+NA  
+ 
 # Common Problems 
-NA 
+NA  
+ 
 # Related Functions 
-NA 
+NA  

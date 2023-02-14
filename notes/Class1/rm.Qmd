@@ -1,11 +1,12 @@
 # [`rm()`]{.blue}
-
-
-[rm]{.blue}(*things*)]
-{.center}
+ 
+ 
+### [rm]{.blue}(*things*){.center} 
+ 
 # What it does 
 
 The [`rm()`]{.blue} function removes an object from R's working memory.
+  
  
 # Demo code 
 
@@ -13,10 +14,13 @@ The [`rm()`]{.blue} function removes an object from R's working memory.
 life_the_universe_and_everything <- 42
 rm(life_the_universe_and_everything)
 ```
---- 
+  
+ 
 # Usefull stuff 
-NA 
+NA  
+ 
 # Common Problems 
-NA 
+NA  
+ 
 # Related Functions 
-NA 
+NA  

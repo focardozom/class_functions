@@ -168,10 +168,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#suppresspackagestartupmessages" id="toc-suppresspackagestartupmessages" class="nav-link active" data-scroll-target="#suppresspackagestartupmessages"><span class="blue"><code>suppressPackageStartupMessages()</code></span></a></li>
+  <li><a href="#suppresspackagestartupmessages" id="toc-suppresspackagestartupmessages" class="nav-link active" data-scroll-target="#suppresspackagestartupmessages"><span class="blue"><code>suppressPackageStartupMessages()</code></span></a>
+  <ul class="collapse">
+  <li><a href="#suppresspackagestartupmessageslibrarypackage" id="toc-suppresspackagestartupmessageslibrarypackage" class="nav-link" data-scroll-target="#suppresspackagestartupmessageslibrarypackage"><span class="blue">suppressPackageStartupMessages</span>(library(<em>package</em>))</a></li>
+  </ul></li>
+  <li><a href="#what-it-does" id="toc-what-it-does" class="nav-link" data-scroll-target="#what-it-does">What it does</a></li>
   <li><a href="#demo-code" id="toc-demo-code" class="nav-link" data-scroll-target="#demo-code">Demo code</a></li>
   <li><a href="#usefull-stuff" id="toc-usefull-stuff" class="nav-link" data-scroll-target="#usefull-stuff">Usefull stuff</a></li>
   <li><a href="#common-problems" id="toc-common-problems" class="nav-link" data-scroll-target="#common-problems">Common Problems</a></li>
+  <li><a href="#related-functions" id="toc-related-functions" class="nav-link" data-scroll-target="#related-functions">Related Functions</a></li>
   </ul>
 </nav>
     </div>
@@ -182,7 +187,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <section id="suppresspackagestartupmessages" class="level1">
 <h1><span class="blue"><code>suppressPackageStartupMessages()</code></span></h1>
-<p><span class="blue">suppressPackageStartupMessages</span>(library(<em>package</em>))] {.center} # What it does</p>
+<section id="suppresspackagestartupmessageslibrarypackage" class="level3 center">
+<h3 class="center anchored" data-anchor-id="suppresspackagestartupmessageslibrarypackage"><span class="blue">suppressPackageStartupMessages</span>(library(<em>package</em>))</h3>
+</section>
+</section>
+<section id="what-it-does" class="level1">
+<h1>What it does</h1>
 <ul>
 <li>Load a package without printing its greeting message.</li>
 </ul>
@@ -198,11 +208,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li>This is very useful with the <span class="blue"><code>tidyverse</code></span> and <span class="blue"><code>tidymodels</code></span>. Use this if and only if you are also using the <span class="blue"><code>conflicted</code></span> package (to avoid function name conflicts).</li>
 </ul>
-<hr>
 </section>
 <section id="common-problems" class="level1">
 <h1>Common Problems</h1>
-<p>NA # Related Functions NA</p>
+<p>NA</p>
+</section>
+<section id="related-functions" class="level1">
+<h1>Related Functions</h1>
+<p>NA</p>
 
 
 </section>

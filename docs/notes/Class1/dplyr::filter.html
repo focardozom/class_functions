@@ -168,9 +168,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#dplyrfilter" id="toc-dplyrfilter" class="nav-link active" data-scroll-target="#dplyrfilter"><span class="blue"><code>dplyr::filter()</code></span></a></li>
+  <li><a href="#dplyrfilter" id="toc-dplyrfilter" class="nav-link active" data-scroll-target="#dplyrfilter"><span class="blue"><code>dplyr::filter()</code></span></a>
+  <ul class="collapse">
+  <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section"></a></li>
+  </ul></li>
+  <li><a href="#what-it-does" id="toc-what-it-does" class="nav-link" data-scroll-target="#what-it-does">What it does</a></li>
   <li><a href="#demo-code" id="toc-demo-code" class="nav-link" data-scroll-target="#demo-code">Demo code</a></li>
   <li><a href="#usefull-stuff" id="toc-usefull-stuff" class="nav-link" data-scroll-target="#usefull-stuff">Usefull stuff</a></li>
+  <li><a href="#common-problems" id="toc-common-problems" class="nav-link" data-scroll-target="#common-problems">Common Problems</a></li>
+  <li><a href="#related-functions" id="toc-related-functions" class="nav-link" data-scroll-target="#related-functions">Related Functions</a></li>
   </ul>
 </nav>
     </div>
@@ -181,7 +187,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <section id="dplyrfilter" class="level1">
 <h1><span class="blue"><code>dplyr::filter()</code></span></h1>
-<p>{.center} # What it does</p>
+<section id="section" class="level3">
+<h3 class="anchored" data-anchor-id="section"></h3>
+<p>{.center}</p>
+</section>
+</section>
+<section id="what-it-does" class="level1">
+<h1>What it does</h1>
 <p>.center[<span class="blue"><code>filter</code></span><code>(tableName, logical test)</code>] + Use <span class="blue"><code>filter()</code></span> to pick rows/records. Inside the <span class="blue"><code>()</code></span> you put a logic check. <span class="blue"><code>filter()</code></span> keeps rows/records where the logic check is true.</p>
 </section>
 <section id="demo-code" class="level1">
@@ -191,11 +203,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">filter</span>(mtcars, <span class="fu">is.na</span>(mpg))  <span class="co"># cars missing miles per gallon information</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">filter</span>(mtcars, <span class="sc">!</span><span class="fu">is.na</span>(mpg))  <span class="co"># cars not missing miles per gallon information</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<hr>
 </section>
 <section id="usefull-stuff" class="level1">
 <h1>Usefull stuff</h1>
-<p>NA # Common Problems NA # Related Functions NA</p>
+<p>NA</p>
+</section>
+<section id="common-problems" class="level1">
+<h1>Common Problems</h1>
+<p>NA</p>
+</section>
+<section id="related-functions" class="level1">
+<h1>Related Functions</h1>
+<p>NA</p>
 
 
 </section>

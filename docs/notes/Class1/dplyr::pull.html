@@ -168,10 +168,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#dplyrpull" id="toc-dplyrpull" class="nav-link active" data-scroll-target="#dplyrpull"><span class="blue"><code>dplyr::pull()</code></span></a></li>
+  <li><a href="#dplyrpull" id="toc-dplyrpull" class="nav-link active" data-scroll-target="#dplyrpull"><span class="blue"><code>dplyr::pull()</code></span></a>
+  <ul class="collapse">
+  <li><a href="#pulldataset-variable" id="toc-pulldataset-variable" class="nav-link" data-scroll-target="#pulldataset-variable"><span class="blue">pull</span>(<em>dataset</em>, <em>variable</em>)</a></li>
+  </ul></li>
+  <li><a href="#what-it-does" id="toc-what-it-does" class="nav-link" data-scroll-target="#what-it-does">What it does</a></li>
   <li><a href="#demo-code" id="toc-demo-code" class="nav-link" data-scroll-target="#demo-code">Demo code</a></li>
   <li><a href="#usefull-stuff" id="toc-usefull-stuff" class="nav-link" data-scroll-target="#usefull-stuff">Usefull stuff</a></li>
   <li><a href="#common-problems" id="toc-common-problems" class="nav-link" data-scroll-target="#common-problems">Common Problems</a></li>
+  <li><a href="#related-functions" id="toc-related-functions" class="nav-link" data-scroll-target="#related-functions">Related Functions</a></li>
   </ul>
 </nav>
     </div>
@@ -182,7 +187,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <section id="dplyrpull" class="level1">
 <h1><span class="blue"><code>dplyr::pull()</code></span></h1>
-<p><span class="blue">pull</span>(<em>dataset</em>, <em>variable</em>)] {.center} # What it does</p>
+<section id="pulldataset-variable" class="level3 center">
+<h3 class="center anchored" data-anchor-id="pulldataset-variable"><span class="blue">pull</span>(<em>dataset</em>, <em>variable</em>)</h3>
+</section>
+</section>
+<section id="what-it-does" class="level1">
+<h1>What it does</h1>
 <ul>
 <li>The <span class="blue"><code>pull()</code></span> is used to copy of a variable out of a dataset into a new object.</li>
 </ul>
@@ -199,11 +209,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>When it is used with the <span class="blue"><code>filter()</code></span> function, <span class="blue"><code>pull()</code></span> can be used to extract a single value from a dataset. This is useful when you need to extract a number, like an odds ratio or a <em>p</em>-value, for a report.</li>
 <li><span class="blue"><code>pull()</code></span> is the only <span class="blue"><code>dplyr</code></span> function that does not return a <code>tibble</code>.</li>
 </ul>
-<hr>
 </section>
 <section id="common-problems" class="level1">
 <h1>Common Problems</h1>
-<p>NA # Related Functions NA</p>
+<p>NA</p>
+</section>
+<section id="related-functions" class="level1">
+<h1>Related Functions</h1>
+<p>NA</p>
 
 
 </section>
