@@ -1,14 +1,23 @@
 # [`remotes::install_cran()`]{.blue}
 
-	[remotes::install\_cran]{.blue}("*thingy*"){.center}
+
+[remotes::install\_cran]{.blue}("*thingy*")]
+{.center}
 # What it does 
 
 + A better way to add packages is to use the [`install_cran()`]{.blue} function from the [`remotes`]{.blue} package.
  
 # Demo code 
-	```{r, eval=FALSE}	remotes::install_cran("DOPE")	```	Paste that line into the Console windowpane (bottom left corner) and tap the return or enter key on your keyboard.	 
+
+```{r, eval=FALSE}
+remotes::install_cran("DOPE")
+```
+Paste that line into the Console windowpane (bottom left corner) and tap the return or enter key on your keyboard.
+ 
 # Usefull stuff 
-	+ It will check to see the package has been updated before it bothers to do the download.	--- 
+
++ It will check to see the package has been updated before it bothers to do the download.
+--- 
 # Common Problems 
 NA 
 # Related Functions 

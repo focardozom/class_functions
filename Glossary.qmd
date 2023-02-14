@@ -12,7 +12,7 @@ library(tidyverse)
 library(glue)
 ```
 
-```{r }
+```{r eval=TRUE}
 super_data <- readRDS('data/notes_data.rds') |> 
   select(-Content)
 
