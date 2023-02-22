@@ -2,7 +2,7 @@
 You can easily tweak a variable’s name with:
 .center[[`rename`]{.blue}`(tableName, newName = oldName)`]
 .small[
-```{r}
+```{r eval=FALSE}
 laryngectomy %>%
   rename(sex = gender)  # from gender to sex
 ```

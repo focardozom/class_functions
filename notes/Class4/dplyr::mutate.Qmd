@@ -12,7 +12,7 @@
  
 # Demo code 
 
-```{r, include=FALSE}
+```{r, eval=FALSE, include=FALSE}
 conflicted::conflicts_prefer(palmerpenguins::penguins)
 ```
 ```{r, eval=FALSE}

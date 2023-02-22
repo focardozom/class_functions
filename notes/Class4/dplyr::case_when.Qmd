@@ -19,7 +19,7 @@ laryngectomy %>%
 ```
 ]
 .pull-right[
-```{r echo=FALSE}
+```{r eval=FALSE, echo=FALSE}
 laryngectomy %>%
   mutate(
     `Pathological Stage` =

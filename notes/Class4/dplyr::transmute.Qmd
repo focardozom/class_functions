@@ -2,11 +2,8 @@
  
  
 ### 
-{r eval = FALSE}
 laryngectomy %>%
-  transmute(hadND = 2 - nk_dissection)
-
-{.center} 
+  transmute(hadND = 2 - nk_dissection {.center} 
  
 # What it does 
 

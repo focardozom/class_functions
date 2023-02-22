@@ -1,5 +1,5 @@
 # [`mutate()`]{.blue} for Errors and Secret Codes
-```{r}
+```{r eval=FALSE}
 analysis <- balise %>%
   mutate(middle = if_else(middle == "x", NA_character_, middle)) %>%
   mutate(births = if_else(births < 0, NA_real_, births))

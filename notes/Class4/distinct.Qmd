@@ -21,7 +21,7 @@ laryngectomy %>%
 ```
 ]
 .pull-right-36[.verysmall[
-```{r, echo = FALSE}
+```{r, eval=FALSE, echo = FALSE}
 laryngectomy %>% distinct(gender)
 laryngectomy %>% distinct(int_stg)
 laryngectomy %>%

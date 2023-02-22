@@ -23,7 +23,7 @@
 # Demo code 
 
 .scroll-box-8[
-```{r}
+```{r eval=FALSE}
 glimpse(iris)
 ```
 ]

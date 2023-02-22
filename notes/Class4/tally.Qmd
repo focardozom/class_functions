@@ -15,7 +15,7 @@ sexVars <- laryngectomy %>%
 ```
 ]
 .pull-right-36[
-```{r theTallyTableOut, echo=FALSE}
+```{r theTallyTableOut,eval=FALSE, echo=FALSE}
 sexVars <- laryngectomy %>%
   mutate(isMale = 2 - gender ) %>%
   mutate(sex = as.character(isMale)) %>%

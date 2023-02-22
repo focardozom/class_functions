@@ -6,7 +6,7 @@ laryngectomy %>%
   select(gender, length_fu) %>%
   `group_by(gender)` # marks the grouping variable
 ```
-```{r echo = FALSE}
+```{r eval =  FALSE, echo = FALSE}
 laryngectomy %>%
   select(gender, length_fu) %>%
   group_by(gender) # marks the grouping variable

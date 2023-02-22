@@ -17,7 +17,7 @@ laryngectomy %>%
 ```
 ]
 .pull-right-36[
-```{r theSummarizeTableOut, echo=FALSE}
+```{r theSummarizeTableOut,eval=FALSE, echo=FALSE}
 laryngectomy %>%
   summarize(theMinFU = min(length_fu),
             theMeanFU = mean(length_fu),

@@ -20,7 +20,7 @@ laryngectomy %>%
 ```
 ]
 .pull-right-36[
-```{r echo=FALSE}
+```{r eval=FALSE, echo=FALSE}
 laryngectomy %>%
   mutate(isMale = 2 - gender ) %>%
   mutate(sex = as.character(isMale)) %>%
