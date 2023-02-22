@@ -11,7 +11,7 @@ laryngectomy %>%
    select(`ends_with("_fu")`) %>%
    head(n = 2)  # only keep first two records (to fit on the slide)
 ```
-```{r eval= FALSE , echo = FALSE}
+```{r eval=FALSE, echo = FALSE}
 library(lr4ds)
 laryngectomy %>%
    select(ends_with("_fu")) %>%

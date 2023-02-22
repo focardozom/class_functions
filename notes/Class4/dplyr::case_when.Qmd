@@ -1,7 +1,16 @@
 # [`dplyr::case_when()`]{.blue}
-.small[
-.center[[`case_when`]{.blue} (`*check* ~ *response*, ..., *check* ~ *repsonse*`)]
+ 
+ 
+### 
+.small[[case_when]{.blue} (*check* ~ *response*, ..., *check* ~ *repsonse*){.center} 
+ 
+# What it does 
+
 + [`case_when`]{.blue} does a series of logic checks, in the order listed, and assigns the response from the first check that is true.
+  
+ 
+# Demo code 
+
 .pull-left[
 ```{r eval=FALSE}
 laryngectomy %>%
@@ -34,24 +43,19 @@ laryngectomy %>%
   count(`Pathological Stage`)
 ```
 ]
+  
+ 
+# Usefull stuff 
+
 + [`case_when()`]{.blue} often uses `TRUE` as the last logic check.  Because it is always true, it acts like "else" or "otherwise". 
 + Use [`case_when()`]{.blue} instead of [`if_else()`]{.blue} if there is *any* chance the data has unexpected values.
 ]
- 
- 
-### NA{.center} 
- 
-# What it does 
-NA  
- 
-# Demo code 
-NA  
- 
-# Usefull stuff 
-NA  
+.related-functions[]
+  
  
 # Common Problems 
-NA  
+
+  
  
 # Related Functions 
 NA  

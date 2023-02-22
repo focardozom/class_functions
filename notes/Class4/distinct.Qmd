@@ -1,6 +1,18 @@
-# [`distinct()`]{.blue} shows unique values.
+# [`distinct()`]{.blue} 
+ 
+ 
+### 
+{.center} 
+ 
+# What it does 
+
++ [`distinct()`]{.blue} shows unique values.
+  
+ 
+# Demo code 
+
 .pull-left-60[
-[`distinct`]{.blue}`(table, variables)`
+.blue[`distinct`]`(table, variables)`
 ```{r, eval = FALSE}
 laryngectomy %>% distinct(gender)
 laryngectomy %>% distinct(int_stg)
@@ -40,21 +52,15 @@ laryngectomy %>%
   arrange(sex, stage)
 ```
 ]]
- 
- 
-### NA{.center} 
- 
-# What it does 
-NA  
- 
-# Demo code 
-NA  
+  
  
 # Usefull stuff 
-NA  
+
+
  
 # Common Problems 
-NA  
+
+  
  
 # Related Functions 
 NA  

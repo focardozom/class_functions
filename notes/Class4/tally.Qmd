@@ -1,6 +1,15 @@
 # [`tally()`]{.blue}
-.center[[`tally`]{.blue}`(dataset, variable)`]
+ 
+ 
+### [tally]{.blue}(dataset, variable){.center} 
+ 
+# What it does 
+
 It adds up the values:
+  
+ 
+# Demo code 
+
 .pull-left-60[
 ```{r theTallyTable, eval = FALSE}
 sexVars <- laryngectomy %>%
@@ -15,7 +24,7 @@ sexVars <- laryngectomy %>%
 ```
 ]
 .pull-right-36[
-```{r theTallyTableOut,eval=FALSE, echo=FALSE}
+```{r theTallyTableOut, eval = FALSE, echo=FALSE}
 sexVars <- laryngectomy %>%
   mutate(isMale = 2 - gender ) %>%
   mutate(sex = as.character(isMale)) %>%
@@ -26,25 +35,20 @@ sexVars <- laryngectomy %>%
   sexVars %>% tally(isMale)  # adds up 0s and 1s
 ```
 ]
+  
+ 
+# Usefull stuff 
+
 ???
 This was a good trick...
 r theTallyTable, eval = FALSE
 r theTallyTableOut, ref.label="theTallyTable", echo=FALSE
- 
- 
-### NA{.center} 
- 
-# What it does 
-NA  
- 
-# Demo code 
-NA  
- 
-# Usefull stuff 
-NA  
+.related-functions[]
+  
  
 # Common Problems 
-NA  
+
+  
  
 # Related Functions 
 NA  

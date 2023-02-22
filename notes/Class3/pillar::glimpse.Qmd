@@ -23,8 +23,8 @@
 # Demo code 
 
 .scroll-box-8[
-```{r eval=FALSE}
-glimpse(iris)
+```{r}
+pillar::glimpse(iris)
 ```
 ]
   

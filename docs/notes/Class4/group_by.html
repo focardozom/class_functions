@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.269">
+<meta name="generator" content="quarto-1.2.335">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -171,7 +171,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <ul>
   <li><a href="#group_by-_1" id="toc-group_by-_1" class="nav-link active" data-scroll-target="#group_by-_1"><span class="blue"><code>group_by()</code></span> <span class="math inline">\(_1\)</span></a>
   <ul class="collapse">
-  <li><a href="#na" id="toc-na" class="nav-link" data-scroll-target="#na">NA</a></li>
+  <li><a href="#group_bytablename-groupingvariable" id="toc-group_bytablename-groupingvariable" class="nav-link" data-scroll-target="#group_bytablename-groupingvariable"><span class="blue">group_by</span>(tableName, groupingVariable)</a></li>
   </ul></li>
   <li><a href="#what-it-does" id="toc-what-it-does" class="nav-link" data-scroll-target="#what-it-does">What it does</a></li>
   <li><a href="#demo-code" id="toc-demo-code" class="nav-link" data-scroll-target="#demo-code">Demo code</a></li>
@@ -188,34 +188,56 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <section id="group_by-_1" class="level1">
 <h1><span class="blue"><code>group_by()</code></span> <span class="math inline">\(_1\)</span></h1>
-<p>.center[<span class="blue"><code>group_by</code></span><code>(tableName, groupingVariable)</code>] Before dplyr 1.1 to get groups you would tag the dataset as having a grouping variable:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>laryngectomy <span class="sc">%&gt;%</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(gender, length_fu) <span class="sc">%&gt;%</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="st">`</span><span class="at">group_by(gender)</span><span class="st">`</span> <span class="co"># marks the grouping variable</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell">
-
-</div>
-<section id="na" class="level3 center">
-<h3 class="center anchored" data-anchor-id="na">NA</h3>
+<section id="group_bytablename-groupingvariable" class="level3 center">
+<h3 class="center anchored" data-anchor-id="group_bytablename-groupingvariable"><span class="blue">group_by</span>(tableName, groupingVariable)</h3>
 </section>
 </section>
 <section id="what-it-does" class="level1">
 <h1>What it does</h1>
-<p>NA</p>
+<p>Before dplyr 1.1 to get groups you would tag the dataset as having a grouping variable:</p>
 </section>
 <section id="demo-code" class="level1">
 <h1>Demo code</h1>
-<p>NA</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>laryngectomy <span class="sc">|&gt;</span> </span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(gender, length_fu) <span class="sc">|&gt;</span> </span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="st">`</span><span class="at">group_by(gender)</span><span class="st">`</span> <span class="co"># marks the grouping variable</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="cell-output cell-output-stderr">
+<pre><code>── Attaching packages ─────────────────────────────────────── tidyverse 1.3.2 ──
+✔ ggplot2 3.4.1     ✔ purrr   1.0.1
+✔ tibble  3.1.8     ✔ dplyr   1.1.0
+✔ tidyr   1.3.0     ✔ stringr 1.5.0
+✔ readr   2.1.4     ✔ forcats 1.0.0
+── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+✖ dplyr::filter() masks stats::filter()
+✖ dplyr::lag()    masks stats::lag()</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 123 × 2
+# Groups:   gender [2]
+   gender length_fu
+    &lt;dbl&gt;     &lt;dbl&gt;
+ 1      1       103
+ 2      1       240
+ 3      1        93
+ 4      1       546
+ 5      1       208
+ 6      1       199
+ 7      1       155
+ 8      1       480
+ 9      1        23
+10      1        48
+# … with 113 more rows</code></pre>
+</div>
+</div>
 </section>
 <section id="usefull-stuff" class="level1">
 <h1>Usefull stuff</h1>
-<p>NA</p>
 </section>
 <section id="common-problems" class="level1">
 <h1>Common Problems</h1>
-<p>NA</p>
 </section>
 <section id="related-functions" class="level1">
 <h1>Related Functions</h1>

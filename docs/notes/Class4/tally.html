@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.269">
+<meta name="generator" content="quarto-1.2.335">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -170,7 +170,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <ul>
   <li><a href="#tally" id="toc-tally" class="nav-link active" data-scroll-target="#tally"><span class="blue"><code>tally()</code></span></a>
   <ul class="collapse">
-  <li><a href="#na" id="toc-na" class="nav-link" data-scroll-target="#na">NA</a></li>
+  <li><a href="#tallydataset-variable" id="toc-tallydataset-variable" class="nav-link" data-scroll-target="#tallydataset-variable"><span class="blue">tally</span>(dataset, variable)</a></li>
   </ul></li>
   <li><a href="#what-it-does" id="toc-what-it-does" class="nav-link" data-scroll-target="#what-it-does">What it does</a></li>
   <li><a href="#demo-code" id="toc-demo-code" class="nav-link" data-scroll-target="#demo-code">Demo code</a></li>
@@ -187,7 +187,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <section id="tally" class="level1">
 <h1><span class="blue"><code>tally()</code></span></h1>
-<p>.center[<span class="blue"><code>tally</code></span><code>(dataset, variable)</code>] It adds up the values: .pull-left-60[</p>
+<section id="tallydataset-variable" class="level3 center">
+<h3 class="center anchored" data-anchor-id="tallydataset-variable"><span class="blue">tally</span>(dataset, variable)</h3>
+</section>
+</section>
+<section id="what-it-does" class="level1">
+<h1>What it does</h1>
+<p>It adds up the values:</p>
+</section>
+<section id="demo-code" class="level1">
+<h1>Demo code</h1>
+<p>.pull-left-60[</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>sexVars <span class="ot">&lt;-</span> laryngectomy <span class="sc">%&gt;%</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">isMale =</span> <span class="dv">2</span> <span class="sc">-</span> gender ) <span class="sc">%&gt;%</span></span>
@@ -203,26 +213,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="cell">
 
 </div>
-<p>] ??? This was a good trick… r theTallyTable, eval = FALSE r theTallyTableOut, ref.label=“theTallyTable”, echo=FALSE</p>
-<section id="na" class="level3 center">
-<h3 class="center anchored" data-anchor-id="na">NA</h3>
-</section>
-</section>
-<section id="what-it-does" class="level1">
-<h1>What it does</h1>
-<p>NA</p>
-</section>
-<section id="demo-code" class="level1">
-<h1>Demo code</h1>
-<p>NA</p>
+<p>]</p>
 </section>
 <section id="usefull-stuff" class="level1">
 <h1>Usefull stuff</h1>
-<p>NA</p>
+<p>??? This was a good trick… r theTallyTable, eval = FALSE r theTallyTableOut, ref.label=“theTallyTable”, echo=FALSE .related-functions[]</p>
 </section>
 <section id="common-problems" class="level1">
 <h1>Common Problems</h1>
-<p>NA</p>
 </section>
 <section id="related-functions" class="level1">
 <h1>Related Functions</h1>

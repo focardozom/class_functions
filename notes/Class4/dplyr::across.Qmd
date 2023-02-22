@@ -1,6 +1,15 @@
 # [`dplyr::across()`]{.blue} with [`dplyr::mutate()`]{.blue} 
-.center[[`across`]{.blue}`(varaibles), function`]
+ 
+ 
+### [across]{.blue}(varaibles), function{.center} 
+ 
+# What it does 
+
 + The [`across()`]{.blue} function with [`mutate()`]{.blue} does the same mutation to multiple variables.
+  
+ 
+# Demo code 
+
 ```{r eval=FALSE}
 laryngectomy %>%
   # Convert categorical character variavbles to be factors.
@@ -8,22 +17,17 @@ laryngectomy %>%
     across(gender:sor, factor)
   )
 ```
-+ The [`across()`]{.blue} function is used with [`dplyr::summarise`]{.blue} to apply the same summary statistics to many variables.
- 
- 
-### NA{.center} 
- 
-# What it does 
-NA  
- 
-# Demo code 
-NA  
+  
  
 # Usefull stuff 
-NA  
+
++ The [`across()`]{.blue} function is used with [`dplyr::summarise`]{.blue} to apply the same summary statistics to many variables.
+.related-functions[]
+  
  
 # Common Problems 
-NA  
+
+  
  
 # Related Functions 
 NA  

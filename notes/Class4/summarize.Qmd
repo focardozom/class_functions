@@ -1,6 +1,12 @@
 # [`summarize()`]{.blue} to make rows/records with statistics. $_1$
-.small[.center[[`summarize`]{.blue}`(tableName, newName = aggregateFunction)`  
-[`summarize`]{.blue}`(tableName, aSum = sum(a), anAvg = mean(b), theVar = var(b))`]
+ 
+ 
+### 
+.small[[summarize]{.blue}(tableName, newName = aggregateFunction)  
+[summarize]{.blue}(tableName, aSum = sum(a), anAvg = mean(b), theVar = var(b)){.center} 
+ 
+# What it does 
+
 + Make a new dataset with summary statistics
 + Use it to take a vector and output a single number
 + Only keeps the new variables
@@ -8,6 +14,10 @@
     + min max mean median quantile sd var IQR diff length sum
 + dplyr aggregate functions
     + first last nth n n_distinct
+  
+ 
+# Demo code 
+
 .pull-left-60[
 ```{r theSummarizeTable, eval = FALSE}
 laryngectomy %>%
@@ -17,7 +27,7 @@ laryngectomy %>%
 ```
 ]
 .pull-right-36[
-```{r theSummarizeTableOut,eval=FALSE, echo=FALSE}
+```{r theSummarizeTableOut, eval=FALSE, echo=FALSE}
 laryngectomy %>%
   summarize(theMinFU = min(length_fu),
             theMeanFU = mean(length_fu),
@@ -25,21 +35,16 @@ laryngectomy %>%
 ```
 ]
 ]
- 
- 
-### NA{.center} 
- 
-# What it does 
-NA  
- 
-# Demo code 
-NA  
+  
  
 # Usefull stuff 
-NA  
+
+.related-functions[]
+  
  
 # Common Problems 
-NA  
+
+  
  
 # Related Functions 
 NA  

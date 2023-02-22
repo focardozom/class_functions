@@ -1,27 +1,31 @@
 # [`dplyr::pull()`]{.blue} makes a vector.
-.center[[`pull`]{.blue}`(tableName, variableName)`]
+ 
+ 
+### [pull]{.blue}(tableName, variableName){.center} 
+ 
+# What it does 
+
 Rarely, you will want to pull a column out of a data frame and save it as a vector. [`pull()`]{.blue} is the only `dplyr` verb that does not return a tibble.
+  
+ 
+# Demo code 
+
 ```{r eval = FALSE}
 yes_no_ND <- laryngectomy %>%
   mutate(hadND = 2 - nk_dissection) %>%
   pull(hadND)
 ```
-.center[![](images/pull.png)]
- 
- 
-### NA{.center} 
- 
-# What it does 
-NA  
- 
-# Demo code 
-NA  
+  
  
 # Usefull stuff 
-NA  
+
+.center[![](images/pull.png)]
+.related-functions[]
+  
  
 # Common Problems 
-NA  
+
+  
  
 # Related Functions 
 NA  

@@ -1,9 +1,11 @@
 # [`dplyr::transmute()`]{.blue}
  
  
-### 
+### laryngectomy %>% [transmute]{.blue}(hadND = 2 - nk_dissection).demo-code[{r eval = FALSE}
 laryngectomy %>%
-  transmute(hadND = 2 - nk_dissection {.center} 
+  transmute(hadND = 2 - nk_dissection)
+
+{.center} 
  
 # What it does 
 
