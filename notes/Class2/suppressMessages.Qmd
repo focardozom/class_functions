@@ -1,0 +1,32 @@
+# [`suppressMessages()`]{.blue}
+ 
+ 
+### [suppressMessages]{.blue}(*function*){.center} 
+ 
+# What it does 
+
++ This will muffle messages produced by a chatty function.  
+  
+  
+ 
+# Demo code 
+
+```{r eval=FALSE}
+suppressMessages(library(h2o))
+```
+  
+ 
+# Usefull stuff 
+
++ It may be clearer to write: [`library(*package*, quietly = TRUE)`]{.blue}.
++ This helps with packages that are chatty even when using the `quietly = TRUE` argument to [`library()`]{.blue}.
++ This prevents many messages from showing up in R Markdown output without suppressing other critical messages.
+.related-functions[]
+  
+ 
+# Common Problems 
+
+  
+ 
+# Related Functions 
+NA  

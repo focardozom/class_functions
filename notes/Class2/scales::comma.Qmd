@@ -1,0 +1,29 @@
+# [`scales::comma()`]{.blue}
+ 
+ 
+### [scales::comma]{.blue}(*number*){.center} 
+ 
+# What it does 
+
++ It adds commas to number.
+  
+ 
+# Demo code 
+
+  
+ 
+# Usefull stuff 
+
+```{r eval=FALSE}
+scales::comma(9001)
+```
++ This is extremely useful when preparing R Markdown reports.
+.related-functions[]
+  
+ 
+# Common Problems 
+
+  
+ 
+# Related Functions 
+NA  

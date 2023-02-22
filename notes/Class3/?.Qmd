@@ -1,0 +1,33 @@
+# [`?`]{.blue}
+ 
+ 
+### [?]{.blue}*thingy*{.center} 
+ 
+# What it does 
+
++ Open the help file for an object that you don't understand.  It is useful to find variable definitions for some datasets and some function argument details.
+  
+ 
+# Demo code 
+
+```{r eval=FALSE}
+?women
+```
+  
+ 
+# Usefull stuff 
+
++ Note: There is no help file for for men. [`?`]{.blue}men .
+```{r}
+?men
+```
+.related-functions[]
++ [`??`]{.blue} does a broader search in the local documentation.
+  
+ 
+# Common Problems 
+
+  
+ 
+# Related Functions 
+NA  

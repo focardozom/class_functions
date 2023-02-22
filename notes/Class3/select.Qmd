@@ -1,0 +1,37 @@
+# [`select()`]{.blue}'s Helper Functions
++ [`starts_with("X")`]{.blue}: every name that starts with "X”
++ [`ends_with("X")`]{.blue}: every name that ends with "X”
++ [`contains("X")`]{.blue}: every name that contains "X”
++ [`matches("X")`]{.blue}: every name that matches "X", where "X" can be a regular expression
++ [`num_range("x", 1:5)`]{.blue}: the variables named x01, x02, x03, x04 and x05
++ [`one_of(x)`]{.blue}: every name that appears in x, which should be a character vector
+```{r eval = FALSE}
+library(lr4ds)
+laryngectomy %>%
+   select(`ends_with("_fu")`) %>%
+   head(n = 2)  # only keep first two records (to fit on the slide)
+```
+```{r eval= FALSE, echo = FALSE}
+library(lr4ds)
+laryngectomy %>%
+   select(ends_with("_fu")) %>%
+   head(n = 2)
+```
+ 
+ 
+### NA{.center} 
+ 
+# What it does 
+NA  
+ 
+# Demo code 
+NA  
+ 
+# Usefull stuff 
+NA  
+ 
+# Common Problems 
+NA  
+ 
+# Related Functions 
+NA  

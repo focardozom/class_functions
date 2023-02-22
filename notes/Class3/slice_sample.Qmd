@@ -1,0 +1,26 @@
+# [`slice_sample()`]{.blue} grabs a few records.
+If you have a lot of data, you can easily use [`slice_sample()`]{.blue} with the [`n =`]{.blue} or [`prop =`]{.blue} arguments to take a sample for doing preliminary work.  Be sure to use the base R [`set.seed()`]{.blue} function before [`slice_sample()`]{.blue} to specify which set of random records to select.
+```{r eval=FALSE}
+set.seed(123)
+laryngectomy %>%
+  select(age, gender, recur_site, trt_mod, int_stg, recur_stg) %>%
+  slice_sample(prop = .05)  # a random 5% of the data
+```
+ 
+ 
+### NA{.center} 
+ 
+# What it does 
+NA  
+ 
+# Demo code 
+NA  
+ 
+# Usefull stuff 
+NA  
+ 
+# Common Problems 
+NA  
+ 
+# Related Functions 
+NA  

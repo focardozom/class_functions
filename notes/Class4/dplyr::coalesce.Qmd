@@ -1,0 +1,29 @@
+# [`dplyr::coalesce()`]{.blue}
+.center[[`coalesce`]{.blue}`(varaible(s))`]
++ The [`coalesce()`]{.blue} function chooses the first not-missing value from a set of variables.
+```{r eval=FALSE}
+laryngectomy %>%
+  # Get day of worst outcome: death, reoccurrence, visit, or huge negative number
+  mutate(
+    outcome_day = coalesce(death_fu, recur_fu, length_fu, -99999999)
+  )
+```
++ If you include a huge outlier as the last option, it will make it easy to spot missing values.
+ 
+ 
+### NA{.center} 
+ 
+# What it does 
+NA  
+ 
+# Demo code 
+NA  
+ 
+# Usefull stuff 
+NA  
+ 
+# Common Problems 
+NA  
+ 
+# Related Functions 
+NA  

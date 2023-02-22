@@ -1,0 +1,34 @@
+# [`mean()`]{.blue}
+ 
+ 
+### [mean]{.blue}(*vector*, na.rm = *value*){.center} 
+ 
+# What it does 
+
++ It calculates an average. 
++ By default it returns `NA` is any value is missing.
++ You normally use this on a typical numeric variable but it can be use for other types of data if it can convert them to numbers (like dates/times). 
+  + You can also calculate the average on a logical (TRUE/FALSE) variable to get the percent true.  <mark>Remember</mark>: 1=TRUE/YES, 0=FALSE/NO in everything you do.
+  
+ 
+# Demo code 
+
+.small[
+```{r, comment=""}
+mean(mtcars$mpg)
+mean(TRUE)
+```
+]
+  
+ 
+# Usefull stuff 
+
+.related-functions[]
+  
+ 
+# Common Problems 
+
+  
+ 
+# Related Functions 
+NA  
