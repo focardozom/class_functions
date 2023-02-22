@@ -1,0 +1,31 @@
+# [`<-`]{.blue}
+ 
+ 
+### [*thingy* <- *something*]{.blue}{.center} 
+ 
+# What it does 
+
++ You use [`<-`]{.blue} to assign an object (e.g., *thingy*) a value (e.g., *something*).
++ The [`<-`]{.blue} operator is pronounced "gets".
++ In other languages this would be an `=`.
+  
+ 
+# Demo code 
+
+```{r eval=FALSE}
+everything <- 42
+```
+  
+ 
+# Usefull stuff 
+
++ You can also use  [`->`]{.blue} (e.g., *`something`* [`->`]{.blue} *`thingy`*) but it violates all style guides.
+  
+ 
+# Common Problems 
+
++ Use an [`=`]{.blue}, not [`<-`]{.blue} , to assign values to an argument in a function call.
+  
+ 
+# Related Functions 
+NA  

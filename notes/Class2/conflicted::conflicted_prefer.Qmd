@@ -1,0 +1,30 @@
+# [`conflicted::conflicted_prefer()`]{.blue}
+ 
+ 
+### 
+.small[[conflicted_prefer]{.blue}("*function*", "*winning package*", quiet = TRUE){.center} 
+ 
+# What it does 
+
++ The conflicted packages complains when the same function name is used in multiple packages.
++ Use conflicted_prefer() to specify which version should be used by default.
+  
+ 
+# Demo code 
+
+```{r eval=FALSE}
+conflict_prefer("filter", "dplyr", quiet = TRUE)
+```
+  
+ 
+# Usefull stuff 
+
++ You can overwrite this default with `package::function()`.
+  
+ 
+# Common Problems 
+
+  
+ 
+# Related Functions 
+NA  

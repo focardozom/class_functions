@@ -1,0 +1,32 @@
+# [`|>`]{.blue}
+ 
+ 
+### *thing* [|>]{.blue} *thing*{.center} 
+ 
+# What it does 
+
++ The base R pipe, [`|>`]{.blue}, is designed to pass an object into the first argument of another function. 
+  
+ 
+# Demo code 
+
+```{r eval=FALSE}
+mtcars |> subset(cyl == 4) |> head()
+```
+  
+ 
+# Usefull stuff 
+
++ This pipe is faster than the magrittr pipe (i.e., [`%>%`]{.blue}).
++ It can not redirect to any argument other than the first.
++ It is of limited use because many critical functions (e.g., [`lm()`]{.blue} and [`plot()`]{.blue}) do not take a dataset as the first argument.
+ 
+.related-functions[]
+  
+ 
+# Common Problems 
+
+  
+ 
+# Related Functions 
+NA  

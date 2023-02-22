@@ -1,0 +1,31 @@
+# [`format()`]{.blue}
+ 
+ 
+### [format]{.blue}(*number(s)*, scientific=FALSE){.center} 
+ 
+# What it does 
+
++ Use [`format()`]{.blue} to display numbers and text many formats and alignment options.
+  
+ 
+# Demo code 
+
+```{r eval=TRUE}
+huge <- 1000000000000000
+format(huge, big.mark=",", scientific=FALSE)
+```
+  
+ 
+# Usefull stuff 
+
++ [`format()`]{.blue} is useful for showing huge and tiny numbers without scientific notation.
++ [`format()`]{.blue} can be use display aligned text. 
+.related-functions[]
+  
+ 
+# Common Problems 
+
+  
+ 
+# Related Functions 
+NA  

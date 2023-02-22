@@ -1,0 +1,33 @@
+# [`%>%`]{.blue} from the [`magrittr`]{.blue} Package
+ 
+ 
+###  $thing_1$ [%>%]{.blue}  
+ $thing_2$
+{.center} 
+ 
+# What it does 
+
++ The symbol [`%>%`]{.blue} is called a pipe.  When describing a workflow, it is spoken as "then".
++ It normally sends the output from $thing_1$ to the first argument of $thing_2$.
+  
+ 
+# Demo code 
+
+```{r eval=FALSE}
+mtcars %>%
+  filter(mpg == 30.4)
+```
+  
+ 
+# Usefull stuff 
+
++ Many functions can be connected in a pipeline.
++ Start code after a pipe on a new line.
++ Indent all lines of code two spaces after the first pipe.
+  
+ 
+# Common Problems 
+NA  
+ 
+# Related Functions 
+NA  

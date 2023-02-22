@@ -1,0 +1,36 @@
+# [`rep()`]{.blue}
+ 
+ 
+### [rep]{.blue}(value, #){.center} 
+ 
+# What it does 
+
++ The [`rep()`]{.blue} function is used to repeat something. 
+  
+ 
+# Demo code 
+
+```{r eval=FALSE}
+rep("Cup of Coffee", 3)
+fam <-
+  tibble(
+    name_first = c("Raymond", "Lori", "Mary", "Andrew", "Ella", "Snowy", "Mia", "Crab"),
+    name_last = c(rep("Balise", 4), "Johnson", rep("Balise", 3)),
+    species = c(rep("human", 5), c("Canis lupus familiaris", 2), "anomuran decapod crustaceans")
+  )
+```
+  
+ 
+# Usefull stuff 
+
++ When creating a new dataset, the base R data.frame function will try to repeat (recycle) values if a variable/column is "short" (i.e., a value is missing).  This can be problematic. The tibble function does not automatically recycle values.  Use [`rep()`]{.blue} rather that repeatedly typing the same value.
++ `rep()` function can do complex repeating patters. rep(c("fun", "ado", "tree"), c(1, 2, 3))
+.related-functions[]
+  
+ 
+# Common Problems 
+
+  
+ 
+# Related Functions 
+NA  

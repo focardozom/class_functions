@@ -1,0 +1,32 @@
+#[`names()`]{.blue}
+ 
+ 
+### [names]{.blue}(*thingy*){.center} 
+ 
+# What it does 
+
++ If you want a print the variable names in a dataset.
+  
+ 
+# Demo code 
+
+```{r}
+names(iris)
+```
+  
+ 
+# Usefull stuff 
+
+.related-functions[]
++ I frequently use it with [`dput()`]{.blue}
+```{r}
+dput(names(iris))
+```
+  
+ 
+# Common Problems 
+
+  
+ 
+# Related Functions 
+NA  

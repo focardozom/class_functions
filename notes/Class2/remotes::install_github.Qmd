@@ -1,0 +1,33 @@
+# [`remotes::install_github()`]{.blue}
+ 
+ 
+### [remotes::install_github]{.blue}(*author/package*){.center} 
+ 
+# What it does 
+
++ Downloads and install a package from from www.github.com.
+  
+ 
+# Demo code 
+
+```{r eval=FALSE}
+remotes::install_github("RaymondBalise/rUM")
+```
+  
+ 
+# Usefull stuff 
+
++ Use this release to get the latest bug fixes.
++ It checks to see if there is any new content before it downloads.
++ You will need tools to build packages.
+  + These tools ship with Mac.
+  + On Windows you will need to install [Rtools](https://cran.r-project.org/bin/windows/Rtools/rtools40.html)
+.related-functions[]
+  
+ 
+# Common Problems 
+
+  
+ 
+# Related Functions 
+NA  

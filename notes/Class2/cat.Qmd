@@ -1,0 +1,37 @@
+# [`cat()`]{.blue}
+ 
+ 
+### [cat]{.blue}(*things*){.center} 
+ 
+# What it does 
+
+.pull-left-60[
++ [`cat()`]{.blue} is simpler version of the [`paste()`]{.blue} function.
+  + It does not print the vector position, like [`print()`]{.blue}.
+  + It does not prints a slash before quotes.
+]
+  
+ 
+# Demo code 
+
+.pull-right-36[
+```{r}
+cat("The cyberman", "cried.")
+cat('The cyberman said "error."')
+words <- "Hi Mom"
+cat("Ray said ", '"', words, '".')
+```
+]
+  
+ 
+# Usefull stuff 
+
++ The [`glue::glue()`]{.blue} is an excellent alternative.
+  
+ 
+# Common Problems 
+
+  
+ 
+# Related Functions 
+NA  

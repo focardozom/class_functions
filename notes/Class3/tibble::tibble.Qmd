@@ -1,0 +1,38 @@
+# [`tibble::tibble()`]{.blue}
+.center[[`tibble`]{.blue}`(thing(s))`]
+.small[
++  The [`tibble()`]{.blue} function will convert base R vectors or a `data.frame` into a tidyverse `tibble`
+```{r eval=FALSE}
+mtcars <- as_tibble(mtcars)
+fam <-
+  tibble(
+    \`First Name` = c("Raymond", "Lori", "Mary", "Andrew", "Ella", "Snowy", "Mia", "Crab"),
+    \`Last Name` = c(rep("Balise", 4), "Johnson", rep("Balise", 3)),
+    species = c(rep("h. sapiens", 5), c("canis lupus familiaris", 2), "anomuran decapod crustaceans")
+  )
+```
++ `tibble`s have a useful print method.
++ `tibbles` do not use row names.  Convert row names to a variable with `rownames_to_column()`
++ They do not accept partial matching (i.e., `fam$F` does not work).
++ `tibble`s do not automatically change data.
+  + Character variables do not become factors!
+  + Column names are not converted to base names (e.g. spaces are allowed). 
+]
+ 
+ 
+### NA{.center} 
+ 
+# What it does 
+NA  
+ 
+# Demo code 
+NA  
+ 
+# Usefull stuff 
+NA  
+ 
+# Common Problems 
+NA  
+ 
+# Related Functions 
+NA  

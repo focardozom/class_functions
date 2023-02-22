@@ -1,0 +1,41 @@
+# [`dplyr::mutate()`]{.blue}
+ 
+ 
+### [mutate]{.blue}(*data*, *variable* = *stuff*){.center} 
+ 
+# What it does 
+
+.small[
++ [`mutate()`]{.blue} is used to create and manipulate variables in the `tidyverse` ecosystem.
+  
+ 
+# Demo code 
+
+```{r eval=FALSE}
+mtcars %>%
+  mutate(Transmition = if_else(am == 0, "Automatic", "Manual"),
+         Transmition = factor(Transmition))
+```
+  
+ 
+# Usefull stuff 
+
++ You can have any number of comma delimited mutations in one function call.
++ The [`if_else()`]{.blue} and [`case_when()`]{.blue} functions are particularly useful with [`mutate()`]{.blue}.
++ [`mutate()`]{.blue} can apply the same mutation to multiple values if it is mixed with the [`across()`]{.blue} function:   mutate(across(c(vs, am), factor)).
+```{r eval=FALSE}
+mtcars %>%
+  mutate(
+    across(c(vs, am), factor)
+  )
+```
+]
+.related-functions[]
+  
+ 
+# Common Problems 
+
+  
+ 
+# Related Functions 
+NA  
