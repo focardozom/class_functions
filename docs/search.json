@@ -399,8 +399,8 @@
     "text": "class()\n\nclass(thingy)\n\n\n\nWhat it does\nIf you are not sure what something is, you can check its class by typing using the class() function in the console windowpane.\n\n\nDemo code\n\nclass(iris)\n\n\n\nUsefull stuff\n.pull-left[.center[]] .pull-right[.center[]]\n\n\nCommon Problems\nNA\n\n\nRelated Functions\nNA"
   },
   {
-    "objectID": "notes/Class1/%>%.html",
-    "href": "notes/Class1/%>%.html",
+    "objectID": "notes/Class1/oldpipe.html",
+    "href": "notes/Class1/oldpipe.html",
     "title": "BST623 functions",
     "section": "",
     "text": "%>% from the magrittr Package\n\n\\(thing_1\\) %>%\n\\(thing_2\\) {.center}\n\n\n\nWhat it does\n\nThe symbol %>% is called a pipe. When describing a workflow, it is spoken as “then”.\nIt normally sends the output from \\(thing_1\\) to the first argument of \\(thing_2\\).\n\n\n\nDemo code\n\nmtcars %>%\n  filter(mpg == 30.4)\n\n\n\nUsefull stuff\n\nMany functions can be connected in a pipeline.\nStart code after a pipe on a new line.\nIndent all lines of code two spaces after the first pipe.\n\n\n\nCommon Problems\nNA\n\n\nRelated Functions\nNA"
