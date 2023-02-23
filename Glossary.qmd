@@ -14,7 +14,15 @@ library(glue)
 
 ```{r eval=TRUE}
 super_data <- readRDS('data/notes_data.rds') |> 
-  select(-Content)
+  select(Class, Notes) |> 
+  mutate(Class= case_when(
+    Class== "Class1" ~ "Class 1 introduction",
+    Class== "Class2" ~ "Class 2 rmarkdown",
+    Class== "Class3" ~ "Class 3 writing",
+    Class== "Class4" ~ "Class 4 manipulating",
+    ))
+
+
 
 reactable(super_data,
   columns = list(
