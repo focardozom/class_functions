@@ -14,13 +14,13 @@ library(glue)
 
 ```{r eval=TRUE}
 super_data <- readRDS('data/notes_data.rds') |> 
-  select(Class, Notes) |> 
-  mutate(Class= case_when(
-    Class== "Class1" ~ "Class 1 introduction",
-    Class== "Class2" ~ "Class 2 rmarkdown",
-    Class== "Class3" ~ "Class 3 writing",
-    Class== "Class4" ~ "Class 4 manipulating",
-    ))
+  mutate(Topic= case_when(
+    Class== "Class1" ~ "Introduction",
+    Class== "Class2" ~ "Rmarkdown",
+    Class== "Class3" ~ "Writing",
+    Class== "Class4" ~ "Manipulating",
+    )) |> 
+  select(Class, Topic, Notes)
 
 
 
