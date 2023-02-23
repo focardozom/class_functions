@@ -13,7 +13,7 @@
  
 # Demo code 
 
-.small[
+
 ```{r, comment=""}
 mean(mtcars$mpg)
 mean(TRUE)

@@ -20,7 +20,7 @@ reactable(super_data,
   columns = list(
     Notes = colDef(cell = function(value, index) {
       url <- glue("/class_functions/notes/{super_data$Class[index]}/{super_data$Notes[index]}.html")
-      htmltools::tags$a(href = url, as.character(value))
+      htmltools::tags$a(href = url,target = "_blank", as.character(value))
     },
     filterable = TRUE)
   )

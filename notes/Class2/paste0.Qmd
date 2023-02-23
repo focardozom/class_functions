@@ -5,14 +5,14 @@
  
 # What it does 
 
-.small[
+
 + It pastes together character strings without adding spaces. 
 + The [`paste0()`]{.blue} function prints a slash before quotes.
   
  
 # Demo code 
 
-.pull-left[
+
 ```{r, comment=""}
 paste0("The cyberman", " cried.")
 paste0('The cyberman said "error."')

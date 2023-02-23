@@ -196,13 +196,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><span class="blue"><code>one_of(x)</code></span>: every name that appears in x, which should be a character vector</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(lr4ds)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>laryngectomy <span class="sc">%&gt;%</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>   <span class="fu">select</span>(<span class="st">`</span><span class="at">ends_with("_fu")</span><span class="st">`</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>   <span class="fu">head</span>(<span class="at">n =</span> <span class="dv">2</span>)  <span class="co"># only keep first two records (to fit on the slide)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>laryngectomy <span class="sc">|&gt;</span> </span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>   <span class="fu">select</span>(<span class="st">`</span><span class="at">ends_with("_fu")</span><span class="st">`</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>   <span class="fu">head</span>(<span class="at">n =</span> <span class="dv">2</span>)  <span class="co"># only keep first two records (to fit on the slide)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2 × 3
+  length_fu death_fu recur_fu
+      &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;
+1       103       NA       NA
+2       240       NA       NA</code></pre>
+</div>
 </div>
 <section id="na" class="level3 center">
 <h3 class="center anchored" data-anchor-id="na">NA</h3>

@@ -5,9 +5,8 @@
  
 # What it does 
 
-.small[
+
 + Use [`mutate()`]{.blue} to make a new variable or replace an existing one.
-]
   
  
 # Demo code 

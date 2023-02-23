@@ -5,7 +5,7 @@
  
 # What it does 
 
-.small[
+
 + Make a summary table of a vector or a pair of vectors.
   
  

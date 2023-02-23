@@ -2,7 +2,7 @@
  
  
 ### 
-.small[[conflicted_prefer]{.blue}("*function*", "*winning package*", quiet = TRUE){.center} 
+[conflicted_prefer]{.blue}("*function*", "*winning package*", quiet = TRUE){.center} 
  
 # What it does 
 

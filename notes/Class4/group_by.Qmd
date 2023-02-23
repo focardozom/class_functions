@@ -11,16 +11,16 @@ Before dplyr 1.1 to get groups you would tag the dataset as having a grouping va
 # Demo code 
 
 ```{r eval = FALSE}
-
 laryngectomy |> 
   select(gender, length_fu) |> 
   `group_by(gender)` # marks the grouping variable
 ```
-
-```{r echo = FALSE}
+```{r include=FALSE, warning=FALSE, message=FALSE}
 library(tidyverse)
-
-lr4ds::laryngectomy |> 
+laryngectomy <- lr4ds::laryngectomy
+```
+```{r echo = FALSE}
+laryngectomy |> 
   select(gender, length_fu) |> 
   group_by(gender) # marks the grouping variable
 ```
@@ -28,7 +28,7 @@ lr4ds::laryngectomy |>
  
 # Usefull stuff 
 
-
+.related-functions[]
   
  
 # Common Problems 

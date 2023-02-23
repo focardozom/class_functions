@@ -10,8 +10,12 @@ complications <- laryngectomy %>%
 + [`select()`]{.blue} does not do autocomplete.
 + You can refer to variables by position number. The first variable is 1. `r emo::ji("nauseated_face")`.
  + You can .red[remove/exclude] unwanted variables with a `-`:
+```{r include=FALSE, warning=FALSE, message=FALSE}
+library(tidyverse)
+laryngectomy <- lr4ds::laryngectomy
+```
 ```{r eval = FALSE}
-withoutComplicationVars <- laryngectomy %>%
+withoutComplicationVars <- laryngectomy |> 
    select(`-`(complications:comp_2plus))
 ```
  

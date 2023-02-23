@@ -200,33 +200,64 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </section>
 <section id="demo-code" class="level1">
 <h1>Demo code</h1>
-<p>.pull-left-60[ .blue[<code>distinct</code>]<code>(table, variables)</code></p>
+<p>.blue[<code>distinct</code>]<code>(table, variables)</code></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>laryngectomy <span class="sc">%&gt;%</span> <span class="fu">distinct</span>(gender)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>laryngectomy <span class="sc">%&gt;%</span> <span class="fu">distinct</span>(int_stg)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>laryngectomy <span class="sc">%&gt;%</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">isMale =</span> <span class="dv">2</span> <span class="sc">-</span> gender ) <span class="sc">%&gt;%</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">sex =</span> <span class="fu">as.character</span>(isMale)) <span class="sc">%&gt;%</span></span>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>laryngectomy<span class="sc">|&gt;</span> <span class="fu">distinct</span>(gender)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>laryngectomy <span class="sc">|&gt;</span> <span class="fu">distinct</span>(int_stg)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>laryngectomy <span class="sc">|&gt;</span> </span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">isMale =</span> <span class="dv">2</span> <span class="sc">-</span> gender ) <span class="sc">|&gt;</span> </span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">sex =</span> <span class="fu">as.character</span>(isMale)) <span class="sc">|&gt;</span> </span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">sex =</span> <span class="fu">fct_recode</span>(sex,</span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>                          <span class="st">"Female"</span> <span class="ot">=</span> <span class="st">"0"</span>,</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>                          <span class="st">"Male"</span> <span class="ot">=</span> <span class="st">"1"</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>                          <span class="st">"Male"</span> <span class="ot">=</span> <span class="st">"1"</span>)) <span class="sc">|&gt;</span> </span>
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">stage =</span> <span class="fu">fct_recode</span>(<span class="fu">as.character</span>(int_stg),</span>
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>                          <span class="st">"T1"</span> <span class="ot">=</span> <span class="st">"1"</span>,</span>
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>                          <span class="st">"T2"</span> <span class="ot">=</span> <span class="st">"2"</span>,</span>
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>                          <span class="st">"T3"</span> <span class="ot">=</span> <span class="st">"3"</span>,</span>
 <span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>                          <span class="st">"T4"</span> <span class="ot">=</span> <span class="st">"4"</span>,</span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>                          <span class="st">"Unknown"</span> <span class="ot">=</span> <span class="st">"5"</span>)) <span class="sc">%&gt;%</span></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>  <span class="st">`</span><span class="at">distinct(sex, stage)</span><span class="st">`</span> <span class="sc">%&gt;%</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>                          <span class="st">"Unknown"</span> <span class="ot">=</span> <span class="st">"5"</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>  <span class="st">`</span><span class="at">distinct(sex, stage)</span><span class="st">`</span> <span class="sc">|&gt;</span> </span>
 <span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(sex, stage)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>] .pull-right-36[.verysmall[</p>
+<p>] .ver</p>
 <div class="cell">
-
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2 × 1
+  gender
+   &lt;dbl&gt;
+1      1
+2      2</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 5 × 1
+  int_stg
+    &lt;dbl&gt;
+1       2
+2       3
+3       1
+4       4
+5       5</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 9 × 2
+  sex    stage  
+  &lt;fct&gt;  &lt;fct&gt;  
+1 Female T1     
+2 Female T2     
+3 Female T3     
+4 Female Unknown
+5 Male   T1     
+6 Male   T2     
+7 Male   T3     
+8 Male   T4     
+9 Male   Unknown</code></pre>
+</div>
 </div>
 <p>]]</p>
 </section>
 <section id="usefull-stuff" class="level1">
 <h1>Usefull stuff</h1>
+<p>.related-functions[]</p>
 </section>
 <section id="common-problems" class="level1">
 <h1>Common Problems</h1>

@@ -1,12 +1,10 @@
 # [`dplyr::filter()`]{.blue}
  
  
-### 
-{.center} 
+### [filter]{.blue}(tableName, logical test){.center} 
  
 # What it does 
 
-.center[[`filter`]{.blue}`(tableName, logical test)`]
 + Use [`filter()`]{.blue} to pick rows/records. Inside the [`()`]{.blue} you put a logic check. [`filter()`]{.blue} keeps rows/records where the logic check is true.  
   
  

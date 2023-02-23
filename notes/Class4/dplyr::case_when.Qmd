@@ -2,7 +2,7 @@
  
  
 ### 
-.small[[case_when]{.blue} (*check* ~ *response*, ..., *check* ~ *repsonse*){.center} 
+[case_when]{.blue} (*check* ~ *response*, ..., *check* ~ *repsonse*){.center} 
  
 # What it does 
 
@@ -11,9 +11,13 @@
  
 # Demo code 
 
-.pull-left[
+```{r include=FALSE, warning=FALSE, message=FALSE}
+library(tidyverse)
+laryngectomy <- lr4ds::laryngectomy
+```
+
 ```{r eval=FALSE}
-laryngectomy %>%
+laryngectomy |> 
   mutate(
     \`Pathological Stage` =
       case_when(
@@ -23,13 +27,13 @@ laryngectomy %>%
         # path_stg == 5 ~ "Unknown",
         .default ~ "*** PROBLEM ***"
       )
-  ) %>%
+  ) |> 
   count(\`Pathological Stage`)
 ```
 ]
 .pull-right[
-```{r eval=FALSE, echo=FALSE}
-laryngectomy %>%
+```{r echo=FALSE}
+laryngectomy |> 
   mutate(
     `Pathological Stage` =
       case_when(
@@ -39,7 +43,7 @@ laryngectomy %>%
         # path_stg == 5 ~ "Unknown",
         TRUE ~ "*** PROBLEM ***"
       )
-  ) %>%
+  ) |> 
   count(`Pathological Stage`)
 ```
 ]

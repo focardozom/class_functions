@@ -5,7 +5,7 @@
  
 # What it does 
 
-.small[
+
 + Useful you to see information on the structure of any. It is somewhat useful for datasets.
   
  

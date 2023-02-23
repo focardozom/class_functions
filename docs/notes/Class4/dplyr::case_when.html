@@ -189,7 +189,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h1><span class="blue"><code>dplyr::case_when()</code></span></h1>
 <section id="section" class="level3">
 <h3 class="anchored" data-anchor-id="section"></h3>
-<p>.small[<span class="blue">case_when</span> (<em>check</em> ~ <em>response</em>, …, <em>check</em> ~ <em>repsonse</em>){.center}</p>
+<p><span class="blue">case_when</span> (<em>check</em> ~ <em>response</em>, …, <em>check</em> ~ <em>repsonse</em>){.center}</p>
 </section>
 </section>
 <section id="what-it-does" class="level1">
@@ -200,9 +200,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </section>
 <section id="demo-code" class="level1">
 <h1>Demo code</h1>
-<p>.pull-left[</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>laryngectomy <span class="sc">%&gt;%</span></span>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>laryngectomy <span class="sc">|&gt;</span> </span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    \<span class="st">`</span><span class="at">Pathological Stage</span><span class="st">`</span> <span class="ot">=</span></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>      <span class="fu">case_when</span>(</span>
@@ -212,12 +211,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>        <span class="co"># path_stg == 5 ~ "Unknown",</span></span>
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>        .default <span class="sc">~</span> <span class="st">"*** PROBLEM ***"</span></span>
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>      )</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span> </span>
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(\<span class="st">`</span><span class="at">Pathological Stage</span><span class="st">`</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>] .pull-right[</p>
 <div class="cell">
-
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 2
+  `Pathological Stage`     n
+  &lt;chr&gt;                &lt;int&gt;
+1 *** PROBLEM ***         19
+2 Early                   26
+3 Late                    78</code></pre>
+</div>
 </div>
 <p>]</p>
 </section>

@@ -2,7 +2,7 @@
  
  
 ### 
-.small[[summarize]{.blue}(tableName, newName = aggregateFunction)  
+[summarize]{.blue}(tableName, newName = aggregateFunction)  
 [summarize]{.blue}(tableName, aSum = sum(a), anAvg = mean(b), theVar = var(b)){.center} 
  
 # What it does 
@@ -18,17 +18,21 @@
  
 # Demo code 
 
-.pull-left-60[
+
 ```{r theSummarizeTable, eval = FALSE}
-laryngectomy %>%
+laryngectomy |> 
 {{  summarize(theMinFU = min(length_fu),}}
 {{            theMeanFU = mean(length_fu),}}
 {{            theMaxFU = max(length_fu))}}
 ```
 ]
-.pull-right-36[
-```{r theSummarizeTableOut, eval=FALSE, echo=FALSE}
-laryngectomy %>%
+
+```{r include=FALSE, warning=FALSE, message=FALSE}
+library(tidyverse)
+laryngectomy <- lr4ds::laryngectomy
+```
+```{r theSummarizeTableOut, echo=FALSE}
+laryngectomy |> 
   summarize(theMinFU = min(length_fu),
             theMeanFU = mean(length_fu),
             theMaxFU = max(length_fu))

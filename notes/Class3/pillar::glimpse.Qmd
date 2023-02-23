@@ -2,7 +2,7 @@
  
  
 ### 
-.small[[glimpse]{.blue}(*dataset*){.center} 
+[glimpse]{.blue}(*dataset*){.center} 
  
 # What it does 
 
@@ -12,8 +12,7 @@
 + int = "integer" for numbers without decimals
 + dbl = "double" for numbers with decimals
 + lgl = "logical" for true/false
-+ date = "date"]
-.pull-right[
++ date = "date".pull-right[
 + chr = "character" for character string
 + fct = "factor" for categories that are not ordered
 + ord = "ordered" for ordered categories
@@ -22,7 +21,7 @@
  
 # Demo code 
 
-.scroll-box-8[
+
 ```{r}
 pillar::glimpse(iris)
 ```

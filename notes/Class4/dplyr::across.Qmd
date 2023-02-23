@@ -11,7 +11,7 @@
 # Demo code 
 
 ```{r eval=FALSE}
-laryngectomy %>%
+laryngectomy |> 
   # Convert categorical character variavbles to be factors.
   mutate(
     across(gender:sor, factor)

@@ -1,4 +1,4 @@
-# [`|>`]{.blue}
+# [New Pipe `|>`]{.blue}
  
  
 ### *thing* [|>]{.blue} *thing*{.center} 

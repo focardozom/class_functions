@@ -2,7 +2,7 @@
  
  
 ### 
-.small[[options]{.blue}(*option* = *value*){.center} 
+[options]{.blue}(*option* = *value*){.center} 
  
 # What it does 
 

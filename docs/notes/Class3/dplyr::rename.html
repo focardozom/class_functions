@@ -189,8 +189,30 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h1><span class="blue"><code>dplyr::rename()</code></span></h1>
 <p>You can easily tweak a variable’s name with: .center[<span class="blue"><code>rename</code></span><code>(tableName, newName = oldName)</code>] .small[</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>laryngectomy <span class="sc">%&gt;%</span></span>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>laryngectomy <span class="sc">|&gt;</span> </span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="at">sex =</span> gender)  <span class="co"># from gender to sex</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 123 × 32
+     age   sex recur_s…¹ trt_mod int_stg recur…² preop…³ nk_di…⁴ Later…⁵ mic_v…⁶
+   &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;
+ 1    54     1         2       1       2       3       1       2      NA       2
+ 2    73     1         1       2       3       3       1       1       1       2
+ 3    74     1         1       1       2       2       1       2      NA       2
+ 4    58     1         1       2       2       3       3       1       1       1
+ 5    70     1         2       1       1       4       2       1       1       2
+ 6    60     1         2       1       1       4       1       1       1       1
+ 7    61     1         2       2       4       3       3       1       1       2
+ 8    73     1         3       1       1       3       1       1       1       2
+ 9    83     1         2       1       2       2       2       1       1       2
+10    63     1         3       1       2       4       2       1       2       2
+# … with 113 more rows, 22 more variables: pec_flap &lt;dbl&gt;, pathology &lt;dbl&gt;,
+#   path_stg &lt;dbl&gt;, complications &lt;dbl&gt;, fistula &lt;dbl&gt;, wound_inf &lt;dbl&gt;,
+#   dehiscence &lt;dbl&gt;, wound_comp &lt;dbl&gt;, chyle_leak &lt;dbl&gt;, hematoma &lt;dbl&gt;,
+#   revision_proc &lt;dbl&gt;, flap_fail &lt;dbl&gt;, periop_death &lt;dbl&gt;, med_comp &lt;dbl&gt;,
+#   comp_2plus &lt;dbl&gt;, hosp_stay &lt;dbl&gt;, death &lt;dbl&gt;, recur &lt;dbl&gt;, sor &lt;dbl&gt;,
+#   length_fu &lt;dbl&gt;, death_fu &lt;dbl&gt;, recur_fu &lt;dbl&gt;, and abbreviated variable
+#   names ¹​recur_site, ²​recur_stg, ³​preop_Img_mod, ⁴​nk_dissection, …</code></pre>
+</div>
 </div>
 <p>]</p>
 <section id="na" class="level3 center">

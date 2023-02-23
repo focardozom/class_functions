@@ -11,7 +11,7 @@
 # Demo code 
 
 ```{r eval=FALSE}
-laryngectomy %>%
+laryngectomy |> 
   # Get day of worst outcome: death, reoccurrence, visit, or huge negative number
   mutate(
     outcome_day = coalesce(death_fu, recur_fu, length_fu, -99999999)
