@@ -25,14 +25,29 @@ super_data <- readRDS('data/notes_data.rds') |>
 
 
 reactable(super_data,
+          filterable = TRUE,
   columns = list(
     Notes = colDef(cell = function(value, index) {
       url <- glue("/class_functions/notes/{super_data$Class[index]}/{super_data$Notes[index]}.html")
       htmltools::tags$a(href = url,target = "_blank", as.character(value))
-    },
-    filterable = TRUE)
+    }),
+    Topic = colDef(
+      filterInput = function(values, name) {
+        htmltools::tags$select(
+          # Set to undefined to clear the filter
+          onchange = sprintf("Reactable.setFilter('topic-select', '%s', event.target.value || undefined)", name),
+          # "All" has an empty value to clear the filter, and is the default option
+          htmltools::tags$option(value = "", "All"),
+          lapply(unique(values), htmltools::tags$option),
+          "aria-label" = sprintf("Filter %s", name),
+          style = "width: 100%; height: 28px;"
+        )
+      
+      }
+    )),
+   defaultPageSize = 12,
+  elementId = "topic-select",
   )
-)
 ```
 
 ```{r eval=FALSE}
@@ -49,4 +64,5 @@ reactable(super_data,
   )
 )
 ```
+
 
