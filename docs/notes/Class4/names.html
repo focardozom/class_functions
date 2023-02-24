@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>BST623 functions – dplyrmutate</title>
+<title>BST623 functions – names</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -168,10 +168,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#dplyrmutate" id="toc-dplyrmutate" class="nav-link active" data-scroll-target="#dplyrmutate"><span class="blue"><code>dplyr::mutate()</code></span></a>
-  <ul class="collapse">
-  <li><a href="#mutatedata-variable-stuff" id="toc-mutatedata-variable-stuff" class="nav-link" data-scroll-target="#mutatedata-variable-stuff"><span class="blue">mutate</span>(<em>data</em>, <em>variable</em> = <em>stuff</em>)</a></li>
-  </ul></li>
+  <li><a href="#namesthingy" id="toc-namesthingy" class="nav-link active" data-scroll-target="#namesthingy"><span class="blue">names</span>(<em>thingy</em>)</a></li>
   <li><a href="#what-it-does" id="toc-what-it-does" class="nav-link" data-scroll-target="#what-it-does">What it does</a></li>
   <li><a href="#demo-code" id="toc-demo-code" class="nav-link" data-scroll-target="#demo-code">Demo code</a></li>
   <li><a href="#usefull-stuff" id="toc-usefull-stuff" class="nav-link" data-scroll-target="#usefull-stuff">Usefull stuff</a></li>
@@ -185,43 +182,40 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 
 
-<section id="dplyrmutate" class="level1">
-<h1><span class="blue"><code>dplyr::mutate()</code></span></h1>
-<section id="mutatedata-variable-stuff" class="level3 center">
-<h3 class="center anchored" data-anchor-id="mutatedata-variable-stuff"><span class="blue">mutate</span>(<em>data</em>, <em>variable</em> = <em>stuff</em>)</h3>
-</section>
+<p>#<span class="blue"><code>names()</code></span></p>
+<section id="namesthingy" class="level3 center">
+<h3 class="center anchored" data-anchor-id="namesthingy"><span class="blue">names</span>(<em>thingy</em>)</h3>
 </section>
 <section id="what-it-does" class="level1">
 <h1>What it does</h1>
 <ul>
-<li><span class="blue"><code>mutate()</code></span> is used to create and manipulate variables in the <code>tidyverse</code> ecosystem.</li>
+<li>If you want a print the variable names in a dataset.</li>
 </ul>
 </section>
 <section id="demo-code" class="level1">
 <h1>Demo code</h1>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>mtcars <span class="sc">|&gt;</span> </span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Transmition =</span> <span class="fu">if_else</span>(am <span class="sc">==</span> <span class="dv">0</span>, <span class="st">"Automatic"</span>, <span class="st">"Manual"</span>),</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>         <span class="at">Transmition =</span> <span class="fu">factor</span>(Transmition))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(iris)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Sepal.Length" "Sepal.Width"  "Petal.Length" "Petal.Width"  "Species"     </code></pre>
+</div>
 </div>
 </section>
 <section id="usefull-stuff" class="level1">
 <h1>Usefull stuff</h1>
-<ul>
-<li>You can have any number of comma delimited mutations in one function call.</li>
-<li>The <span class="blue"><code>if_else()</code></span> and <span class="blue"><code>case_when()</code></span> functions are particularly useful with <span class="blue"><code>mutate()</code></span>.</li>
-<li><span class="blue"><code>mutate()</code></span> can apply the same mutation to multiple values if it is mixed with the <span class="blue"><code>across()</code></span> function: mutate(across(c(vs, am), factor)).</li>
-</ul>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>mtcars <span class="sc">|&gt;</span> </span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">across</span>(<span class="fu">c</span>(vs, am), factor)</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>]</p>
 </section>
 <section id="common-problems" class="level1">
 <h1>Common Problems</h1>
+<ul>
+<li>I frequently use it with <span class="blue"><code>dput()</code></span></li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dput</span>(<span class="fu">names</span>(iris))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>c("Sepal.Length", "Sepal.Width", "Petal.Length", "Petal.Width", 
+"Species")</code></pre>
+</div>
+</div>
 </section>
 <section id="related-functions" class="level1">
 <h1>Related Functions</h1>

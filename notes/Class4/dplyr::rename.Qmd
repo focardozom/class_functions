@@ -1,0 +1,33 @@
+# [`dplyr::rename()`]{.blue}
+ 
+ 
+### 
+You can easily tweak a variable’s name with:[rename]{.blue}(tableName, newName = oldName)
+{.center} 
+ 
+# What it does 
+
+  
+ 
+# Demo code 
+
+```{r include=FALSE, warning=FALSE, message=FALSE}
+laryngectomy <- lr4ds::laryngectomy
+library(tidyverse)
+```
+```{r}
+laryngectomy |> 
+  rename(sex = gender)  # from gender to sex
+```
+]
+  
+ 
+# Usefull stuff 
+
+  
+ 
+# Common Problems 
+NA  
+ 
+# Related Functions 
+NA  

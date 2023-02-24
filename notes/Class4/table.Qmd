@@ -1,0 +1,32 @@
+# [`table()`]{.blue}
+ 
+ 
+### [table]{.blue}(*vector(s*)){.center} 
+ 
+# What it does 
+
+
++ Make a summary table of a vector or a pair of vectors.
+  
+ 
+# Demo code 
+
+```{r}
+table(iris$Species)
+table(mtcars$cyl, mtcars$vs)
+```
+  
+ 
+# Usefull stuff 
+
++ [`table()`]{.blue} does not have a dataset option and it does not label well. 
++ It is well suited for quick checks while debugging.
+]
+  
+ 
+# Common Problems 
+
+  
+ 
+# Related Functions 
+NA  

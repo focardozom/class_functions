@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>BST623 functions – dplyrmutate</title>
+<title>BST623 functions – dplyrrename</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -168,9 +168,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#dplyrmutate" id="toc-dplyrmutate" class="nav-link active" data-scroll-target="#dplyrmutate"><span class="blue"><code>dplyr::mutate()</code></span></a>
+  <li><a href="#dplyrrename" id="toc-dplyrrename" class="nav-link active" data-scroll-target="#dplyrrename"><span class="blue"><code>dplyr::rename()</code></span></a>
   <ul class="collapse">
-  <li><a href="#mutatedata-variable-stuff" id="toc-mutatedata-variable-stuff" class="nav-link" data-scroll-target="#mutatedata-variable-stuff"><span class="blue">mutate</span>(<em>data</em>, <em>variable</em> = <em>stuff</em>)</a></li>
+  <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section"></a></li>
   </ul></li>
   <li><a href="#what-it-does" id="toc-what-it-does" class="nav-link" data-scroll-target="#what-it-does">What it does</a></li>
   <li><a href="#demo-code" id="toc-demo-code" class="nav-link" data-scroll-target="#demo-code">Demo code</a></li>
@@ -185,43 +185,52 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 
 
-<section id="dplyrmutate" class="level1">
-<h1><span class="blue"><code>dplyr::mutate()</code></span></h1>
-<section id="mutatedata-variable-stuff" class="level3 center">
-<h3 class="center anchored" data-anchor-id="mutatedata-variable-stuff"><span class="blue">mutate</span>(<em>data</em>, <em>variable</em> = <em>stuff</em>)</h3>
+<section id="dplyrrename" class="level1">
+<h1><span class="blue"><code>dplyr::rename()</code></span></h1>
+<section id="section" class="level3">
+<h3 class="anchored" data-anchor-id="section"></h3>
+<p>You can easily tweak a variable’s name with:<span class="blue">rename</span>(tableName, newName = oldName) {.center}</p>
 </section>
 </section>
 <section id="what-it-does" class="level1">
 <h1>What it does</h1>
-<ul>
-<li><span class="blue"><code>mutate()</code></span> is used to create and manipulate variables in the <code>tidyverse</code> ecosystem.</li>
-</ul>
 </section>
 <section id="demo-code" class="level1">
 <h1>Demo code</h1>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>mtcars <span class="sc">|&gt;</span> </span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Transmition =</span> <span class="fu">if_else</span>(am <span class="sc">==</span> <span class="dv">0</span>, <span class="st">"Automatic"</span>, <span class="st">"Manual"</span>),</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>         <span class="at">Transmition =</span> <span class="fu">factor</span>(Transmition))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>laryngectomy <span class="sc">|&gt;</span> </span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="at">sex =</span> gender)  <span class="co"># from gender to sex</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 123 × 32
+     age   sex recur_s…¹ trt_mod int_stg recur…² preop…³ nk_di…⁴ Later…⁵ mic_v…⁶
+   &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;
+ 1    54     1         2       1       2       3       1       2      NA       2
+ 2    73     1         1       2       3       3       1       1       1       2
+ 3    74     1         1       1       2       2       1       2      NA       2
+ 4    58     1         1       2       2       3       3       1       1       1
+ 5    70     1         2       1       1       4       2       1       1       2
+ 6    60     1         2       1       1       4       1       1       1       1
+ 7    61     1         2       2       4       3       3       1       1       2
+ 8    73     1         3       1       1       3       1       1       1       2
+ 9    83     1         2       1       2       2       2       1       1       2
+10    63     1         3       1       2       4       2       1       2       2
+# … with 113 more rows, 22 more variables: pec_flap &lt;dbl&gt;, pathology &lt;dbl&gt;,
+#   path_stg &lt;dbl&gt;, complications &lt;dbl&gt;, fistula &lt;dbl&gt;, wound_inf &lt;dbl&gt;,
+#   dehiscence &lt;dbl&gt;, wound_comp &lt;dbl&gt;, chyle_leak &lt;dbl&gt;, hematoma &lt;dbl&gt;,
+#   revision_proc &lt;dbl&gt;, flap_fail &lt;dbl&gt;, periop_death &lt;dbl&gt;, med_comp &lt;dbl&gt;,
+#   comp_2plus &lt;dbl&gt;, hosp_stay &lt;dbl&gt;, death &lt;dbl&gt;, recur &lt;dbl&gt;, sor &lt;dbl&gt;,
+#   length_fu &lt;dbl&gt;, death_fu &lt;dbl&gt;, recur_fu &lt;dbl&gt;, and abbreviated variable
+#   names ¹​recur_site, ²​recur_stg, ³​preop_Img_mod, ⁴​nk_dissection, …</code></pre>
 </div>
-</section>
-<section id="usefull-stuff" class="level1">
-<h1>Usefull stuff</h1>
-<ul>
-<li>You can have any number of comma delimited mutations in one function call.</li>
-<li>The <span class="blue"><code>if_else()</code></span> and <span class="blue"><code>case_when()</code></span> functions are particularly useful with <span class="blue"><code>mutate()</code></span>.</li>
-<li><span class="blue"><code>mutate()</code></span> can apply the same mutation to multiple values if it is mixed with the <span class="blue"><code>across()</code></span> function: mutate(across(c(vs, am), factor)).</li>
-</ul>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>mtcars <span class="sc">|&gt;</span> </span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">across</span>(<span class="fu">c</span>(vs, am), factor)</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>]</p>
 </section>
+<section id="usefull-stuff" class="level1">
+<h1>Usefull stuff</h1>
+</section>
 <section id="common-problems" class="level1">
 <h1>Common Problems</h1>
+<p>NA</p>
 </section>
 <section id="related-functions" class="level1">
 <h1>Related Functions</h1>

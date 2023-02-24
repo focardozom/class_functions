@@ -1,0 +1,28 @@
+# [`dput()`]{.blue}
+ 
+ 
+### [dput]{.blue}(*thingy*){.center} 
+ 
+# What it does 
+
++ Print a text version of *any* object in the console (by default).
+  
+ 
+# Demo code 
+
+```{r, comment=""}
+dput(names(iris))
+```
+  
+ 
+# Usefull stuff 
+
++ It is very convenient if you want to get a set of variable names for later processing.
+  
+ 
+# Common Problems 
+
+  
+ 
+# Related Functions 
+NA  

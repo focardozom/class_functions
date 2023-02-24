@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>BST623 functions – dplyrcase_when</title>
+<title>BST623 functions – rep</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -168,9 +168,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#dplyrcase_when" id="toc-dplyrcase_when" class="nav-link active" data-scroll-target="#dplyrcase_when"><span class="blue"><code>dplyr::case_when()</code></span></a>
+  <li><a href="#rep" id="toc-rep" class="nav-link active" data-scroll-target="#rep"><span class="blue"><code>rep()</code></span></a>
   <ul class="collapse">
-  <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section"></a></li>
+  <li><a href="#repvalue" id="toc-repvalue" class="nav-link" data-scroll-target="#repvalue"><span class="blue">rep</span>(value, #)</a></li>
   </ul></li>
   <li><a href="#what-it-does" id="toc-what-it-does" class="nav-link" data-scroll-target="#what-it-does">What it does</a></li>
   <li><a href="#demo-code" id="toc-demo-code" class="nav-link" data-scroll-target="#demo-code">Demo code</a></li>
@@ -185,53 +185,35 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 
 
-<section id="dplyrcase_when" class="level1">
-<h1><span class="blue"><code>dplyr::case_when()</code></span></h1>
-<section id="section" class="level3">
-<h3 class="anchored" data-anchor-id="section"></h3>
-<p><span class="blue">case_when</span> (<em>check</em> ~ <em>response</em>, …, <em>check</em> ~ <em>repsonse</em>){.center}</p>
+<section id="rep" class="level1">
+<h1><span class="blue"><code>rep()</code></span></h1>
+<section id="repvalue" class="level3 center">
+<h3 class="center anchored" data-anchor-id="repvalue"><span class="blue">rep</span>(value, #)</h3>
 </section>
 </section>
 <section id="what-it-does" class="level1">
 <h1>What it does</h1>
 <ul>
-<li><span class="blue"><code>case_when</code></span> does a series of logic checks, in the order listed, and assigns the response from the first check that is true.</li>
+<li>The <span class="blue"><code>rep()</code></span> function is used to repeat something.</li>
 </ul>
 </section>
 <section id="demo-code" class="level1">
 <h1>Demo code</h1>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>laryngectomy <span class="sc">|&gt;</span> </span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    \<span class="st">`</span><span class="at">Pathological Stage</span><span class="st">`</span> <span class="ot">=</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>      <span class="fu">case_when</span>(</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>        path_stg <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>) <span class="sc">~</span> <span class="st">"Early"</span>,</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>        path_stg <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">3</span>, <span class="dv">4</span>) <span class="sc">~</span> <span class="st">"Late"</span>,</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>        <span class="co"># If you didn't know this value existed...</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>        <span class="co"># path_stg == 5 ~ "Unknown",</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>        .default <span class="sc">~</span> <span class="st">"*** PROBLEM ***"</span></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>      )</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span> </span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(\<span class="st">`</span><span class="at">Pathological Stage</span><span class="st">`</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rep</span>(<span class="st">"Cup of Coffee"</span>, <span class="dv">3</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>fam <span class="ot">&lt;-</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tibble</span>(</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">name_first =</span> <span class="fu">c</span>(<span class="st">"Raymond"</span>, <span class="st">"Lori"</span>, <span class="st">"Mary"</span>, <span class="st">"Andrew"</span>, <span class="st">"Ella"</span>, <span class="st">"Snowy"</span>, <span class="st">"Mia"</span>, <span class="st">"Crab"</span>),</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">name_last =</span> <span class="fu">c</span>(<span class="fu">rep</span>(<span class="st">"Balise"</span>, <span class="dv">4</span>), <span class="st">"Johnson"</span>, <span class="fu">rep</span>(<span class="st">"Balise"</span>, <span class="dv">3</span>)),</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">species =</span> <span class="fu">c</span>(<span class="fu">rep</span>(<span class="st">"human"</span>, <span class="dv">5</span>), <span class="fu">c</span>(<span class="st">"Canis lupus familiaris"</span>, <span class="dv">2</span>), <span class="st">"anomuran decapod crustaceans"</span>)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>] .pull-right[</p>
-<div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 3 × 2
-  `Pathological Stage`     n
-  &lt;chr&gt;                &lt;int&gt;
-1 *** PROBLEM ***         19
-2 Early                   26
-3 Late                    78</code></pre>
-</div>
-</div>
-<p>]</p>
 </section>
 <section id="usefull-stuff" class="level1">
 <h1>Usefull stuff</h1>
 <ul>
-<li><span class="blue"><code>case_when()</code></span> often uses <code>TRUE</code> as the last logic check. Because it is always true, it acts like “else” or “otherwise”.</li>
-<li>Use <span class="blue"><code>case_when()</code></span> instead of <span class="blue"><code>if_else()</code></span> if there is <em>any</em> chance the data has unexpected values. ] .related-functions[]</li>
+<li>When creating a new dataset, the base R data.frame function will try to repeat (recycle) values if a variable/column is “short” (i.e., a value is missing). This can be problematic. The tibble function does not automatically recycle values. Use <span class="blue"><code>rep()</code></span> rather that repeatedly typing the same value.</li>
+<li><code>rep()</code> function can do complex repeating patters. rep(c(“fun”, “ado”, “tree”), c(1, 2, 3))</li>
 </ul>
 </section>
 <section id="common-problems" class="level1">

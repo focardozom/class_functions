@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>BST623 functions – pipe</title>
+<title>BST623 functions – table</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -168,9 +168,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#new-pipe" id="toc-new-pipe" class="nav-link active" data-scroll-target="#new-pipe"><span class="blue">New Pipe <code>|&gt;</code></span></a>
+  <li><a href="#table" id="toc-table" class="nav-link active" data-scroll-target="#table"><span class="blue"><code>table()</code></span></a>
   <ul class="collapse">
-  <li><a href="#thing-thing" id="toc-thing-thing" class="nav-link" data-scroll-target="#thing-thing"><em>thing</em> <span class="blue">|&gt;</span> <em>thing</em></a></li>
+  <li><a href="#tablevectors" id="toc-tablevectors" class="nav-link" data-scroll-target="#tablevectors"><span class="blue">table</span>(<em>vector(s</em>))</a></li>
   </ul></li>
   <li><a href="#what-it-does" id="toc-what-it-does" class="nav-link" data-scroll-target="#what-it-does">What it does</a></li>
   <li><a href="#demo-code" id="toc-demo-code" class="nav-link" data-scroll-target="#demo-code">Demo code</a></li>
@@ -185,32 +185,43 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 
 
-<section id="new-pipe" class="level1">
-<h1><span class="blue">New Pipe <code>|&gt;</code></span></h1>
-<section id="thing-thing" class="level3 center">
-<h3 class="center anchored" data-anchor-id="thing-thing"><em>thing</em> <span class="blue">|&gt;</span> <em>thing</em></h3>
+<section id="table" class="level1">
+<h1><span class="blue"><code>table()</code></span></h1>
+<section id="tablevectors" class="level3 center">
+<h3 class="center anchored" data-anchor-id="tablevectors"><span class="blue">table</span>(<em>vector(s</em>))</h3>
 </section>
 </section>
 <section id="what-it-does" class="level1">
 <h1>What it does</h1>
 <ul>
-<li>The base R pipe, <span class="blue"><code>|&gt;</code></span>, is designed to pass an object into the first argument of another function.</li>
+<li>Make a summary table of a vector or a pair of vectors.</li>
 </ul>
 </section>
 <section id="demo-code" class="level1">
 <h1>Demo code</h1>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>mtcars <span class="sc">|&gt;</span> <span class="fu">subset</span>(cyl <span class="sc">==</span> <span class="dv">4</span>) <span class="sc">|&gt;</span> <span class="fu">head</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(iris<span class="sc">$</span>Species)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    setosa versicolor  virginica 
+        50         50         50 </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(mtcars<span class="sc">$</span>cyl, mtcars<span class="sc">$</span>vs)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   
+     0  1
+  4  1 10
+  6  3  4
+  8 14  0</code></pre>
+</div>
 </div>
 </section>
 <section id="usefull-stuff" class="level1">
 <h1>Usefull stuff</h1>
 <ul>
-<li>This pipe is faster than the magrittr pipe (i.e., <span class="blue"><code>%&gt;%</code></span>).</li>
-<li>It can not redirect to any argument other than the first.</li>
-<li>It is of limited use because many critical functions (e.g., <span class="blue"><code>lm()</code></span> and <span class="blue"><code>plot()</code></span>) do not take a dataset as the first argument.</li>
+<li><span class="blue"><code>table()</code></span> does not have a dataset option and it does not label well.</li>
+<li>It is well suited for quick checks while debugging. ]</li>
 </ul>
-<p>.related-functions[]</p>
 </section>
 <section id="common-problems" class="level1">
 <h1>Common Problems</h1>

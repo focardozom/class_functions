@@ -1,0 +1,42 @@
+# [`pillar::glimpse()`]{.blue}
+ 
+ 
+### 
+[glimpse]{.blue}(*dataset*){.center} 
+ 
+# What it does 
+
++ [`glimpse()`]{.blue} is a convenient alternative to [`str()`]{.blue}  for when you want quick look at dataset.
++ [`glimpse()`]{.blue} shows the "type of" each column of data.<br>
+.pull-left[
++ int = "integer" for numbers without decimals
++ dbl = "double" for numbers with decimals
++ lgl = "logical" for true/false
++ date = "date".pull-right[
++ chr = "character" for character string
++ fct = "factor" for categories that are not ordered
++ ord = "ordered" for ordered categories
+]<br>
+  
+ 
+# Demo code 
+
+
+```{r}
+pillar::glimpse(iris)
+```
+]
+  
+ 
+# Usefull stuff 
+
++ [`glimpse()`]{.blue} is in the [`pillar`]{.blue} package but it automatically is loaded with either [`dplyr`]{.blue} or [`tibble`]{.blue}.
+]
+  
+ 
+# Common Problems 
+
+  
+ 
+# Related Functions 
+NA  

@@ -1,0 +1,40 @@
+# [`dplyr::select()`]{.blue} 
+ 
+ 
+### [select]{.blue}(*dataset*, *variables*){.center} 
+ 
+# What it does 
+
++ Use [`select()`]{.blue} to choose variables to keep in a new dataset.
+  
+ 
+# Demo code 
+
+```{r eval = FALSE}
+laryngectomy %>%
+  `select(age, gender, death_fu)`
+complications <- laryngectomy %>%
+   select(complications`:`comp_2plus)
+```
+  
+ 
+# Usefull stuff 
+
++ [`select()`]{.blue} does not do autocomplete.
++ You can refer to variables by position number. The first variable is 1. `r emo::ji("nauseated_face")`.
+ + You can .red[remove/exclude] unwanted variables with a `-`:
+```{r include=FALSE, warning=FALSE, message=FALSE}
+library(tidyverse)
+laryngectomy <- lr4ds::laryngectomy
+```
+```{r eval = FALSE}
+withoutComplicationVars <- laryngectomy |> 
+   select(`-`(complications:comp_2plus))
+```
+  
+ 
+# Common Problems 
+NA  
+ 
+# Related Functions 
+NA  
