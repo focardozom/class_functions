@@ -1,6 +1,17 @@
 # [`c()`]{.blue} is smart! $_1$
+ 
+ 
+### 
+{.center} 
+ 
+# What it does 
+
 + Remember from "topic 1" that R pays attention to the class/type objects.
 + [`c()`]{.blue} will notice if the parts that you are combining are numbers or text and it will make the object the correct class/type.
+  
+ 
+# Demo code 
+
 .pull-left-36[
 ```{r}
 ages <- c(17, 18, 40, 39)
@@ -17,15 +28,7 @@ class(ages)
 ages
 ```
 ]
- 
- 
-### NA{.center} 
- 
-# What it does 
-NA  
- 
-# Demo code 
-NA  
+  
  
 # Usefull stuff 
 NA  

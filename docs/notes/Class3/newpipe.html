@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>BST623 functions – dplyrrename</title>
+<title>BST623 functions – newpipe</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -168,9 +168,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#dplyrrename" id="toc-dplyrrename" class="nav-link active" data-scroll-target="#dplyrrename"><span class="blue"><code>dplyr::rename()</code></span></a>
+  <li><a href="#new-pipe" id="toc-new-pipe" class="nav-link active" data-scroll-target="#new-pipe"><span class="blue">New Pipe <code>|&gt;</code></span></a>
   <ul class="collapse">
-  <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section"></a></li>
+  <li><a href="#thing-thing" id="toc-thing-thing" class="nav-link" data-scroll-target="#thing-thing"><em>thing</em> <span class="blue">|&gt;</span> <em>thing</em></a></li>
   </ul></li>
   <li><a href="#what-it-does" id="toc-what-it-does" class="nav-link" data-scroll-target="#what-it-does">What it does</a></li>
   <li><a href="#demo-code" id="toc-demo-code" class="nav-link" data-scroll-target="#demo-code">Demo code</a></li>
@@ -185,52 +185,34 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 
 
-<section id="dplyrrename" class="level1">
-<h1><span class="blue"><code>dplyr::rename()</code></span></h1>
-<section id="section" class="level3">
-<h3 class="anchored" data-anchor-id="section"></h3>
-<p>You can easily tweak a variable’s name with:<span class="blue">rename</span>(tableName, newName = oldName) {.center}</p>
+<section id="new-pipe" class="level1">
+<h1><span class="blue">New Pipe <code>|&gt;</code></span></h1>
+<section id="thing-thing" class="level3 center">
+<h3 class="center anchored" data-anchor-id="thing-thing"><em>thing</em> <span class="blue">|&gt;</span> <em>thing</em></h3>
 </section>
 </section>
 <section id="what-it-does" class="level1">
 <h1>What it does</h1>
+<ul>
+<li>The base R pipe, <span class="blue"><code>|&gt;</code></span>, is designed to pass an object into the first argument of another function.</li>
+</ul>
 </section>
 <section id="demo-code" class="level1">
 <h1>Demo code</h1>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>laryngectomy <span class="sc">|&gt;</span> </span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="at">sex =</span> gender)  <span class="co"># from gender to sex</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 123 × 32
-     age   sex recur_s…¹ trt_mod int_stg recur…² preop…³ nk_di…⁴ Later…⁵ mic_v…⁶
-   &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;
- 1    54     1         2       1       2       3       1       2      NA       2
- 2    73     1         1       2       3       3       1       1       1       2
- 3    74     1         1       1       2       2       1       2      NA       2
- 4    58     1         1       2       2       3       3       1       1       1
- 5    70     1         2       1       1       4       2       1       1       2
- 6    60     1         2       1       1       4       1       1       1       1
- 7    61     1         2       2       4       3       3       1       1       2
- 8    73     1         3       1       1       3       1       1       1       2
- 9    83     1         2       1       2       2       2       1       1       2
-10    63     1         3       1       2       4       2       1       2       2
-# … with 113 more rows, 22 more variables: pec_flap &lt;dbl&gt;, pathology &lt;dbl&gt;,
-#   path_stg &lt;dbl&gt;, complications &lt;dbl&gt;, fistula &lt;dbl&gt;, wound_inf &lt;dbl&gt;,
-#   dehiscence &lt;dbl&gt;, wound_comp &lt;dbl&gt;, chyle_leak &lt;dbl&gt;, hematoma &lt;dbl&gt;,
-#   revision_proc &lt;dbl&gt;, flap_fail &lt;dbl&gt;, periop_death &lt;dbl&gt;, med_comp &lt;dbl&gt;,
-#   comp_2plus &lt;dbl&gt;, hosp_stay &lt;dbl&gt;, death &lt;dbl&gt;, recur &lt;dbl&gt;, sor &lt;dbl&gt;,
-#   length_fu &lt;dbl&gt;, death_fu &lt;dbl&gt;, recur_fu &lt;dbl&gt;, and abbreviated variable
-#   names ¹​recur_site, ²​recur_stg, ³​preop_Img_mod, ⁴​nk_dissection, …</code></pre>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>mtcars <span class="sc">|&gt;</span> <span class="fu">subset</span>(cyl <span class="sc">==</span> <span class="dv">4</span>) <span class="sc">|&gt;</span> <span class="fu">head</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</div>
-<p>]</p>
 </section>
 <section id="usefull-stuff" class="level1">
 <h1>Usefull stuff</h1>
+<ul>
+<li>This pipe is faster than the magrittr pipe (i.e., <span class="blue"><code>%&gt;%</code></span>).</li>
+<li>It can not redirect to any argument other than the first.</li>
+<li>It is of limited use because many critical functions (e.g., <span class="blue"><code>lm()</code></span> and <span class="blue"><code>plot()</code></span>) do not take a dataset as the first argument.</li>
+</ul>
 </section>
 <section id="common-problems" class="level1">
 <h1>Common Problems</h1>
-<p>NA</p>
 </section>
 <section id="related-functions" class="level1">
 <h1>Related Functions</h1>

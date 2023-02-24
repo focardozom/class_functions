@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>BST623 functions – dplyrfilter</title>
+<title>BST623 functions – mutate</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -168,9 +168,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#dplyrfilter" id="toc-dplyrfilter" class="nav-link active" data-scroll-target="#dplyrfilter"><span class="blue"><code>dplyr::filter()</code></span></a>
+  <li><a href="#mutate-for-errors-and-secret-codes" id="toc-mutate-for-errors-and-secret-codes" class="nav-link active" data-scroll-target="#mutate-for-errors-and-secret-codes"><span class="blue"><code>mutate()</code></span> for Errors and Secret Codes</a>
   <ul class="collapse">
-  <li><a href="#filtertablename-logical-test" id="toc-filtertablename-logical-test" class="nav-link" data-scroll-target="#filtertablename-logical-test"><span class="blue">filter</span>(tableName, logical test)</a></li>
+  <li><a href="#na" id="toc-na" class="nav-link" data-scroll-target="#na">NA</a></li>
   </ul></li>
   <li><a href="#what-it-does" id="toc-what-it-does" class="nav-link" data-scroll-target="#what-it-does">What it does</a></li>
   <li><a href="#demo-code" id="toc-demo-code" class="nav-link" data-scroll-target="#demo-code">Demo code</a></li>
@@ -185,35 +185,40 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 
 
-<section id="dplyrfilter" class="level1">
-<h1><span class="blue"><code>dplyr::filter()</code></span></h1>
-<section id="filtertablename-logical-test" class="level3 center">
-<h3 class="center anchored" data-anchor-id="filtertablename-logical-test"><span class="blue">filter</span>(tableName, logical test)</h3>
+<section id="mutate-for-errors-and-secret-codes" class="level1">
+<h1><span class="blue"><code>mutate()</code></span> for Errors and Secret Codes</h1>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>analysis <span class="ot">&lt;-</span> balise <span class="sc">|&gt;</span> </span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">middle =</span> <span class="fu">if_else</span>(middle <span class="sc">==</span> <span class="st">"x"</span>, <span class="cn">NA_character_</span>, middle)) <span class="sc">|&gt;</span> </span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">births =</span> <span class="fu">if_else</span>(births <span class="sc">&lt;</span> <span class="dv">0</span>, <span class="cn">NA_real_</span>, births))</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>analysis</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 5 × 3
+  first   middle  births
+  &lt;chr&gt;   &lt;chr&gt;    &lt;dbl&gt;
+1 Lori    Ann          2
+2 Raymond Russell     NA
+3 Mary    Kathryn      0
+4 Snowy   &lt;NA&gt;        NA
+5 Crab    &lt;NA&gt;        NA</code></pre>
+</div>
+</div>
+<p>Notice the print method for black and white puts NA inside of &lt;&gt;. I prefer the print method used in the console.</p>
+<section id="na" class="level3 center">
+<h3 class="center anchored" data-anchor-id="na">NA</h3>
 </section>
 </section>
 <section id="what-it-does" class="level1">
 <h1>What it does</h1>
-<ul>
-<li>Use <span class="blue"><code>filter()</code></span> to pick rows/records.</li>
-<li>Inside the <span class="blue"><code>()</code></span> you put a logic check.</li>
-<li><span class="blue"><code>filter()</code></span> keeps rows/records where the logic check is true.</li>
-</ul>
+<p>NA</p>
 </section>
 <section id="demo-code" class="level1">
 <h1>Demo code</h1>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>laryngectomy <span class="sc">%&gt;%</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(death <span class="sc">==</span> <span class="dv">1</span>)  <span class="co"># the people who died</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>laryngectomy <span class="sc">%&gt;%</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">is.na</span>(pathology))  <span class="co"># people missing pathology</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>laryngectomy <span class="sc">%&gt;%</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(pathology))  <span class="co"># people not missing pathology</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>laryngectomy <span class="sc">%&gt;%</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(pathology <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>)) <span class="co"># people with values of 1 or 2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
+<p>NA</p>
 </section>
 <section id="usefull-stuff" class="level1">
 <h1>Usefull stuff</h1>
+<p>NA</p>
 </section>
 <section id="common-problems" class="level1">
 <h1>Common Problems</h1>

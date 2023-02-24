@@ -21,7 +21,6 @@ mtcars |> subset(cyl == 4) |> head()
 + It can not redirect to any argument other than the first.
 + It is of limited use because many critical functions (e.g., [`lm()`]{.blue} and [`plot()`]{.blue}) do not take a dataset as the first argument.
  
-.related-functions[]
   
  
 # Common Problems 
