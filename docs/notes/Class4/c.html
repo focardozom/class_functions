@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>BST623 functions – summarize</title>
+<title>BST623 functions – c</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -169,7 +169,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#summarize-to-make-rowsrecords-with-statistics.-_1" id="toc-summarize-to-make-rowsrecords-with-statistics.-_1" class="nav-link active" data-scroll-target="#summarize-to-make-rowsrecords-with-statistics.-_1"><span class="blue"><code>summarize()</code></span> to make rows/records with statistics. <span class="math inline">\(_1\)</span></a>
+  <li><a href="#c-is-smart-_1" id="toc-c-is-smart-_1" class="nav-link active" data-scroll-target="#c-is-smart-_1"><span class="blue"><code>c()</code></span> is smart! <span class="math inline">\(_1\)</span></a>
   <ul class="collapse">
   <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section"></a></li>
   </ul></li>
@@ -186,55 +186,55 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 
 
-<section id="summarize-to-make-rowsrecords-with-statistics.-_1" class="level1">
-<h1><span class="blue"><code>summarize()</code></span> to make rows/records with statistics. <span class="math inline">\(_1\)</span></h1>
+<section id="c-is-smart-_1" class="level1">
+<h1><span class="blue"><code>c()</code></span> is smart! <span class="math inline">\(_1\)</span></h1>
 <section id="section" class="level3">
 <h3 class="anchored" data-anchor-id="section"></h3>
-<p><span class="blue">summarize</span>(tableName, newName = aggregateFunction)<br>
-<span class="blue">summarize</span>(tableName, aSum = sum(a), anAvg = mean(b), theVar = var(b)){.center}</p>
+<p>{.center}</p>
 </section>
 </section>
 <section id="what-it-does" class="level1">
 <h1>What it does</h1>
 <ul>
-<li>Make a new dataset with summary statistics</li>
-<li>Use it to take a vector and output a single number</li>
-<li>Only keeps the new variables</li>
-<li>Base aggregate functions
-<ul>
-<li>min max mean median quantile sd var IQR diff length sum</li>
-</ul></li>
-<li>dplyr aggregate functions
-<ul>
-<li>first last nth n n_distinct</li>
-</ul></li>
+<li>Remember from “topic 1” that R pays attention to the class/type objects.</li>
+<li><span class="blue"><code>c()</code></span> will notice if the parts that you are combining are numbers or text and it will make the object the correct class/type.</li>
 </ul>
 </section>
 <section id="demo-code" class="level1">
 <h1>Demo code</h1>
+<p>.pull-left-36[</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>laryngectomy <span class="sc">|&gt;</span> </span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>{{  <span class="fu">summarize</span>(<span class="at">theMinFU =</span> <span class="fu">min</span>(length_fu),<span class="er">}}</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>{{            theMeanFU <span class="ot">=</span> <span class="fu">mean</span>(length_fu),}}</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>{{            theMaxFU <span class="ot">=</span> <span class="fu">max</span>(length_fu)<span class="er">)</span>}}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>ages <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">17</span>, <span class="dv">18</span>, <span class="dv">40</span>, <span class="dv">39</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(ages)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "numeric"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>ages</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 17 18 40 39</code></pre>
+</div>
+</div>
+<p>] <br> – .pull-right-60[</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>ages <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"seventeen"</span>, <span class="st">"eighteen"</span>, <span class="st">"forty"</span>, <span class="st">"thirty nine"</span>)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(ages)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "character"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>ages</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "seventeen"   "eighteen"    "forty"       "thirty nine"</code></pre>
+</div>
 </div>
 <p>]</p>
-<div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 1 × 3
-  theMinFU theMeanFU theMaxFU
-     &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;
-1        6     1148.     4441</code></pre>
-</div>
-</div>
-<p>] ]</p>
 </section>
 <section id="usefull-stuff" class="level1">
 <h1>Usefull stuff</h1>
-<p>.related-functions[]</p>
+<p>NA</p>
 </section>
 <section id="common-problems" class="level1">
 <h1>Common Problems</h1>
+<p>NA</p>
 </section>
 <section id="related-functions" class="level1">
 <h1>Related Functions</h1>

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>BST623 functions – group_by</title>
+<title>BST623 functions – dput</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -122,7 +122,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   }
 }</script>
 
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 </head>
 
@@ -169,9 +168,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#group_by-_1" id="toc-group_by-_1" class="nav-link active" data-scroll-target="#group_by-_1"><span class="blue"><code>group_by()</code></span> <span class="math inline">\(_1\)</span></a>
+  <li><a href="#dput" id="toc-dput" class="nav-link active" data-scroll-target="#dput"><span class="blue"><code>dput()</code></span></a>
   <ul class="collapse">
-  <li><a href="#group_bytablename-groupingvariable" id="toc-group_bytablename-groupingvariable" class="nav-link" data-scroll-target="#group_bytablename-groupingvariable"><span class="blue">group_by</span>(tableName, groupingVariable)</a></li>
+  <li><a href="#dputthingy" id="toc-dputthingy" class="nav-link" data-scroll-target="#dputthingy"><span class="blue">dput</span>(<em>thingy</em>)</a></li>
   </ul></li>
   <li><a href="#what-it-does" id="toc-what-it-does" class="nav-link" data-scroll-target="#what-it-does">What it does</a></li>
   <li><a href="#demo-code" id="toc-demo-code" class="nav-link" data-scroll-target="#demo-code">Demo code</a></li>
@@ -186,46 +185,33 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 
 
-<section id="group_by-_1" class="level1">
-<h1><span class="blue"><code>group_by()</code></span> <span class="math inline">\(_1\)</span></h1>
-<section id="group_bytablename-groupingvariable" class="level3 center">
-<h3 class="center anchored" data-anchor-id="group_bytablename-groupingvariable"><span class="blue">group_by</span>(tableName, groupingVariable)</h3>
+<section id="dput" class="level1">
+<h1><span class="blue"><code>dput()</code></span></h1>
+<section id="dputthingy" class="level3 center">
+<h3 class="center anchored" data-anchor-id="dputthingy"><span class="blue">dput</span>(<em>thingy</em>)</h3>
 </section>
 </section>
 <section id="what-it-does" class="level1">
 <h1>What it does</h1>
-<p>Before dplyr 1.1 to get groups you would tag the dataset as having a grouping variable:</p>
+<ul>
+<li>Print a text version of <em>any</em> object in the console (by default).</li>
+</ul>
 </section>
 <section id="demo-code" class="level1">
 <h1>Demo code</h1>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>laryngectomy <span class="sc">|&gt;</span> </span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(gender, length_fu) <span class="sc">|&gt;</span> </span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="st">`</span><span class="at">group_by(gender)</span><span class="st">`</span> <span class="co"># marks the grouping variable</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dput</span>(<span class="fu">names</span>(iris))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 123 × 2
-# Groups:   gender [2]
-   gender length_fu
-    &lt;dbl&gt;     &lt;dbl&gt;
- 1      1       103
- 2      1       240
- 3      1        93
- 4      1       546
- 5      1       208
- 6      1       199
- 7      1       155
- 8      1       480
- 9      1        23
-10      1        48
-# … with 113 more rows</code></pre>
+<pre><code>c("Sepal.Length", "Sepal.Width", "Petal.Length", "Petal.Width", 
+"Species")</code></pre>
 </div>
 </div>
 </section>
 <section id="usefull-stuff" class="level1">
 <h1>Usefull stuff</h1>
-<p>.related-functions[]</p>
+<ul>
+<li>It is very convenient if you want to get a set of variable names for later processing.</li>
+</ul>
 </section>
 <section id="common-problems" class="level1">
 <h1>Common Problems</h1>

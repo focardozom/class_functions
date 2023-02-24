@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>BST623 functions – dplyracross</title>
+<title>BST623 functions – format</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -168,9 +168,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#dplyracross-with-dplyrmutate" id="toc-dplyracross-with-dplyrmutate" class="nav-link active" data-scroll-target="#dplyracross-with-dplyrmutate"><span class="blue"><code>dplyr::across()</code></span> with <span class="blue"><code>dplyr::mutate()</code></span></a>
+  <li><a href="#format" id="toc-format" class="nav-link active" data-scroll-target="#format"><span class="blue"><code>format()</code></span></a>
   <ul class="collapse">
-  <li><a href="#acrossvaraibles-function" id="toc-acrossvaraibles-function" class="nav-link" data-scroll-target="#acrossvaraibles-function"><span class="blue">across</span>(varaibles), function</a></li>
+  <li><a href="#formatnumbers-scientificfalse" id="toc-formatnumbers-scientificfalse" class="nav-link" data-scroll-target="#formatnumbers-scientificfalse"><span class="blue">format</span>(<em>number(s)</em>, scientific=FALSE)</a></li>
   </ul></li>
   <li><a href="#what-it-does" id="toc-what-it-does" class="nav-link" data-scroll-target="#what-it-does">What it does</a></li>
   <li><a href="#demo-code" id="toc-demo-code" class="nav-link" data-scroll-target="#demo-code">Demo code</a></li>
@@ -185,32 +185,33 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 
 
-<section id="dplyracross-with-dplyrmutate" class="level1">
-<h1><span class="blue"><code>dplyr::across()</code></span> with <span class="blue"><code>dplyr::mutate()</code></span></h1>
-<section id="acrossvaraibles-function" class="level3 center">
-<h3 class="center anchored" data-anchor-id="acrossvaraibles-function"><span class="blue">across</span>(varaibles), function</h3>
+<section id="format" class="level1">
+<h1><span class="blue"><code>format()</code></span></h1>
+<section id="formatnumbers-scientificfalse" class="level3 center">
+<h3 class="center anchored" data-anchor-id="formatnumbers-scientificfalse"><span class="blue">format</span>(<em>number(s)</em>, scientific=FALSE)</h3>
 </section>
 </section>
 <section id="what-it-does" class="level1">
 <h1>What it does</h1>
 <ul>
-<li>The <span class="blue"><code>across()</code></span> function with <span class="blue"><code>mutate()</code></span> does the same mutation to multiple variables.</li>
+<li>Use <span class="blue"><code>format()</code></span> to display numbers and text many formats and alignment options.</li>
 </ul>
 </section>
 <section id="demo-code" class="level1">
 <h1>Demo code</h1>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>laryngectomy <span class="sc">|&gt;</span> </span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Convert categorical character variavbles to be factors.</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">across</span>(gender<span class="sc">:</span>sor, factor)</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>huge <span class="ot">&lt;-</span> <span class="dv">1000000000000000</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span>(huge, <span class="at">big.mark=</span><span class="st">","</span>, <span class="at">scientific=</span><span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "1,000,000,000,000,000"</code></pre>
+</div>
 </div>
 </section>
 <section id="usefull-stuff" class="level1">
 <h1>Usefull stuff</h1>
 <ul>
-<li>The <span class="blue"><code>across()</code></span> function is used with <span class="blue"><code>dplyr::summarise</code></span> to apply the same summary statistics to many variables. .related-functions[]</li>
+<li><span class="blue"><code>format()</code></span> is useful for showing huge and tiny numbers without scientific notation.</li>
+<li><span class="blue"><code>format()</code></span> can be use display aligned text.</li>
 </ul>
 </section>
 <section id="common-problems" class="level1">

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>BST623 functions – tally</title>
+<title>BST623 functions – slice_sample</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -168,9 +168,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#tally" id="toc-tally" class="nav-link active" data-scroll-target="#tally"><span class="blue"><code>tally()</code></span></a>
+  <li><a href="#slice_sample-grabs-a-few-records." id="toc-slice_sample-grabs-a-few-records." class="nav-link active" data-scroll-target="#slice_sample-grabs-a-few-records."><span class="blue"><code>slice_sample()</code></span> grabs a few records.</a>
   <ul class="collapse">
-  <li><a href="#tallydataset-variable" id="toc-tallydataset-variable" class="nav-link" data-scroll-target="#tallydataset-variable"><span class="blue">tally</span>(dataset, variable)</a></li>
+  <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section"></a></li>
   </ul></li>
   <li><a href="#what-it-does" id="toc-what-it-does" class="nav-link" data-scroll-target="#what-it-does">What it does</a></li>
   <li><a href="#demo-code" id="toc-demo-code" class="nav-link" data-scroll-target="#demo-code">Demo code</a></li>
@@ -185,52 +185,44 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 
 
-<section id="tally" class="level1">
-<h1><span class="blue"><code>tally()</code></span></h1>
-<section id="tallydataset-variable" class="level3 center">
-<h3 class="center anchored" data-anchor-id="tallydataset-variable"><span class="blue">tally</span>(dataset, variable)</h3>
+<section id="slice_sample-grabs-a-few-records." class="level1">
+<h1><span class="blue"><code>slice_sample()</code></span> grabs a few records.</h1>
+<section id="section" class="level3">
+<h3 class="anchored" data-anchor-id="section"></h3>
+<p>{.center}</p>
 </section>
 </section>
 <section id="what-it-does" class="level1">
 <h1>What it does</h1>
-<p>It adds up the values:</p>
+<p>If you have a lot of data, you can easily use <span class="blue"><code>slice_sample()</code></span> with the <span class="blue"><code>n =</code></span> or <span class="blue"><code>prop =</code></span> arguments to take a sample for doing preliminary work. Be sure to use the base R <span class="blue"><code>set.seed()</code></span> function before <span class="blue"><code>slice_sample()</code></span> to specify which set of random records to select.</p>
 </section>
 <section id="demo-code" class="level1">
 <h1>Demo code</h1>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>sexVars <span class="ot">&lt;-</span> laryngectomy <span class="sc">|&gt;</span> </span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">isMale =</span> <span class="dv">2</span> <span class="sc">-</span> gender ) <span class="sc">|&gt;</span> </span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">sex =</span> <span class="fu">as.character</span>(isMale)) <span class="sc">|&gt;</span> </span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">sex =</span> <span class="fu">fct_recode</span>(sex,</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>                          <span class="st">"Female"</span> <span class="ot">=</span> <span class="st">"0"</span>,</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>                          <span class="st">"Male"</span> <span class="ot">=</span> <span class="st">"1"</span>))</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  sexVars <span class="sc">%&gt;%</span> <span class="st">`</span><span class="at">tally(gender)</span><span class="st">`</span>  <span class="co"># adds up 1s and 2s</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  sexVars <span class="sc">%&gt;%</span> <span class="st">`</span><span class="at">tally(isMale)</span><span class="st">`</span>  <span class="co"># adds up 0s and 1s</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co"># sexVars %&gt;% tally(sex)  # can't sum up "Male" and "Female"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>]</p>
-<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>laryngectomy <span class="sc">|&gt;</span> </span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(age, gender, recur_site, trt_mod, int_stg, recur_stg)  <span class="sc">|&gt;</span> </span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice_sample</span>(<span class="at">prop =</span> .<span class="dv">05</span>)  <span class="co"># a random 5% of the data</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 1 × 1
-      n
-  &lt;dbl&gt;
-1   130</code></pre>
+<pre><code># A tibble: 6 × 6
+    age gender recur_site trt_mod int_stg recur_stg
+  &lt;dbl&gt;  &lt;dbl&gt;      &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;     &lt;dbl&gt;
+1    70      1          3       1       2         3
+2    66      1          2       1       1         2
+3    81      1          2       1       2         4
+4    74      1          2       2       2         2
+5    83      1          3       1       1         3
+6    84      1          2       1       1         3</code></pre>
 </div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 1 × 1
-      n
-  &lt;dbl&gt;
-1   116</code></pre>
 </div>
-</div>
-<p>]</p>
 </section>
 <section id="usefull-stuff" class="level1">
 <h1>Usefull stuff</h1>
-<p>??? This was a good trick… r theTallyTable, eval = FALSE r theTallyTableOut, ref.label=“theTallyTable”, echo=FALSE .related-functions[]</p>
+<p>NA</p>
 </section>
 <section id="common-problems" class="level1">
 <h1>Common Problems</h1>
+<p>NA</p>
 </section>
 <section id="related-functions" class="level1">
 <h1>Related Functions</h1>
