@@ -25,7 +25,6 @@ fam <-
 
 + When creating a new dataset, the base R data.frame function will try to repeat (recycle) values if a variable/column is "short" (i.e., a value is missing).  This can be problematic. The tibble function does not automatically recycle values.  Use [`rep()`]{.blue} rather that repeatedly typing the same value.
 + `rep()` function can do complex repeating patters. rep(c("fun", "ado", "tree"), c(1, 2, 3))
-.related-functions[]
   
  
 # Common Problems 

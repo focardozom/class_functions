@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>BST623 functions – pillarglimpse</title>
+<title>BST623 functions – count</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -168,9 +168,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#pillarglimpse" id="toc-pillarglimpse" class="nav-link active" data-scroll-target="#pillarglimpse"><span class="blue"><code>pillar::glimpse()</code></span></a>
+  <li><a href="#count" id="toc-count" class="nav-link active" data-scroll-target="#count"><span class="blue"><code>count()</code></span></a>
   <ul class="collapse">
-  <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section"></a></li>
+  <li><a href="#counttable-variables" id="toc-counttable-variables" class="nav-link" data-scroll-target="#counttable-variables"><span class="blue">count</span>(table, variables)</a></li>
   </ul></li>
   <li><a href="#what-it-does" id="toc-what-it-does" class="nav-link" data-scroll-target="#what-it-does">What it does</a></li>
   <li><a href="#demo-code" id="toc-demo-code" class="nav-link" data-scroll-target="#demo-code">Demo code</a></li>
@@ -185,48 +185,55 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 
 
-<section id="pillarglimpse" class="level1">
-<h1><span class="blue"><code>pillar::glimpse()</code></span></h1>
-<section id="section" class="level3">
-<h3 class="anchored" data-anchor-id="section"></h3>
-<p><span class="blue">glimpse</span>(<em>dataset</em>){.center}</p>
+<section id="count" class="level1">
+<h1><span class="blue"><code>count()</code></span></h1>
+<section id="counttable-variables" class="level3 center">
+<h3 class="center anchored" data-anchor-id="counttable-variables"><span class="blue">count</span>(table, variables)</h3>
 </section>
 </section>
 <section id="what-it-does" class="level1">
 <h1>What it does</h1>
-<ul>
-<li><span class="blue"><code>glimpse()</code></span> is a convenient alternative to <span class="blue"><code>str()</code></span> for when you want quick look at dataset.</li>
-<li><span class="blue"><code>glimpse()</code></span> shows the “type of” each column of data.<br> .pull-left[</li>
-<li>int = “integer” for numbers without decimals</li>
-<li>dbl = “double” for numbers with decimals</li>
-<li>lgl = “logical” for true/false</li>
-<li>date = “date”.pull-right[</li>
-<li>chr = “character” for character string</li>
-<li>fct = “factor” for categories that are not ordered</li>
-<li>ord = “ordered” for ordered categories ]<br></li>
-</ul>
+<p><code>dplyr</code> can do fancy summary statistics but <span class="blue"><code>count()</code></span> is quick, easy and useful for frequency counts:</p>
 </section>
 <section id="demo-code" class="level1">
 <h1>Demo code</h1>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>pillar<span class="sc">::</span><span class="fu">glimpse</span>(iris)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>laryngectomy <span class="sc">|&gt;</span> </span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">isMale =</span> <span class="dv">2</span> <span class="sc">-</span> gender )  <span class="sc">|&gt;</span> </span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">sex =</span> <span class="fu">as.character</span>(isMale))  <span class="sc">|&gt;</span> </span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">sex =</span> <span class="fu">fct_recode</span>(sex,</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>                          <span class="st">"Female"</span> <span class="ot">=</span> <span class="st">"0"</span>,</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>                          <span class="st">"Male"</span> <span class="ot">=</span> <span class="st">"1"</span>))  <span class="sc">|&gt;</span> </span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">stage =</span> <span class="fu">fct_recode</span>(<span class="fu">as.character</span>(int_stg),</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>                          <span class="st">"T1"</span> <span class="ot">=</span> <span class="st">"1"</span>,</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>                          <span class="st">"T2"</span> <span class="ot">=</span> <span class="st">"2"</span>,</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>                          <span class="st">"T3"</span> <span class="ot">=</span> <span class="st">"3"</span>,</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>                          <span class="st">"T4"</span> <span class="ot">=</span> <span class="st">"4"</span>,</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>                          <span class="st">"Unknown"</span> <span class="ot">=</span> <span class="st">"5"</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  <span class="st">`</span><span class="at">count(sex, stage)</span><span class="st">`</span> <span class="sc">|&gt;</span> </span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(sex, stage)  <span class="co"># this just sorts by sex then stage</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>]</p>
+<div class="cell">
 <div class="cell-output cell-output-stdout">
-<pre><code>Rows: 150
-Columns: 5
-$ Sepal.Length &lt;dbl&gt; 5.1, 4.9, 4.7, 4.6, 5.0, 5.4, 4.6, 5.0, 4.4, 4.9, 5.4, 4.…
-$ Sepal.Width  &lt;dbl&gt; 3.5, 3.0, 3.2, 3.1, 3.6, 3.9, 3.4, 3.4, 2.9, 3.1, 3.7, 3.…
-$ Petal.Length &lt;dbl&gt; 1.4, 1.4, 1.3, 1.5, 1.4, 1.7, 1.4, 1.5, 1.4, 1.5, 1.5, 1.…
-$ Petal.Width  &lt;dbl&gt; 0.2, 0.2, 0.2, 0.2, 0.2, 0.4, 0.3, 0.2, 0.2, 0.1, 0.2, 0.…
-$ Species      &lt;fct&gt; setosa, setosa, setosa, setosa, setosa, setosa, setosa, s…</code></pre>
+<pre><code># A tibble: 9 × 3
+  sex    stage       n
+  &lt;fct&gt;  &lt;fct&gt;   &lt;int&gt;
+1 Female T1          1
+2 Female T2          1
+3 Female T3          1
+4 Female Unknown     4
+5 Male   T1         53
+6 Male   T2         34
+7 Male   T3          8
+8 Male   T4          4
+9 Male   Unknown    17</code></pre>
 </div>
 </div>
 <p>]</p>
 </section>
 <section id="usefull-stuff" class="level1">
 <h1>Usefull stuff</h1>
-<ul>
-<li><span class="blue"><code>glimpse()</code></span> is in the <span class="blue"><code>pillar</code></span> package but it automatically is loaded with either <span class="blue"><code>dplyr</code></span> or <span class="blue"><code>tibble</code></span>. ]</li>
-</ul>
 </section>
 <section id="common-problems" class="level1">
 <h1>Common Problems</h1>

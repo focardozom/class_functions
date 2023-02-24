@@ -170,7 +170,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <ul>
   <li><a href="#selects-helper-functions" id="toc-selects-helper-functions" class="nav-link active" data-scroll-target="#selects-helper-functions"><span class="blue"><code>select()</code></span>’s Helper Functions</a>
   <ul class="collapse">
-  <li><a href="#na" id="toc-na" class="nav-link" data-scroll-target="#na">NA</a></li>
+  <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section"></a></li>
   </ul></li>
   <li><a href="#what-it-does" id="toc-what-it-does" class="nav-link" data-scroll-target="#what-it-does">What it does</a></li>
   <li><a href="#demo-code" id="toc-demo-code" class="nav-link" data-scroll-target="#demo-code">Demo code</a></li>
@@ -187,6 +187,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <section id="selects-helper-functions" class="level1">
 <h1><span class="blue"><code>select()</code></span>’s Helper Functions</h1>
+<section id="section" class="level3">
+<h3 class="anchored" data-anchor-id="section"></h3>
+<p>{.center}</p>
+</section>
+</section>
+<section id="what-it-does" class="level1">
+<h1>What it does</h1>
 <ul>
 <li><span class="blue"><code>starts_with("X")</code></span>: every name that starts with “X”</li>
 <li><span class="blue"><code>ends_with("X")</code></span>: every name that ends with “X”</li>
@@ -195,6 +202,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><span class="blue"><code>num_range("x", 1:5)</code></span>: the variables named x01, x02, x03, x04 and x05</li>
 <li><span class="blue"><code>one_of(x)</code></span>: every name that appears in x, which should be a character vector</li>
 </ul>
+</section>
+<section id="demo-code" class="level1">
+<h1>Demo code</h1>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>laryngectomy <span class="sc">|&gt;</span> </span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>   <span class="fu">select</span>(<span class="st">`</span><span class="at">ends_with("_fu")</span><span class="st">`</span>) <span class="sc">|&gt;</span> </span>
@@ -209,21 +219,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 2       240       NA       NA</code></pre>
 </div>
 </div>
-<section id="na" class="level3 center">
-<h3 class="center anchored" data-anchor-id="na">NA</h3>
-</section>
-</section>
-<section id="what-it-does" class="level1">
-<h1>What it does</h1>
-<p>NA</p>
-</section>
-<section id="demo-code" class="level1">
-<h1>Demo code</h1>
-<p>NA</p>
 </section>
 <section id="usefull-stuff" class="level1">
 <h1>Usefull stuff</h1>
-<p>NA</p>
 </section>
 <section id="common-problems" class="level1">
 <h1>Common Problems</h1>

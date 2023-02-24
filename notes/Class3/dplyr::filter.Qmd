@@ -1,8 +1,17 @@
 # [`dplyr::filter()`]{.blue}
-.center[[`filter`]{.blue}`(tableName, logical test)`]
+ 
+ 
+### [filter]{.blue}(tableName, logical test){.center} 
+ 
+# What it does 
+
 + Use [`filter()`]{.blue} to pick rows/records.
 + Inside the [`()`]{.blue} you put a logic check. 
 + [`filter()`]{.blue} keeps rows/records where the logic check is true.  
+  
+ 
+# Demo code 
+
 ```{r, eval=FALSE}
 laryngectomy %>%
   filter(death == 1)  # the people who died
@@ -13,18 +22,11 @@ laryngectomy %>%
 laryngectomy %>%
   filter(pathology %in% c(1, 2)) # people with values of 1 or 2
 ```
- 
- 
-### NA{.center} 
- 
-# What it does 
-NA  
- 
-# Demo code 
-NA  
+  
  
 # Usefull stuff 
-NA  
+
+  
  
 # Common Problems 
 NA  

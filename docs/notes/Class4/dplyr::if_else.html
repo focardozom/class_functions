@@ -194,25 +194,29 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <section id="what-it-does" class="level1">
 <h1>What it does</h1>
 <ul>
-<li><code>if_else()</code> checks the truth of a logic <em>check</em> on a variable/vector and returns the <em>true</em> argument if it is true or the <em>false</em> argument otherwise.</li>
+<li><code>if_else()</code> checks the truth of a logic <em>check</em> on a variable/vector and returns the <em>true</em> argument if it is true or the <em>false</em> argument if it is not true.</li>
 </ul>
 </section>
 <section id="demo-code" class="level1">
 <h1>Demo code</h1>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">if_else</span>(mtcars<span class="sc">$</span>am <span class="sc">==</span> <span class="dv">0</span>, <span class="st">"Automatic"</span>, <span class="st">"Manual"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>laryngectomy <span class="sc">|&gt;</span> </span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(  <span class="co"># does the initial stage agree with final pathology staging?</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">path_result =</span> <span class="fu">if_else</span>(int_stg <span class="sc">!=</span> path_stg, <span class="st">"Changed"</span>, <span class="st">"Same"</span>)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span> </span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(int_stg, path_stg, path_result)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="usefull-stuff" class="level1">
 <h1>Usefull stuff</h1>
 <ul>
 <li>The logic check can involve any number of variables.</li>
-<li><span class="blue"><code>if_else()</code></span> is often used with <span class="blue"><code>dplyr::mutate()</code></span></li>
 <li><span class="blue"><code>if_else()</code></span> is dangerous because unexpected values can be binned in the <em>false</em> level/group.</li>
 </ul>
 </section>
 <section id="common-problems" class="level1">
 <h1>Common Problems</h1>
+<p>NA</p>
 </section>
 <section id="related-functions" class="level1">
 <h1>Related Functions</h1>

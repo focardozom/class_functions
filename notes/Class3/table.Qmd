@@ -22,7 +22,6 @@ table(mtcars$cyl, mtcars$vs)
 + [`table()`]{.blue} does not have a dataset option and it does not label well. 
 + It is well suited for quick checks while debugging.
 ]
-.related-functions[]
   
  
 # Common Problems 

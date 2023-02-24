@@ -18,7 +18,6 @@ dput(names(iris))
 # Usefull stuff 
 
 + It is very convenient if you want to get a set of variable names for later processing.
-.related-functions[]
   
  
 # Common Problems 

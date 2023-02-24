@@ -170,7 +170,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <ul>
   <li><a href="#tibbletibble" id="toc-tibbletibble" class="nav-link active" data-scroll-target="#tibbletibble"><span class="blue"><code>tibble::tibble()</code></span></a>
   <ul class="collapse">
-  <li><a href="#na" id="toc-na" class="nav-link" data-scroll-target="#na">NA</a></li>
+  <li><a href="#tibblethings" id="toc-tibblethings" class="nav-link" data-scroll-target="#tibblethings"><span class="blue">tibble</span>(thing(s))</a></li>
   </ul></li>
   <li><a href="#what-it-does" id="toc-what-it-does" class="nav-link" data-scroll-target="#what-it-does">What it does</a></li>
   <li><a href="#demo-code" id="toc-demo-code" class="nav-link" data-scroll-target="#demo-code">Demo code</a></li>
@@ -187,7 +187,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <section id="tibbletibble" class="level1">
 <h1><span class="blue"><code>tibble::tibble()</code></span></h1>
-<p>.center[<span class="blue"><code>tibble</code></span><code>(thing(s))</code>] .small[ + The <span class="blue"><code>tibble()</code></span> function will convert base R vectors or a <code>data.frame</code> into a tidyverse <code>tibble</code></p>
+<section id="tibblethings" class="level3">
+<h3 class="anchored" data-anchor-id="tibblethings"><span class="blue">tibble</span>(thing(s))</h3>
+<p>{.center}</p>
+</section>
+</section>
+<section id="what-it-does" class="level1">
+<h1>What it does</h1>
+<ul>
+<li>The <span class="blue"><code>tibble()</code></span> function will convert base R vectors or a <code>data.frame</code> into a tidyverse <code>tibble</code></li>
+</ul>
+</section>
+<section id="demo-code" class="level1">
+<h1>Demo code</h1>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>mtcars <span class="ot">&lt;-</span> <span class="fu">as_tibble</span>(mtcars)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>fam <span class="ot">&lt;-</span></span>
@@ -197,6 +209,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">species =</span> <span class="fu">c</span>(<span class="fu">rep</span>(<span class="st">"h. sapiens"</span>, <span class="dv">5</span>), <span class="fu">c</span>(<span class="st">"canis lupus familiaris"</span>, <span class="dv">2</span>), <span class="st">"anomuran decapod crustaceans"</span>)</span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+</section>
+<section id="usefull-stuff" class="level1">
+<h1>Usefull stuff</h1>
 <ul>
 <li><code>tibble</code>s have a useful print method.</li>
 <li><code>tibbles</code> do not use row names. Convert row names to a variable with <code>rownames_to_column()</code></li>
@@ -207,21 +222,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Column names are not converted to base names (e.g.&nbsp;spaces are allowed). ]</li>
 </ul></li>
 </ul>
-<section id="na" class="level3 center">
-<h3 class="center anchored" data-anchor-id="na">NA</h3>
-</section>
-</section>
-<section id="what-it-does" class="level1">
-<h1>What it does</h1>
-<p>NA</p>
-</section>
-<section id="demo-code" class="level1">
-<h1>Demo code</h1>
-<p>NA</p>
-</section>
-<section id="usefull-stuff" class="level1">
-<h1>Usefull stuff</h1>
-<p>NA</p>
 </section>
 <section id="common-problems" class="level1">
 <h1>Common Problems</h1>

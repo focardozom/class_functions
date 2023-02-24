@@ -170,7 +170,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <ul>
   <li><a href="#dplyrmutate" id="toc-dplyrmutate" class="nav-link active" data-scroll-target="#dplyrmutate"><span class="blue"><code>dplyr::mutate()</code></span></a>
   <ul class="collapse">
-  <li><a href="#mutatedata-variable-stuff" id="toc-mutatedata-variable-stuff" class="nav-link" data-scroll-target="#mutatedata-variable-stuff"><span class="blue">mutate</span>(<em>data</em>, <em>variable</em> = <em>stuff</em>)</a></li>
+  <li><a href="#mutatedataset-a_variable-something" id="toc-mutatedataset-a_variable-something" class="nav-link" data-scroll-target="#mutatedataset-a_variable-something"><span class="blue">mutate</span>(<em>dataset</em>, <em>a_variable</em> = <em>something</em>)</a></li>
   </ul></li>
   <li><a href="#what-it-does" id="toc-what-it-does" class="nav-link" data-scroll-target="#what-it-does">What it does</a></li>
   <li><a href="#demo-code" id="toc-demo-code" class="nav-link" data-scroll-target="#demo-code">Demo code</a></li>
@@ -187,41 +187,39 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <section id="dplyrmutate" class="level1">
 <h1><span class="blue"><code>dplyr::mutate()</code></span></h1>
-<section id="mutatedata-variable-stuff" class="level3 center">
-<h3 class="center anchored" data-anchor-id="mutatedata-variable-stuff"><span class="blue">mutate</span>(<em>data</em>, <em>variable</em> = <em>stuff</em>)</h3>
+<section id="mutatedataset-a_variable-something" class="level3 center">
+<h3 class="center anchored" data-anchor-id="mutatedataset-a_variable-something"><span class="blue">mutate</span>(<em>dataset</em>, <em>a_variable</em> = <em>something</em>)</h3>
 </section>
 </section>
 <section id="what-it-does" class="level1">
 <h1>What it does</h1>
 <ul>
-<li><span class="blue"><code>mutate()</code></span> is used to create and manipulate variables in the <code>tidyverse</code> ecosystem.</li>
+<li>Use <span class="blue"><code>mutate()</code></span> to make a new variable or replace an existing one.</li>
 </ul>
 </section>
 <section id="demo-code" class="level1">
 <h1>Demo code</h1>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>mtcars <span class="sc">|&gt;</span> </span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Transmition =</span> <span class="fu">if_else</span>(am <span class="sc">==</span> <span class="dv">0</span>, <span class="st">"Automatic"</span>, <span class="st">"Manual"</span>),</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>         <span class="at">Transmition =</span> <span class="fu">factor</span>(Transmition))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>penguins <span class="sc">|&gt;</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">mutate</span>(<span class="at">weight_lbs =</span> body_mass_g <span class="sc">*</span> <span class="fl">0.0022046226</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="usefull-stuff" class="level1">
 <h1>Usefull stuff</h1>
-<ul>
-<li>You can have any number of comma delimited mutations in one function call.</li>
-<li>The <span class="blue"><code>if_else()</code></span> and <span class="blue"><code>case_when()</code></span> functions are particularly useful with <span class="blue"><code>mutate()</code></span>.</li>
-<li><span class="blue"><code>mutate()</code></span> can apply the same mutation to multiple values if it is mixed with the <span class="blue"><code>across()</code></span> function: mutate(across(c(vs, am), factor)).</li>
-</ul>
+<p>.small[ + The details after the <code>=</code> determine the values for the variable. + <span class="blue"><code>if_else()</code></span> and <span class="blue"><code>case_when()</code></span> are often used for calculations. + <span class="blue"><code>mutate()</code></span> can use commas to make/modify many variables.]</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>mtcars <span class="sc">|&gt;</span> </span>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>palmerpenguins<span class="sc">::</span>penguins <span class="sc">|&gt;</span> </span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">across</span>(<span class="fu">c</span>(vs, am), factor)</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">weight_lbs =</span> body_mass_g <span class="sc">*</span> <span class="fl">0.0022046226</span><span class="st">`</span><span class="at">,</span><span class="st">`</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">is_male =</span> <span class="fu">if_else</span>(sex <span class="sc">==</span> male, <span class="dv">1</span>, <span class="dv">0</span>)</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>]</p>
+<p>.small[ + <span class="blue"><code>dplyr::transmute()</code></span> is like mutate but it only keeps the variables you create (or reference).]</p>
 </section>
 <section id="common-problems" class="level1">
 <h1>Common Problems</h1>
+<p>NA</p>
 </section>
 <section id="related-functions" class="level1">
 <h1>Related Functions</h1>

@@ -17,15 +17,14 @@ names(iris)
  
 # Usefull stuff 
 
-.related-functions[]
-+ I frequently use it with [`dput()`]{.blue}
-```{r}
-dput(names(iris))
-```
   
  
 # Common Problems 
 
++ I frequently use it with [`dput()`]{.blue}
+```{r}
+dput(names(iris))
+```
   
  
 # Related Functions 

@@ -32,7 +32,6 @@ pillar::glimpse(iris)
 
 + [`glimpse()`]{.blue} is in the [`pillar`]{.blue} package but it automatically is loaded with either [`dplyr`]{.blue} or [`tibble`]{.blue}.
 ]
-.related-functions[]
   
  
 # Common Problems 

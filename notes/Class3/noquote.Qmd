@@ -18,7 +18,6 @@ noquote('The cyberman said "error."')
 # Usefull stuff 
 
 + This is similar to [`paste`]{.blue}(*text*, `quote = FALSE)` but if you save a `noquote` object it will remember the object should not be quoted.
-.related-functions[]
   
  
 # Common Problems 

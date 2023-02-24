@@ -26,7 +26,6 @@ str(
 ```
 + [`glimpse()`]{.blue} is often more useful.
 ]
-.related-functions[]
   
  
 # Common Problems 

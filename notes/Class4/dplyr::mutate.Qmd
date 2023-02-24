@@ -1,40 +1,47 @@
 # [`dplyr::mutate()`]{.blue}
  
  
-### [mutate]{.blue}(*data*, *variable* = *stuff*){.center} 
+### [mutate]{.blue}(*dataset*, *a_variable* = *something*){.center} 
  
 # What it does 
 
 
-+ [`mutate()`]{.blue} is used to create and manipulate variables in the `tidyverse` ecosystem.
++ Use [`mutate()`]{.blue} to make a new variable or replace an existing one.
   
  
 # Demo code 
 
-```{r eval=FALSE}
-mtcars |> 
-  mutate(Transmition = if_else(am == 0, "Automatic", "Manual"),
-         Transmition = factor(Transmition))
+```{r, include=FALSE}
+conflicted::conflicts_prefer(palmerpenguins::penguins)
+```
+```{r, eval=FALSE}
+library(palmerpenguins)
+penguins |>
+  dplyr::mutate(weight_lbs = body_mass_g * 0.0022046226)
 ```
   
  
 # Usefull stuff 
 
-+ You can have any number of comma delimited mutations in one function call.
-+ The [`if_else()`]{.blue} and [`case_when()`]{.blue} functions are particularly useful with [`mutate()`]{.blue}.
-+ [`mutate()`]{.blue} can apply the same mutation to multiple values if it is mixed with the [`across()`]{.blue} function:   mutate(across(c(vs, am), factor)).
+.small[
++ The details after the `=` determine the values for the variable.
+  + [`if_else()`]{.blue} and [`case_when()`]{.blue} are often used for calculations.
++ [`mutate()`]{.blue} can use commas to make/modify many variables.
+]
 ```{r eval=FALSE}
-mtcars |> 
+palmerpenguins::penguins |> 
   mutate(
-    across(c(vs, am), factor)
+    weight_lbs = body_mass_g * 0.0022046226`,`
+    is_male = if_else(sex == male, 1, 0)
   )
 ```
+.small[
++ [`dplyr::transmute()`]{.blue} is like mutate but it only keeps the variables you create (or reference).
 ]
   
  
 # Common Problems 
-
-  
+NA  
  
 # Related Functions 
 NA  

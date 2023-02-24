@@ -1,0 +1,34 @@
+# [`mutate()`]{.blue} for Errors and Secret Codes
+```{r include=FALSE, warning=FALSE, message=FALSE}
+library(tidyverse)
+balise <- tibble(
+  first = c("Lori", "Raymond", "Mary", "Snowy", "Crab"),
+  middle = c("Ann", "Russell", "Kathryn", "x", "x"),
+  births = c(2, -999, 0, -777, -666)
+)
+```
+```{r}
+analysis <- balise |> 
+  mutate(middle = if_else(middle == "x", NA_character_, middle)) |> 
+  mutate(births = if_else(births < 0, NA_real_, births))
+analysis
+```
+Notice the print method for black and white puts NA inside of <>.  I prefer the print method used in the console.
+ 
+ 
+### NA{.center} 
+ 
+# What it does 
+NA  
+ 
+# Demo code 
+NA  
+ 
+# Usefull stuff 
+NA  
+ 
+# Common Problems 
+NA  
+ 
+# Related Functions 
+NA  

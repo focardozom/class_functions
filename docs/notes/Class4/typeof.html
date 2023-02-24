@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>BST623 functions – dplyrselect</title>
+<title>BST623 functions – typeof</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -168,9 +168,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#dplyrselect" id="toc-dplyrselect" class="nav-link active" data-scroll-target="#dplyrselect"><span class="blue"><code>dplyr::select()</code></span></a>
+  <li><a href="#typeof" id="toc-typeof" class="nav-link active" data-scroll-target="#typeof"><span class="blue"><code>typeof()</code></span></a>
   <ul class="collapse">
-  <li><a href="#selectdataset-variables" id="toc-selectdataset-variables" class="nav-link" data-scroll-target="#selectdataset-variables"><span class="blue">select</span>(<em>dataset</em>, <em>variables</em>)</a></li>
+  <li><a href="#na" id="toc-na" class="nav-link" data-scroll-target="#na">NA</a></li>
   </ul></li>
   <li><a href="#what-it-does" id="toc-what-it-does" class="nav-link" data-scroll-target="#what-it-does">What it does</a></li>
   <li><a href="#demo-code" id="toc-demo-code" class="nav-link" data-scroll-target="#demo-code">Demo code</a></li>
@@ -185,38 +185,33 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 
 
-<section id="dplyrselect" class="level1">
-<h1><span class="blue"><code>dplyr::select()</code></span></h1>
-<section id="selectdataset-variables" class="level3 center">
-<h3 class="center anchored" data-anchor-id="selectdataset-variables"><span class="blue">select</span>(<em>dataset</em>, <em>variables</em>)</h3>
+<section id="typeof" class="level1">
+<h1><span class="blue"><code>typeof()</code></span></h1>
+<p>.small[ .center[<span class="blue"><code>typeof</code></span><code>(*vector*)</code>] .center[<span class="blue"><code>typeof</code></span><code>(*dataset$variable*)</code>] + The “type” of an object helps determine what behaviors an object can do.<br>
++ You can not take the mean of a character variable. + These are the typical types that are used in datasets: .pull-left[ + int = “integer” for numbers without decimals + dbl = “double” for numbers with decimals + lgl = “logical” for true/false + date = “date”] .pull-right[ + chr = “character” for character string + fct = “factor” for categories that are not ordered + ord = “ordered” for ordered categories]</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">typeof</span>(pi)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">typeof</span>(R.version<span class="sc">$</span>nickname)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ul>
+<li>Other “types” are used to categorize functions and other complex objects.</li>
+<li><code>R</code> also uses <span class="blue"><code>mode()</code></span> to describe type. It groups “integer” and “double” as “numeric”. ]</li>
+</ul>
+<section id="na" class="level3 center">
+<h3 class="center anchored" data-anchor-id="na">NA</h3>
 </section>
 </section>
 <section id="what-it-does" class="level1">
 <h1>What it does</h1>
-<ul>
-<li>Use <span class="blue"><code>select()</code></span> to choose variables to keep in a new dataset.</li>
-</ul>
+<p>NA</p>
 </section>
 <section id="demo-code" class="level1">
 <h1>Demo code</h1>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>laryngectomy <span class="sc">%&gt;%</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="st">`</span><span class="at">select(age, gender, death_fu)</span><span class="st">`</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>complications <span class="ot">&lt;-</span> laryngectomy <span class="sc">%&gt;%</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>   <span class="fu">select</span>(complications<span class="st">`</span><span class="at">:</span><span class="st">`</span>comp_2plus)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
+<p>NA</p>
 </section>
 <section id="usefull-stuff" class="level1">
 <h1>Usefull stuff</h1>
-<ul>
-<li><span class="blue"><code>select()</code></span> does not do autocomplete.</li>
-<li>You can refer to variables by position number. The first variable is 1. 🤢.</li>
-<li>You can .red[remove/exclude] unwanted variables with a <code>-</code>:</li>
-</ul>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>withoutComplicationVars <span class="ot">&lt;-</span> laryngectomy <span class="sc">|&gt;</span> </span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>   <span class="fu">select</span>(<span class="st">`</span><span class="at">-</span><span class="st">`</span>(complications<span class="sc">:</span>comp_2plus))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
+<p>NA</p>
 </section>
 <section id="common-problems" class="level1">
 <h1>Common Problems</h1>

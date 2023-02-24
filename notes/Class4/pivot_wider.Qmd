@@ -1,0 +1,26 @@
+# [`pivot_wider()`]{.blue} is a thing. 
+ 
+ 
+### 
+{.center} 
+ 
+# What it does 
+
+  
+ 
+# Demo code 
+
+  
+ 
+# Usefull stuff 
+
++ There is function called `pivot_wider()` that will take long data and make it wider.
++ I rarely use it.  Know it exists.
+  
+ 
+# Common Problems 
+
+  
+ 
+# Related Functions 
+NA  

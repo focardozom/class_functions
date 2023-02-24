@@ -14,158 +14,109 @@
     "text": "Welcome to the BST623 R Programming resource page! This site provides a collection of functions commonly used in the BST623 class, making it easier for you to access and utilize R programming tools in your coursework. Whether you’re a seasoned programmer or new to R, this page is designed to provide a comprehensive and user-friendly experience. Happy coding!"
   },
   {
-    "objectID": "notes/Class4/table1::table1.html",
-    "href": "notes/Class4/table1::table1.html",
+    "objectID": "notes/Class4/pivot_wider.html",
+    "href": "notes/Class4/pivot_wider.html",
     "title": "BST623 functions",
     "section": "",
-    "text": "table1::table1()\n\ntable1(formula, dataset)\n\n\n\nWhat it does\n\ntable1() is an excellent tool for taking a quick look at a dataset.\n\n\n\nDemo code\n\ntable1::table1(~ alcgp + tobgp | agegp, data=esoph)\n\n\n\nUsefull stuff\n\nIt will make a simple table with a basic fomula ~ *variable* + *variable(s)*\nIt will make a table summarizing subgroups with a formula that includes a | *variable*\nThe gt package with gtsummary is more powerful (including p-values) but it requires more code.\n\n\n\nCommon Problems\n\n\nRelated Functions\nNA"
+    "text": "pivot_wider() is a thing.\n\n\n{.center}\n\n\n\nWhat it does\n\n\nDemo code\n\n\nUsefull stuff\n\nThere is function called pivot_wider() that will take long data and make it wider.\nI rarely use it. Know it exists.\n\n\n\nCommon Problems\n\n\nRelated Functions\nNA"
   },
   {
     "objectID": "notes/Class4/dplyr::if_else.html",
     "href": "notes/Class4/dplyr::if_else.html",
     "title": "BST623 functions",
     "section": "",
-    "text": "dplyr::if_else()\n\nif_else(check, true, false)\n\n\n\nWhat it does\n\nif_else() checks the truth of a logic check on a variable/vector and returns the true argument if it is true or the false argument otherwise.\n\n\n\nDemo code\n\nif_else(mtcars$am == 0, \"Automatic\", \"Manual\")\n\n\n\nUsefull stuff\n\nThe logic check can involve any number of variables.\nif_else() is often used with dplyr::mutate()\nif_else() is dangerous because unexpected values can be binned in the false level/group.\n\n\n\nCommon Problems\n\n\nRelated Functions\nNA"
+    "text": "dplyr::if_else()\n\nif_else(check, true, false)\n\n\n\nWhat it does\n\nif_else() checks the truth of a logic check on a variable/vector and returns the true argument if it is true or the false argument if it is not true.\n\n\n\nDemo code\n\nlaryngectomy |> \n  mutate(  # does the initial stage agree with final pathology staging?\n    path_result = if_else(int_stg != path_stg, \"Changed\", \"Same\")\n  ) |> \n  select(int_stg, path_stg, path_result)\n\n\n\nUsefull stuff\n\nThe logic check can involve any number of variables.\nif_else() is dangerous because unexpected values can be binned in the false level/group.\n\n\n\nCommon Problems\nNA\n\n\nRelated Functions\nNA"
   },
   {
-    "objectID": "notes/Class4/pillar::glimpse.html",
-    "href": "notes/Class4/pillar::glimpse.html",
+    "objectID": "notes/Class4/dplyr::pull.html",
+    "href": "notes/Class4/dplyr::pull.html",
     "title": "BST623 functions",
     "section": "",
-    "text": "pillar::glimpse()\n\n\nglimpse(dataset){.center}\n\n\n\nWhat it does\n\nglimpse() is a convenient alternative to str() for when you want quick look at dataset.\nglimpse() shows the “type of” each column of data. .pull-left[\nint = “integer” for numbers without decimals\ndbl = “double” for numbers with decimals\nlgl = “logical” for true/false\ndate = “date”.pull-right[\nchr = “character” for character string\nfct = “factor” for categories that are not ordered\nord = “ordered” for ordered categories ]\n\n\n\nDemo code\n\npillar::glimpse(iris)\n\nRows: 150\nColumns: 5\n$ Sepal.Length <dbl> 5.1, 4.9, 4.7, 4.6, 5.0, 5.4, 4.6, 5.0, 4.4, 4.9, 5.4, 4.…\n$ Sepal.Width  <dbl> 3.5, 3.0, 3.2, 3.1, 3.6, 3.9, 3.4, 3.4, 2.9, 3.1, 3.7, 3.…\n$ Petal.Length <dbl> 1.4, 1.4, 1.3, 1.5, 1.4, 1.7, 1.4, 1.5, 1.4, 1.5, 1.5, 1.…\n$ Petal.Width  <dbl> 0.2, 0.2, 0.2, 0.2, 0.2, 0.4, 0.3, 0.2, 0.2, 0.1, 0.2, 0.…\n$ Species      <fct> setosa, setosa, setosa, setosa, setosa, setosa, setosa, s…\n\n\n]\n\n\nUsefull stuff\n\nglimpse() is in the pillar package but it automatically is loaded with either dplyr or tibble. ]\n\n\n\nCommon Problems\n\n\nRelated Functions\nNA"
+    "text": "dplyr::pull() makes a vector.\n\npull(tableName, variableName)\n\n\n\nWhat it does\nRarely, you will want to pull a column out of a data frame and save it as a vector. pull() is the only dplyr verb that does not return a tibble.\n\n\nDemo code\n\nyes_no_ND <- laryngectomy |> \n  mutate(hadND = 2 - nk_dissection |> \n  pull(hadND)\n\n\n\nUsefull stuff\n.center[]\n\n\nCommon Problems\n\n\nRelated Functions\nNA"
   },
   {
-    "objectID": "notes/Class4/format.html",
-    "href": "notes/Class4/format.html",
+    "objectID": "notes/Class4/dplyr::across.html",
+    "href": "notes/Class4/dplyr::across.html",
     "title": "BST623 functions",
     "section": "",
-    "text": "format()\n\nformat(number(s), scientific=FALSE)\n\n\n\nWhat it does\n\nUse format() to display numbers and text many formats and alignment options.\n\n\n\nDemo code\n\nhuge <- 1000000000000000\nformat(huge, big.mark=\",\", scientific=FALSE)\n\n[1] \"1,000,000,000,000,000\"\n\n\n\n\nUsefull stuff\n\nformat() is useful for showing huge and tiny numbers without scientific notation.\nformat() can be use display aligned text.\n\n\n\nCommon Problems\n\n\nRelated Functions\nNA"
+    "text": "dplyr::across() with dplyr::mutate()\n\nacross(varaibles), function\n\n\n\nWhat it does\n\nThe across() function with mutate() does the same mutation to multiple variables.\n\n\n\nDemo code\n\nlaryngectomy |> \n  # Convert categorical character variavbles to be factors.\n  mutate(\n    across(gender:sor, factor)\n  )\n\n\n\nUsefull stuff\n\nThe across() function is used with dplyr::summarise to apply the same summary statistics to many variables.\n\n\n\nCommon Problems\n\n\nRelated Functions\nNA"
   },
   {
-    "objectID": "notes/Class4/noquote.html",
-    "href": "notes/Class4/noquote.html",
+    "objectID": "notes/Class4/group_by.html",
+    "href": "notes/Class4/group_by.html",
     "title": "BST623 functions",
     "section": "",
-    "text": "noquote()\n\nnoquote(text)\n\n\n\nWhat it does\n\nThe print() function prints without quotes. noquote() function prints without quotes.\n\n\n\nDemo code\n\nnoquote('The cyberman said \"error.\"')\n\n[1] The cyberman said \"error.\"\n\n\n\n\nUsefull stuff\n\nThis is similar to paste(text, quote = FALSE) but if you save a noquote object it will remember the object should not be quoted.\n\n\n\nCommon Problems\n\n\nRelated Functions\nNA"
+    "text": "group_by() \\(_1\\)\n\ngroup_by(tableName, groupingVariable)\n\n\n\nWhat it does\nBefore dplyr 1.1 to get groups you would tag the dataset as having a grouping variable:\n\n\nDemo code\n\nlaryngectomy |> \n  select(gender, length_fu) |> \n  `group_by(gender)` # marks the grouping variable\n\n\n\n# A tibble: 123 × 2\n# Groups:   gender [2]\n   gender length_fu\n    <dbl>     <dbl>\n 1      1       103\n 2      1       240\n 3      1        93\n 4      1       546\n 5      1       208\n 6      1       199\n 7      1       155\n 8      1       480\n 9      1        23\n10      1        48\n# … with 113 more rows\n\n\n\n\nUsefull stuff\n\n\nCommon Problems\n\n\nRelated Functions\nNA"
   },
   {
-    "objectID": "notes/Class4/tibble::tribble.html",
-    "href": "notes/Class4/tibble::tribble.html",
+    "objectID": "notes/Class4/typeof.html",
+    "href": "notes/Class4/typeof.html",
     "title": "BST623 functions",
     "section": "",
-    "text": "tibble::tribble()\n\ntribble(thing(s))\n{.center}\n\n\n\nWhat it does\n\nThe tribble() function let you enter rows of data.\n\n\n\nDemo code\n\nfam <-\n  tribble(\n    ~Name,     ~Species,\n    \"Raymond\", \"homo sapiens\",\n    \"Snowy\",   \"canis lupus familiaris\",\n    \"Crab\",    \"anomuran decapod crustaceans\"\n  )\n\n\n\nUsefull stuff\n\nRemember the names have a + ~ prefix.\nEvery element (except the last) is followed by a comma.\nYou can use spacing to make the code easier to read. .related-functions[] See “fun facts on the tibble slide. ]\n\n\n\nCommon Problems\nNA\n\n\nRelated Functions\nNA"
+    "text": "typeof()\n.small[ .center[typeof(*vector*)] .center[typeof(*dataset$variable*)] + The “type” of an object helps determine what behaviors an object can do.\n+ You can not take the mean of a character variable. + These are the typical types that are used in datasets: .pull-left[ + int = “integer” for numbers without decimals + dbl = “double” for numbers with decimals + lgl = “logical” for true/false + date = “date”] .pull-right[ + chr = “character” for character string + fct = “factor” for categories that are not ordered + ord = “ordered” for ordered categories]\n\ntypeof(pi)\ntypeof(R.version$nickname)\n\n\nOther “types” are used to categorize functions and other complex objects.\nR also uses mode() to describe type. It groups “integer” and “double” as “numeric”. ]\n\n\nNA\n\n\n\nWhat it does\nNA\n\n\nDemo code\nNA\n\n\nUsefull stuff\nNA\n\n\nCommon Problems\nNA\n\n\nRelated Functions\nNA"
   },
   {
-    "objectID": "notes/Class4/select.html",
-    "href": "notes/Class4/select.html",
+    "objectID": "notes/Class4/count.html",
+    "href": "notes/Class4/count.html",
     "title": "BST623 functions",
     "section": "",
-    "text": "select()’s Helper Functions\n\n\n{.center}\n\n\n\nWhat it does\n\nstarts_with(\"X\"): every name that starts with “X”\nends_with(\"X\"): every name that ends with “X”\ncontains(\"X\"): every name that contains “X”\nmatches(\"X\"): every name that matches “X”, where “X” can be a regular expression\nnum_range(\"x\", 1:5): the variables named x01, x02, x03, x04 and x05\none_of(x): every name that appears in x, which should be a character vector\n\n\n\nDemo code\n\nlaryngectomy |> \n   select(`ends_with(\"_fu\")`) |> \n   head(n = 2)  # only keep first two records (to fit on the slide)\n\n\n\n# A tibble: 2 × 3\n  length_fu death_fu recur_fu\n      <dbl>    <dbl>    <dbl>\n1       103       NA       NA\n2       240       NA       NA\n\n\n\n\nUsefull stuff\n\n\nCommon Problems\nNA\n\n\nRelated Functions\nNA"
+    "text": "count()\n\ncount(table, variables)\n\n\n\nWhat it does\ndplyr can do fancy summary statistics but count() is quick, easy and useful for frequency counts:\n\n\nDemo code\n\nlaryngectomy |> \n  mutate(isMale = 2 - gender )  |> \n  mutate(sex = as.character(isMale))  |> \n  mutate(sex = fct_recode(sex,\n                          \"Female\" = \"0\",\n                          \"Male\" = \"1\"))  |> \n  mutate(stage = fct_recode(as.character(int_stg),\n                          \"T1\" = \"1\",\n                          \"T2\" = \"2\",\n                          \"T3\" = \"3\",\n                          \"T4\" = \"4\",\n                          \"Unknown\" = \"5\")) |> \n  `count(sex, stage)` |> \n  arrange(sex, stage)  # this just sorts by sex then stage\n\n]\n\n\n# A tibble: 9 × 3\n  sex    stage       n\n  <fct>  <fct>   <int>\n1 Female T1          1\n2 Female T2          1\n3 Female T3          1\n4 Female Unknown     4\n5 Male   T1         53\n6 Male   T2         34\n7 Male   T3          8\n8 Male   T4          4\n9 Male   Unknown    17\n\n\n]\n\n\nUsefull stuff\n\n\nCommon Problems\n\n\nRelated Functions\nNA"
   },
   {
-    "objectID": "notes/Class4/dput.html",
-    "href": "notes/Class4/dput.html",
+    "objectID": "notes/Class4/tally.html",
+    "href": "notes/Class4/tally.html",
     "title": "BST623 functions",
     "section": "",
-    "text": "dput()\n\ndput(thingy)\n\n\n\nWhat it does\n\nPrint a text version of any object in the console (by default).\n\n\n\nDemo code\n\ndput(names(iris))\n\nc(\"Sepal.Length\", \"Sepal.Width\", \"Petal.Length\", \"Petal.Width\", \n\"Species\")\n\n\n\n\nUsefull stuff\n\nIt is very convenient if you want to get a set of variable names for later processing.\n\n\n\nCommon Problems\n\n\nRelated Functions\nNA"
+    "text": "tally()\n\ntally(dataset, variable)\n\n\n\nWhat it does\nIt adds up the values:\n\n\nDemo code\n\nsexVars <- laryngectomy |> \n  mutate(isMale = 2 - gender ) |> \n  mutate(sex = as.character(isMale)) |> \n  mutate(sex = fct_recode(sex,\n                          \"Female\" = \"0\",\n                          \"Male\" = \"1\"))\n  sexVars %>% `tally(gender)`  # adds up 1s and 2s\n  sexVars %>% `tally(isMale)`  # adds up 0s and 1s\n# sexVars %>% tally(sex)  # can't sum up \"Male\" and \"Female\"\n\n]\n\n\n# A tibble: 1 × 1\n      n\n  <dbl>\n1   130\n\n\n# A tibble: 1 × 1\n      n\n  <dbl>\n1   116\n\n\n]\n\n\nUsefull stuff\n??? This was a good trick… r theTallyTable, eval = FALSE r theTallyTableOut, ref.label=“theTallyTable”, echo=FALSE\n\n\nCommon Problems\n\n\nRelated Functions\nNA"
   },
   {
-    "objectID": "notes/Class4/table.html",
-    "href": "notes/Class4/table.html",
+    "objectID": "notes/Class4/distinct.html",
+    "href": "notes/Class4/distinct.html",
     "title": "BST623 functions",
     "section": "",
-    "text": "table()\n\ntable(vector(s))\n\n\n\nWhat it does\n\nMake a summary table of a vector or a pair of vectors.\n\n\n\nDemo code\n\ntable(iris$Species)\n\n\n    setosa versicolor  virginica \n        50         50         50 \n\ntable(mtcars$cyl, mtcars$vs)\n\n   \n     0  1\n  4  1 10\n  6  3  4\n  8 14  0\n\n\n\n\nUsefull stuff\n\ntable() does not have a dataset option and it does not label well.\nIt is well suited for quick checks while debugging. ]\n\n\n\nCommon Problems\n\n\nRelated Functions\nNA"
+    "text": "distinct()\n\n\n{.center}\n\n\n\nWhat it does\n\ndistinct() shows unique values.\n\n\n\nDemo code\n.blue[distinct](table, variables)\n\nlaryngectomy|> distinct(gender)\nlaryngectomy |> distinct(int_stg)\nlaryngectomy |> \n  mutate(isMale = 2 - gender ) |> \n  mutate(sex = as.character(isMale)) |> \n  mutate(sex = fct_recode(sex,\n                          \"Female\" = \"0\",\n                          \"Male\" = \"1\")) |> \n  mutate(stage = fct_recode(as.character(int_stg),\n                          \"T1\" = \"1\",\n                          \"T2\" = \"2\",\n                          \"T3\" = \"3\",\n                          \"T4\" = \"4\",\n                          \"Unknown\" = \"5\")) |> \n  `distinct(sex, stage)` |> \n  arrange(sex, stage)\n\n] .ver\n\n\n# A tibble: 2 × 1\n  gender\n   <dbl>\n1      1\n2      2\n\n\n# A tibble: 5 × 1\n  int_stg\n    <dbl>\n1       2\n2       3\n3       1\n4       4\n5       5\n\n\n# A tibble: 9 × 2\n  sex    stage  \n  <fct>  <fct>  \n1 Female T1     \n2 Female T2     \n3 Female T3     \n4 Female Unknown\n5 Male   T1     \n6 Male   T2     \n7 Male   T3     \n8 Male   T4     \n9 Male   Unknown\n\n\n]]\n\n\nUsefull stuff\n\n\nCommon Problems\n\n\nRelated Functions\nNA"
   },
   {
-    "objectID": "notes/Class4/rep.html",
-    "href": "notes/Class4/rep.html",
+    "objectID": "notes/Class4/summarize.html",
+    "href": "notes/Class4/summarize.html",
     "title": "BST623 functions",
     "section": "",
-    "text": "rep()\n\nrep(value, #)\n\n\n\nWhat it does\n\nThe rep() function is used to repeat something.\n\n\n\nDemo code\n\nrep(\"Cup of Coffee\", 3)\nfam <-\n  tibble(\n    name_first = c(\"Raymond\", \"Lori\", \"Mary\", \"Andrew\", \"Ella\", \"Snowy\", \"Mia\", \"Crab\"),\n    name_last = c(rep(\"Balise\", 4), \"Johnson\", rep(\"Balise\", 3)),\n    species = c(rep(\"human\", 5), c(\"Canis lupus familiaris\", 2), \"anomuran decapod crustaceans\")\n  )\n\n\n\nUsefull stuff\n\nWhen creating a new dataset, the base R data.frame function will try to repeat (recycle) values if a variable/column is “short” (i.e., a value is missing). This can be problematic. The tibble function does not automatically recycle values. Use rep() rather that repeatedly typing the same value.\nrep() function can do complex repeating patters. rep(c(“fun”, “ado”, “tree”), c(1, 2, 3))\n\n\n\nCommon Problems\n\n\nRelated Functions\nNA"
-  },
-  {
-    "objectID": "notes/Class4/tidyr::drop_na.html",
-    "href": "notes/Class4/tidyr::drop_na.html",
-    "title": "BST623 functions",
-    "section": "",
-    "text": "tidyr::drop_na()\n\ndrop_na(dataset)\n\n\n\nWhat it does\n\nUse tidyr::drop_na() to create a dataset with “complete cases” (i.e., only keep people with complete data).\n\n\n\nDemo code\n\nlaryngectomy %>%\n  drop_na()\n\n\n\nUsefull stuff\n\nThere is no easy dplyr function to find records without any missing data.\nIf you love to type you can write a dplyr::filter() function call to check for no missing data in all variables.\n\n\n\nCommon Problems\nNA\n\n\nRelated Functions\nNA"
+    "text": "summarize() to make rows/records with statistics. \\(_1\\)\n\n\nsummarize(tableName, newName = aggregateFunction)\nsummarize(tableName, aSum = sum(a), anAvg = mean(b), theVar = var(b)){.center}\n\n\n\nWhat it does\n\nMake a new dataset with summary statistics\nUse it to take a vector and output a single number\nOnly keeps the new variables\nBase aggregate functions\n\nmin max mean median quantile sd var IQR diff length sum\n\ndplyr aggregate functions\n\nfirst last nth n n_distinct\n\n\n\n\nDemo code\n\nlaryngectomy |> \n{{  summarize(theMinFU = min(length_fu),}}\n{{            theMeanFU = mean(length_fu),}}\n{{            theMaxFU = max(length_fu))}}\n\n]\n\n\n# A tibble: 1 × 3\n  theMinFU theMeanFU theMaxFU\n     <dbl>     <dbl>    <dbl>\n1        6     1148.     4441\n\n\n] ]\n\n\nUsefull stuff\n\n\nCommon Problems\n\n\nRelated Functions\nNA"
   },
   {
     "objectID": "notes/Class4/dplyr::mutate.html",
     "href": "notes/Class4/dplyr::mutate.html",
     "title": "BST623 functions",
     "section": "",
-    "text": "dplyr::mutate()\n\nmutate(data, variable = stuff)\n\n\n\nWhat it does\n\nmutate() is used to create and manipulate variables in the tidyverse ecosystem.\n\n\n\nDemo code\n\nmtcars |> \n  mutate(Transmition = if_else(am == 0, \"Automatic\", \"Manual\"),\n         Transmition = factor(Transmition))\n\n\n\nUsefull stuff\n\nYou can have any number of comma delimited mutations in one function call.\nThe if_else() and case_when() functions are particularly useful with mutate().\nmutate() can apply the same mutation to multiple values if it is mixed with the across() function: mutate(across(c(vs, am), factor)).\n\n\nmtcars |> \n  mutate(\n    across(c(vs, am), factor)\n  )\n\n]\n\n\nCommon Problems\n\n\nRelated Functions\nNA"
+    "text": "dplyr::mutate()\n\nmutate(dataset, a_variable = something)\n\n\n\nWhat it does\n\nUse mutate() to make a new variable or replace an existing one.\n\n\n\nDemo code\n\nlibrary(palmerpenguins)\npenguins |>\n  dplyr::mutate(weight_lbs = body_mass_g * 0.0022046226)\n\n\n\nUsefull stuff\n.small[ + The details after the = determine the values for the variable. + if_else() and case_when() are often used for calculations. + mutate() can use commas to make/modify many variables.]\n\npalmerpenguins::penguins |> \n  mutate(\n    weight_lbs = body_mass_g * 0.0022046226`,`\n    is_male = if_else(sex == male, 1, 0)\n  )\n\n.small[ + dplyr::transmute() is like mutate but it only keeps the variables you create (or reference).]\n\n\nCommon Problems\nNA\n\n\nRelated Functions\nNA"
   },
   {
-    "objectID": "notes/Class4/slice_sample.html",
-    "href": "notes/Class4/slice_sample.html",
+    "objectID": "notes/Class4/dplyr::coalesce.html",
+    "href": "notes/Class4/dplyr::coalesce.html",
     "title": "BST623 functions",
     "section": "",
-    "text": "slice_sample() grabs a few records.\n\n\n{.center}\n\n\n\nWhat it does\nIf you have a lot of data, you can easily use slice_sample() with the n = or prop = arguments to take a sample for doing preliminary work. Be sure to use the base R set.seed() function before slice_sample() to specify which set of random records to select.\n\n\nDemo code\n\nset.seed(123)\nlaryngectomy |> \n  select(age, gender, recur_site, trt_mod, int_stg, recur_stg)  |> \n  slice_sample(prop = .05)  # a random 5% of the data\n\n# A tibble: 6 × 6\n    age gender recur_site trt_mod int_stg recur_stg\n  <dbl>  <dbl>      <dbl>   <dbl>   <dbl>     <dbl>\n1    70      1          3       1       2         3\n2    66      1          2       1       1         2\n3    81      1          2       1       2         4\n4    74      1          2       2       2         2\n5    83      1          3       1       1         3\n6    84      1          2       1       1         3\n\n\n\n\nUsefull stuff\nNA\n\n\nCommon Problems\nNA\n\n\nRelated Functions\nNA"
+    "text": "dplyr::coalesce()\n\ncoalesce(varaible(s))\n\n\n\nWhat it does\n\nThe coalesce() function chooses the first not-missing value from a set of variables.\n\n\n\nDemo code\n\nlaryngectomy |> \n  # Get day of worst outcome: death, reoccurrence, visit, or huge negative number\n  mutate(\n    outcome_day = coalesce(death_fu, recur_fu, length_fu, -99999999)\n  )\n\n\n\nUsefull stuff\n\nIf you include a huge outlier as the last option, it will make it easy to spot missing values.\n\n\n\nCommon Problems\n\n\nRelated Functions\nNA"
   },
   {
-    "objectID": "notes/Class4/str.html",
-    "href": "notes/Class4/str.html",
+    "objectID": "notes/Class4/dplyr::case_when.html",
+    "href": "notes/Class4/dplyr::case_when.html",
     "title": "BST623 functions",
     "section": "",
-    "text": "str()\n\nstr(thingy)\n\n\n\nWhat it does\n\nUseful you to see information on the structure of any. It is somewhat useful for datasets.\n\n\n\nDemo code\n\nstr(iris)\n\n'data.frame':   150 obs. of  5 variables:\n $ Sepal.Length: num  5.1 4.9 4.7 4.6 5 5.4 4.6 5 4.4 4.9 ...\n $ Sepal.Width : num  3.5 3 3.2 3.1 3.6 3.9 3.4 3.4 2.9 3.1 ...\n $ Petal.Length: num  1.4 1.4 1.3 1.5 1.4 1.7 1.4 1.5 1.4 1.5 ...\n $ Petal.Width : num  0.2 0.2 0.2 0.2 0.2 0.4 0.3 0.2 0.2 0.1 ...\n $ Species     : Factor w/ 3 levels \"setosa\",\"versicolor\",..: 1 1 1 1 1 1 1 1 1 1 ...\n\n\n\n\nUsefull stuff\n\nThe output an be voluminous.\n\n\nstr(\n  lm(height~weight, data= women)\n)\n\n\nglimpse() is often more useful. ]\n\n\n\nCommon Problems\n\n\nRelated Functions\nNA"
+    "text": "dplyr::case_when()\n\n\ncase_when (check ~ response, …, check ~ repsonse){.center}\n\n\n\nWhat it does\n\ncase_when does a series of logic checks, in the order listed, and assigns the response from the first check that is true.\n\n\n\nDemo code\n\nlaryngectomy |> \n  mutate(\n    \\`Pathological Stage` =\n      case_when(\n        path_stg %in% c(1, 2) ~ \"Early\",\n        path_stg %in% c(3, 4) ~ \"Late\",\n        # If you didn't know this value existed...\n        # path_stg == 5 ~ \"Unknown\",\n        .default ~ \"*** PROBLEM ***\"\n      )\n  ) |> \n  count(\\`Pathological Stage`)\n\n] .pull-right[\n\n\n# A tibble: 3 × 2\n  `Pathological Stage`     n\n  <chr>                <int>\n1 *** PROBLEM ***         19\n2 Early                   26\n3 Late                    78\n\n\n]\n\n\nUsefull stuff\n\ncase_when() often uses TRUE as the last logic check. Because it is always true, it acts like “else” or “otherwise”.\nUse case_when() instead of if_else() if there is any chance the data has unexpected values. ]\n\n\n\nCommon Problems\n\n\nRelated Functions\nNA"
   },
   {
-    "objectID": "notes/Class4/dplyr::filter.html",
-    "href": "notes/Class4/dplyr::filter.html",
+    "objectID": "notes/Class4/dplyr::transmute.html",
+    "href": "notes/Class4/dplyr::transmute.html",
     "title": "BST623 functions",
     "section": "",
-    "text": "dplyr::filter()\n\nfilter(tableName, logical test)\n\n\n\nWhat it does\n\nUse filter() to pick rows/records.\nInside the () you put a logic check.\nfilter() keeps rows/records where the logic check is true.\n\n\n\nDemo code\n\nlaryngectomy %>%\n  filter(death == 1)  # the people who died\nlaryngectomy %>%\n  filter(is.na(pathology))  # people missing pathology\nlaryngectomy %>%\n  filter(!is.na(pathology))  # people not missing pathology\nlaryngectomy %>%\n  filter(pathology %in% c(1, 2)) # people with values of 1 or 2\n\n\n\nUsefull stuff\n\n\nCommon Problems\nNA\n\n\nRelated Functions\nNA"
+    "text": "dplyr::transmute()\n\nlaryngectomy %>% transmute(hadND = 2 - nk_dissection).demo-code[{r eval = FALSE}\nlaryngectomy |> transmute(hadND = 2 - nk_dissection)\n{.center}\n\n\n\nWhat it does\ntransmute() is like dplyr::mutate() but it only keeps the variables referenced. Because it is picking what variables to keep, you can select other variables without manipulating them. .useful-stuff[{r eval = FALSE} laryngectomy |>    transmute(     hadND = 2 - nk_dissection`,`     `nk_dissection`   )\n\n\nDemo code\nNA\n\n\nUsefull stuff\nNA\n\n\nCommon Problems\nNA\n\n\nRelated Functions\nNA"
   },
   {
-    "objectID": "notes/Class4/names.html",
-    "href": "notes/Class4/names.html",
+    "objectID": "notes/Class4/mutate.html",
+    "href": "notes/Class4/mutate.html",
     "title": "BST623 functions",
     "section": "",
-    "text": "#names()\n\nnames(thingy)\n\n\nWhat it does\n\nIf you want a print the variable names in a dataset.\n\n\n\nDemo code\n\nnames(iris)\n\n[1] \"Sepal.Length\" \"Sepal.Width\"  \"Petal.Length\" \"Petal.Width\"  \"Species\"     \n\n\n\n\nUsefull stuff\n\n\nCommon Problems\n\nI frequently use it with dput()\n\n\ndput(names(iris))\n\nc(\"Sepal.Length\", \"Sepal.Width\", \"Petal.Length\", \"Petal.Width\", \n\"Species\")\n\n\n\n\nRelated Functions\nNA"
-  },
-  {
-    "objectID": "notes/Class4/?.html",
-    "href": "notes/Class4/?.html",
-    "title": "BST623 functions",
-    "section": "",
-    "text": "?\n\n?thingy\n\n\n\nWhat it does\n\nOpen the help file for an object that you don’t understand. It is useful to find variable definitions for some datasets and some function argument details.\n\n\n\nDemo code\n\n?women\n\n\n\nUsefull stuff\n\nNote: There is no help file for for men. ?men .\n\n\n?men\n\nNo documentation for 'men' in specified packages and libraries:\nyou could try '??men'\n\n\n\n\nCommon Problems\n\n?? does a broader search in the local documentation.\n\n\n\nRelated Functions\nNA"
-  },
-  {
-    "objectID": "notes/Class4/c.html",
-    "href": "notes/Class4/c.html",
-    "title": "BST623 functions",
-    "section": "",
-    "text": "c() is smart! \\(_1\\)\n\n\n{.center}\n\n\n\nWhat it does\n\nRemember from “topic 1” that R pays attention to the class/type objects.\nc() will notice if the parts that you are combining are numbers or text and it will make the object the correct class/type.\n\n\n\nDemo code\n.pull-left-36[\n\nages <- c(17, 18, 40, 39)\nclass(ages)\n\n[1] \"numeric\"\n\nages\n\n[1] 17 18 40 39\n\n\n]  – .pull-right-60[\n\nages <- c(\"seventeen\", \"eighteen\", \"forty\", \"thirty nine\")\nclass(ages)\n\n[1] \"character\"\n\nages\n\n[1] \"seventeen\"   \"eighteen\"    \"forty\"       \"thirty nine\"\n\n\n]\n\n\nUsefull stuff\nNA\n\n\nCommon Problems\nNA\n\n\nRelated Functions\nNA"
-  },
-  {
-    "objectID": "notes/Class4/dplyr::select.html",
-    "href": "notes/Class4/dplyr::select.html",
-    "title": "BST623 functions",
-    "section": "",
-    "text": "dplyr::select()\n\nselect(dataset, variables)\n\n\n\nWhat it does\n\nUse select() to choose variables to keep in a new dataset.\n\n\n\nDemo code\n\nlaryngectomy %>%\n  `select(age, gender, death_fu)`\ncomplications <- laryngectomy %>%\n   select(complications`:`comp_2plus)\n\n\n\nUsefull stuff\n\nselect() does not do autocomplete.\nYou can refer to variables by position number. The first variable is 1. 🤢.\nYou can .red[remove/exclude] unwanted variables with a -:\n\n\nwithoutComplicationVars <- laryngectomy |> \n   select(`-`(complications:comp_2plus))\n\n\n\nCommon Problems\nNA\n\n\nRelated Functions\nNA"
-  },
-  {
-    "objectID": "notes/Class4/New Pipe.html",
-    "href": "notes/Class4/New Pipe.html",
-    "title": "BST623 functions",
-    "section": "",
-    "text": "New Pipe |>\n\nthing |> thing\n\n\n\nWhat it does\n\nThe base R pipe, |>, is designed to pass an object into the first argument of another function.\n\n\n\nDemo code\n\nmtcars |> subset(cyl == 4) |> head()\n\n\n\nUsefull stuff\n\nThis pipe is faster than the magrittr pipe (i.e., %>%).\nIt can not redirect to any argument other than the first.\nIt is of limited use because many critical functions (e.g., lm() and plot()) do not take a dataset as the first argument.\n\n\n\nCommon Problems\n\n\nRelated Functions\nNA"
-  },
-  {
-    "objectID": "notes/Class4/dplyr::rename.html",
-    "href": "notes/Class4/dplyr::rename.html",
-    "title": "BST623 functions",
-    "section": "",
-    "text": "dplyr::rename()\n\n\nYou can easily tweak a variable’s name with:rename(tableName, newName = oldName) {.center}\n\n\n\nWhat it does\n\n\nDemo code\n\nlaryngectomy |> \n  rename(sex = gender)  # from gender to sex\n\n# A tibble: 123 × 32\n     age   sex recur_s…¹ trt_mod int_stg recur…² preop…³ nk_di…⁴ Later…⁵ mic_v…⁶\n   <dbl> <dbl>     <dbl>   <dbl>   <dbl>   <dbl>   <dbl>   <dbl>   <dbl>   <dbl>\n 1    54     1         2       1       2       3       1       2      NA       2\n 2    73     1         1       2       3       3       1       1       1       2\n 3    74     1         1       1       2       2       1       2      NA       2\n 4    58     1         1       2       2       3       3       1       1       1\n 5    70     1         2       1       1       4       2       1       1       2\n 6    60     1         2       1       1       4       1       1       1       1\n 7    61     1         2       2       4       3       3       1       1       2\n 8    73     1         3       1       1       3       1       1       1       2\n 9    83     1         2       1       2       2       2       1       1       2\n10    63     1         3       1       2       4       2       1       2       2\n# … with 113 more rows, 22 more variables: pec_flap <dbl>, pathology <dbl>,\n#   path_stg <dbl>, complications <dbl>, fistula <dbl>, wound_inf <dbl>,\n#   dehiscence <dbl>, wound_comp <dbl>, chyle_leak <dbl>, hematoma <dbl>,\n#   revision_proc <dbl>, flap_fail <dbl>, periop_death <dbl>, med_comp <dbl>,\n#   comp_2plus <dbl>, hosp_stay <dbl>, death <dbl>, recur <dbl>, sor <dbl>,\n#   length_fu <dbl>, death_fu <dbl>, recur_fu <dbl>, and abbreviated variable\n#   names ¹​recur_site, ²​recur_stg, ³​preop_Img_mod, ⁴​nk_dissection, …\n\n\n]\n\n\nUsefull stuff\n\n\nCommon Problems\nNA\n\n\nRelated Functions\nNA"
-  },
-  {
-    "objectID": "notes/Class4/tibble::tibble.html",
-    "href": "notes/Class4/tibble::tibble.html",
-    "title": "BST623 functions",
-    "section": "",
-    "text": "tibble::tibble()\n\ntibble(thing(s))\n{.center}\n\n\n\nWhat it does\n\nThe tibble() function will convert base R vectors or a data.frame into a tidyverse tibble\n\n\n\nDemo code\n\nmtcars <- as_tibble(mtcars)\nfam <-\n  tibble(\n    \\`First Name` = c(\"Raymond\", \"Lori\", \"Mary\", \"Andrew\", \"Ella\", \"Snowy\", \"Mia\", \"Crab\"),\n    \\`Last Name` = c(rep(\"Balise\", 4), \"Johnson\", rep(\"Balise\", 3)),\n    species = c(rep(\"h. sapiens\", 5), c(\"canis lupus familiaris\", 2), \"anomuran decapod crustaceans\")\n  )\n\n\n\nUsefull stuff\n\ntibbles have a useful print method.\ntibbles do not use row names. Convert row names to a variable with rownames_to_column()\nThey do not accept partial matching (i.e., fam$F does not work).\ntibbles do not automatically change data.\n\nCharacter variables do not become factors!\nColumn names are not converted to base names (e.g. spaces are allowed). ]\n\n\n\n\nCommon Problems\nNA\n\n\nRelated Functions\nNA"
+    "text": "mutate() for Errors and Secret Codes\n\nanalysis <- balise |> \n  mutate(middle = if_else(middle == \"x\", NA_character_, middle)) |> \n  mutate(births = if_else(births < 0, NA_real_, births))\nanalysis\n\n# A tibble: 5 × 3\n  first   middle  births\n  <chr>   <chr>    <dbl>\n1 Lori    Ann          2\n2 Raymond Russell     NA\n3 Mary    Kathryn      0\n4 Snowy   <NA>        NA\n5 Crab    <NA>        NA\n\n\nNotice the print method for black and white puts NA inside of <>. I prefer the print method used in the console.\n\nNA\n\n\n\nWhat it does\nNA\n\n\nDemo code\nNA\n\n\nUsefull stuff\nNA\n\n\nCommon Problems\nNA\n\n\nRelated Functions\nNA"
   },
   {
     "objectID": "notes/Class2/%>%.html",
@@ -277,84 +228,84 @@
     "href": "notes/Class3/table1::table1.html",
     "title": "BST623 functions",
     "section": "",
-    "text": "table1::table1()\n\ntable1(formula, dataset)\n\n\n\nWhat it does\n\ntable1() is an excellent tool for taking a quick look at a dataset.\n\n\n\nDemo code\n\ntable1::table1(~ alcgp + tobgp | agegp, data=esoph)\n\n\n\nUsefull stuff\n\nIt will make a simple table with a basic fomula ~ *variable* + *variable(s)*\nIt will make a table summarizing subgroups with a formula that includes a | *variable*\nThe gt package with gtsummary is more powerful (including p-values) but it requires more code. .related-functions[]\n\n\n\nCommon Problems\n\n\nRelated Functions\nNA"
+    "text": "table1::table1()\n\ntable1(formula, dataset)\n\n\n\nWhat it does\n\ntable1() is an excellent tool for taking a quick look at a dataset.\n\n\n\nDemo code\n\ntable1::table1(~ alcgp + tobgp | agegp, data=esoph)\n\n\n\nUsefull stuff\n\nIt will make a simple table with a basic fomula ~ *variable* + *variable(s)*\nIt will make a table summarizing subgroups with a formula that includes a | *variable*\nThe gt package with gtsummary is more powerful (including p-values) but it requires more code.\n\n\n\nCommon Problems\n\n\nRelated Functions\nNA"
   },
   {
     "objectID": "notes/Class3/dplyr::if_else.html",
     "href": "notes/Class3/dplyr::if_else.html",
     "title": "BST623 functions",
     "section": "",
-    "text": "dplyr::if_else()\n\nif_else(check, true, false)\n\n\n\nWhat it does\n\nif_else() checks the truth of a logic check on a variable/vector and returns the true argument if it is true or the false argument otherwise.\n\n\n\nDemo code\n\nif_else(mtcars$am == 0, \"Automatic\", \"Manual\")\n\n\n\nUsefull stuff\n\nThe logic check can involve any number of variables.\nif_else() is often used with dplyr::mutate()\nif_else() is dangerous because unexpected values can be binned in the false level/group. .related-functions[]\n\n\n\nCommon Problems\n\n\nRelated Functions\nNA"
+    "text": "dplyr::if_else()\n\nif_else(check, true, false)\n\n\n\nWhat it does\n\nif_else() checks the truth of a logic check on a variable/vector and returns the true argument if it is true or the false argument otherwise.\n\n\n\nDemo code\n\nif_else(mtcars$am == 0, \"Automatic\", \"Manual\")\n\n\n\nUsefull stuff\n\nThe logic check can involve any number of variables.\nif_else() is often used with dplyr::mutate()\nif_else() is dangerous because unexpected values can be binned in the false level/group.\n\n\n\nCommon Problems\n\n\nRelated Functions\nNA"
   },
   {
     "objectID": "notes/Class3/pillar::glimpse.html",
     "href": "notes/Class3/pillar::glimpse.html",
     "title": "BST623 functions",
     "section": "",
-    "text": "pillar::glimpse()\n\n\nglimpse(dataset){.center}\n\n\n\nWhat it does\n\nglimpse() is a convenient alternative to str() for when you want quick look at dataset.\nglimpse() shows the “type of” each column of data. .pull-left[\nint = “integer” for numbers without decimals\ndbl = “double” for numbers with decimals\nlgl = “logical” for true/false\ndate = “date”.pull-right[\nchr = “character” for character string\nfct = “factor” for categories that are not ordered\nord = “ordered” for ordered categories ]\n\n\n\nDemo code\n\npillar::glimpse(iris)\n\nRows: 150\nColumns: 5\n$ Sepal.Length <dbl> 5.1, 4.9, 4.7, 4.6, 5.0, 5.4, 4.6, 5.0, 4.4, 4.9, 5.4, 4.…\n$ Sepal.Width  <dbl> 3.5, 3.0, 3.2, 3.1, 3.6, 3.9, 3.4, 3.4, 2.9, 3.1, 3.7, 3.…\n$ Petal.Length <dbl> 1.4, 1.4, 1.3, 1.5, 1.4, 1.7, 1.4, 1.5, 1.4, 1.5, 1.5, 1.…\n$ Petal.Width  <dbl> 0.2, 0.2, 0.2, 0.2, 0.2, 0.4, 0.3, 0.2, 0.2, 0.1, 0.2, 0.…\n$ Species      <fct> setosa, setosa, setosa, setosa, setosa, setosa, setosa, s…\n\n\n]\n\n\nUsefull stuff\n\nglimpse() is in the pillar package but it automatically is loaded with either dplyr or tibble. ] .related-functions[]\n\n\n\nCommon Problems\n\n\nRelated Functions\nNA"
+    "text": "pillar::glimpse()\n\n\nglimpse(dataset){.center}\n\n\n\nWhat it does\n\nglimpse() is a convenient alternative to str() for when you want quick look at dataset.\nglimpse() shows the “type of” each column of data. .pull-left[\nint = “integer” for numbers without decimals\ndbl = “double” for numbers with decimals\nlgl = “logical” for true/false\ndate = “date”.pull-right[\nchr = “character” for character string\nfct = “factor” for categories that are not ordered\nord = “ordered” for ordered categories ]\n\n\n\nDemo code\n\npillar::glimpse(iris)\n\nRows: 150\nColumns: 5\n$ Sepal.Length <dbl> 5.1, 4.9, 4.7, 4.6, 5.0, 5.4, 4.6, 5.0, 4.4, 4.9, 5.4, 4.…\n$ Sepal.Width  <dbl> 3.5, 3.0, 3.2, 3.1, 3.6, 3.9, 3.4, 3.4, 2.9, 3.1, 3.7, 3.…\n$ Petal.Length <dbl> 1.4, 1.4, 1.3, 1.5, 1.4, 1.7, 1.4, 1.5, 1.4, 1.5, 1.5, 1.…\n$ Petal.Width  <dbl> 0.2, 0.2, 0.2, 0.2, 0.2, 0.4, 0.3, 0.2, 0.2, 0.1, 0.2, 0.…\n$ Species      <fct> setosa, setosa, setosa, setosa, setosa, setosa, setosa, s…\n\n\n]\n\n\nUsefull stuff\n\nglimpse() is in the pillar package but it automatically is loaded with either dplyr or tibble. ]\n\n\n\nCommon Problems\n\n\nRelated Functions\nNA"
   },
   {
     "objectID": "notes/Class3/format.html",
     "href": "notes/Class3/format.html",
     "title": "BST623 functions",
     "section": "",
-    "text": "format()\n\nformat(number(s), scientific=FALSE)\n\n\n\nWhat it does\n\nUse format() to display numbers and text many formats and alignment options.\n\n\n\nDemo code\n\nhuge <- 1000000000000000\nformat(huge, big.mark=\",\", scientific=FALSE)\n\n[1] \"1,000,000,000,000,000\"\n\n\n\n\nUsefull stuff\n\nformat() is useful for showing huge and tiny numbers without scientific notation.\nformat() can be use display aligned text. .related-functions[]\n\n\n\nCommon Problems\n\n\nRelated Functions\nNA"
+    "text": "format()\n\nformat(number(s), scientific=FALSE)\n\n\n\nWhat it does\n\nUse format() to display numbers and text many formats and alignment options.\n\n\n\nDemo code\n\nhuge <- 1000000000000000\nformat(huge, big.mark=\",\", scientific=FALSE)\n\n[1] \"1,000,000,000,000,000\"\n\n\n\n\nUsefull stuff\n\nformat() is useful for showing huge and tiny numbers without scientific notation.\nformat() can be use display aligned text.\n\n\n\nCommon Problems\n\n\nRelated Functions\nNA"
   },
   {
     "objectID": "notes/Class3/noquote.html",
     "href": "notes/Class3/noquote.html",
     "title": "BST623 functions",
     "section": "",
-    "text": "noquote()\n\nnoquote(text)\n\n\n\nWhat it does\n\nThe print() function prints without quotes. noquote() function prints without quotes.\n\n\n\nDemo code\n\nnoquote('The cyberman said \"error.\"')\n\n[1] The cyberman said \"error.\"\n\n\n\n\nUsefull stuff\n\nThis is similar to paste(text, quote = FALSE) but if you save a noquote object it will remember the object should not be quoted. .related-functions[]\n\n\n\nCommon Problems\n\n\nRelated Functions\nNA"
+    "text": "noquote()\n\nnoquote(text)\n\n\n\nWhat it does\n\nThe print() function prints without quotes. noquote() function prints without quotes.\n\n\n\nDemo code\n\nnoquote('The cyberman said \"error.\"')\n\n[1] The cyberman said \"error.\"\n\n\n\n\nUsefull stuff\n\nThis is similar to paste(text, quote = FALSE) but if you save a noquote object it will remember the object should not be quoted.\n\n\n\nCommon Problems\n\n\nRelated Functions\nNA"
   },
   {
     "objectID": "notes/Class3/tibble::tribble.html",
     "href": "notes/Class3/tibble::tribble.html",
     "title": "BST623 functions",
     "section": "",
-    "text": "tibble::tribble()\n.center[tribble(thing(s))] .small[ + The tribble() function let you enter rows of data.\n\nfam <-\n  tribble(\n    ~Name,     ~Species,\n    \"Raymond\", \"homo sapiens\",\n    \"Snowy\",   \"canis lupus familiaris\",\n    \"Crab\",    \"anomuran decapod crustaceans\"\n  )\n\n\nRemember the names have a + ~ prefix.\nEvery element (except the last) is followed by a comma.\nYou can use spacing to make the code easier to read. See “fun facts on the tibble slide. ]\n\n\nNA\n\n\n\nWhat it does\nNA\n\n\nDemo code\nNA\n\n\nUsefull stuff\nNA\n\n\nCommon Problems\nNA\n\n\nRelated Functions\nNA"
+    "text": "tibble::tribble()\n\ntribble(thing(s))\n{.center}\n\n\n\nWhat it does\n\nThe tribble() function let you enter rows of data.\n\n\n\nDemo code\n\nfam <-\n  tribble(\n    ~Name,     ~Species,\n    \"Raymond\", \"homo sapiens\",\n    \"Snowy\",   \"canis lupus familiaris\",\n    \"Crab\",    \"anomuran decapod crustaceans\"\n  )\n\n\n\nUsefull stuff\n\nRemember the names have a + ~ prefix.\nEvery element (except the last) is followed by a comma.\nYou can use spacing to make the code easier to read. .related-functions[] See “fun facts on the tibble slide. ]\n\n\n\nCommon Problems\nNA\n\n\nRelated Functions\nNA"
   },
   {
     "objectID": "notes/Class3/select.html",
     "href": "notes/Class3/select.html",
     "title": "BST623 functions",
     "section": "",
-    "text": "select()’s Helper Functions\n\nstarts_with(\"X\"): every name that starts with “X”\nends_with(\"X\"): every name that ends with “X”\ncontains(\"X\"): every name that contains “X”\nmatches(\"X\"): every name that matches “X”, where “X” can be a regular expression\nnum_range(\"x\", 1:5): the variables named x01, x02, x03, x04 and x05\none_of(x): every name that appears in x, which should be a character vector\n\n\nlaryngectomy |> \n   select(`ends_with(\"_fu\")`) |> \n   head(n = 2)  # only keep first two records (to fit on the slide)\n\n\n\n# A tibble: 2 × 3\n  length_fu death_fu recur_fu\n      <dbl>    <dbl>    <dbl>\n1       103       NA       NA\n2       240       NA       NA\n\n\n\nNA\n\n\n\nWhat it does\nNA\n\n\nDemo code\nNA\n\n\nUsefull stuff\nNA\n\n\nCommon Problems\nNA\n\n\nRelated Functions\nNA"
+    "text": "select()’s Helper Functions\n\n\n{.center}\n\n\n\nWhat it does\n\nstarts_with(\"X\"): every name that starts with “X”\nends_with(\"X\"): every name that ends with “X”\ncontains(\"X\"): every name that contains “X”\nmatches(\"X\"): every name that matches “X”, where “X” can be a regular expression\nnum_range(\"x\", 1:5): the variables named x01, x02, x03, x04 and x05\none_of(x): every name that appears in x, which should be a character vector\n\n\n\nDemo code\n\nlaryngectomy |> \n   select(`ends_with(\"_fu\")`) |> \n   head(n = 2)  # only keep first two records (to fit on the slide)\n\n\n\n# A tibble: 2 × 3\n  length_fu death_fu recur_fu\n      <dbl>    <dbl>    <dbl>\n1       103       NA       NA\n2       240       NA       NA\n\n\n\n\nUsefull stuff\n\n\nCommon Problems\nNA\n\n\nRelated Functions\nNA"
   },
   {
     "objectID": "notes/Class3/dput.html",
     "href": "notes/Class3/dput.html",
     "title": "BST623 functions",
     "section": "",
-    "text": "dput()\n\ndput(thingy)\n\n\n\nWhat it does\n\nPrint a text version of any object in the console (by default).\n\n\n\nDemo code\n\ndput(names(iris))\n\nc(\"Sepal.Length\", \"Sepal.Width\", \"Petal.Length\", \"Petal.Width\", \n\"Species\")\n\n\n\n\nUsefull stuff\n\nIt is very convenient if you want to get a set of variable names for later processing. .related-functions[]\n\n\n\nCommon Problems\n\n\nRelated Functions\nNA"
+    "text": "dput()\n\ndput(thingy)\n\n\n\nWhat it does\n\nPrint a text version of any object in the console (by default).\n\n\n\nDemo code\n\ndput(names(iris))\n\nc(\"Sepal.Length\", \"Sepal.Width\", \"Petal.Length\", \"Petal.Width\", \n\"Species\")\n\n\n\n\nUsefull stuff\n\nIt is very convenient if you want to get a set of variable names for later processing.\n\n\n\nCommon Problems\n\n\nRelated Functions\nNA"
   },
   {
     "objectID": "notes/Class3/table.html",
     "href": "notes/Class3/table.html",
     "title": "BST623 functions",
     "section": "",
-    "text": "table()\n\ntable(vector(s))\n\n\n\nWhat it does\n\nMake a summary table of a vector or a pair of vectors.\n\n\n\nDemo code\n\ntable(iris$Species)\n\n\n    setosa versicolor  virginica \n        50         50         50 \n\ntable(mtcars$cyl, mtcars$vs)\n\n   \n     0  1\n  4  1 10\n  6  3  4\n  8 14  0\n\n\n\n\nUsefull stuff\n\ntable() does not have a dataset option and it does not label well.\nIt is well suited for quick checks while debugging. ] .related-functions[]\n\n\n\nCommon Problems\n\n\nRelated Functions\nNA"
+    "text": "table()\n\ntable(vector(s))\n\n\n\nWhat it does\n\nMake a summary table of a vector or a pair of vectors.\n\n\n\nDemo code\n\ntable(iris$Species)\n\n\n    setosa versicolor  virginica \n        50         50         50 \n\ntable(mtcars$cyl, mtcars$vs)\n\n   \n     0  1\n  4  1 10\n  6  3  4\n  8 14  0\n\n\n\n\nUsefull stuff\n\ntable() does not have a dataset option and it does not label well.\nIt is well suited for quick checks while debugging. ]\n\n\n\nCommon Problems\n\n\nRelated Functions\nNA"
   },
   {
     "objectID": "notes/Class3/rep.html",
     "href": "notes/Class3/rep.html",
     "title": "BST623 functions",
     "section": "",
-    "text": "rep()\n\nrep(value, #)\n\n\n\nWhat it does\n\nThe rep() function is used to repeat something.\n\n\n\nDemo code\n\nrep(\"Cup of Coffee\", 3)\nfam <-\n  tibble(\n    name_first = c(\"Raymond\", \"Lori\", \"Mary\", \"Andrew\", \"Ella\", \"Snowy\", \"Mia\", \"Crab\"),\n    name_last = c(rep(\"Balise\", 4), \"Johnson\", rep(\"Balise\", 3)),\n    species = c(rep(\"human\", 5), c(\"Canis lupus familiaris\", 2), \"anomuran decapod crustaceans\")\n  )\n\n\n\nUsefull stuff\n\nWhen creating a new dataset, the base R data.frame function will try to repeat (recycle) values if a variable/column is “short” (i.e., a value is missing). This can be problematic. The tibble function does not automatically recycle values. Use rep() rather that repeatedly typing the same value.\nrep() function can do complex repeating patters. rep(c(“fun”, “ado”, “tree”), c(1, 2, 3)) .related-functions[]\n\n\n\nCommon Problems\n\n\nRelated Functions\nNA"
+    "text": "rep()\n\nrep(value, #)\n\n\n\nWhat it does\n\nThe rep() function is used to repeat something.\n\n\n\nDemo code\n\nrep(\"Cup of Coffee\", 3)\nfam <-\n  tibble(\n    name_first = c(\"Raymond\", \"Lori\", \"Mary\", \"Andrew\", \"Ella\", \"Snowy\", \"Mia\", \"Crab\"),\n    name_last = c(rep(\"Balise\", 4), \"Johnson\", rep(\"Balise\", 3)),\n    species = c(rep(\"human\", 5), c(\"Canis lupus familiaris\", 2), \"anomuran decapod crustaceans\")\n  )\n\n\n\nUsefull stuff\n\nWhen creating a new dataset, the base R data.frame function will try to repeat (recycle) values if a variable/column is “short” (i.e., a value is missing). This can be problematic. The tibble function does not automatically recycle values. Use rep() rather that repeatedly typing the same value.\nrep() function can do complex repeating patters. rep(c(“fun”, “ado”, “tree”), c(1, 2, 3))\n\n\n\nCommon Problems\n\n\nRelated Functions\nNA"
   },
   {
     "objectID": "notes/Class3/tidyr::drop_na.html",
     "href": "notes/Class3/tidyr::drop_na.html",
     "title": "BST623 functions",
     "section": "",
-    "text": "tidyr::drop_na()\n.center[drop_na(*dataset*)] + Use tidyr::drop_na() to create a dataset with “complete cases” (i.e., only keep people with complete data).\n\nlaryngectomy %>%\n  drop_na()\n\n\nThere is no easy dplyr function to find records without any missing data.\nIf you love to type you can write a dplyr::filter() function call to check for no missing data in all variables.\n\n\nNA\n\n\n\nWhat it does\nNA\n\n\nDemo code\nNA\n\n\nUsefull stuff\nNA\n\n\nCommon Problems\nNA\n\n\nRelated Functions\nNA"
+    "text": "tidyr::drop_na()\n\ndrop_na(dataset)\n\n\n\nWhat it does\n\nUse tidyr::drop_na() to create a dataset with “complete cases” (i.e., only keep people with complete data).\n\n\n\nDemo code\n\nlaryngectomy %>%\n  drop_na()\n\n\n\nUsefull stuff\n\nThere is no easy dplyr function to find records without any missing data.\nIf you love to type you can write a dplyr::filter() function call to check for no missing data in all variables.\n\n\n\nCommon Problems\nNA\n\n\nRelated Functions\nNA"
   },
   {
     "objectID": "notes/Class3/dplyr::mutate.html",
     "href": "notes/Class3/dplyr::mutate.html",
     "title": "BST623 functions",
     "section": "",
-    "text": "dplyr::mutate()\n\nmutate(data, variable = stuff)\n\n\n\nWhat it does\n\nmutate() is used to create and manipulate variables in the tidyverse ecosystem.\n\n\n\nDemo code\n\nmtcars |> \n  mutate(Transmition = if_else(am == 0, \"Automatic\", \"Manual\"),\n         Transmition = factor(Transmition))\n\n\n\nUsefull stuff\n\nYou can have any number of comma delimited mutations in one function call.\nThe if_else() and case_when() functions are particularly useful with mutate().\nmutate() can apply the same mutation to multiple values if it is mixed with the across() function: mutate(across(c(vs, am), factor)).\n\n\nmtcars |> \n  mutate(\n    across(c(vs, am), factor)\n  )\n\n] .related-functions[]\n\n\nCommon Problems\n\n\nRelated Functions\nNA"
+    "text": "dplyr::mutate()\n\nmutate(data, variable = stuff)\n\n\n\nWhat it does\n\nmutate() is used to create and manipulate variables in the tidyverse ecosystem.\n\n\n\nDemo code\n\nmtcars |> \n  mutate(Transmition = if_else(am == 0, \"Automatic\", \"Manual\"),\n         Transmition = factor(Transmition))\n\n\n\nUsefull stuff\n\nYou can have any number of comma delimited mutations in one function call.\nThe if_else() and case_when() functions are particularly useful with mutate().\nmutate() can apply the same mutation to multiple values if it is mixed with the across() function: mutate(across(c(vs, am), factor)).\n\n\nmtcars |> \n  mutate(\n    across(c(vs, am), factor)\n  )\n\n]\n\n\nCommon Problems\n\n\nRelated Functions\nNA"
   },
   {
     "objectID": "notes/Class3/slice_sample.html",
@@ -368,63 +319,63 @@
     "href": "notes/Class3/str.html",
     "title": "BST623 functions",
     "section": "",
-    "text": "str()\n\nstr(thingy)\n\n\n\nWhat it does\n\nUseful you to see information on the structure of any. It is somewhat useful for datasets.\n\n\n\nDemo code\n\nstr(iris)\n\n'data.frame':   150 obs. of  5 variables:\n $ Sepal.Length: num  5.1 4.9 4.7 4.6 5 5.4 4.6 5 4.4 4.9 ...\n $ Sepal.Width : num  3.5 3 3.2 3.1 3.6 3.9 3.4 3.4 2.9 3.1 ...\n $ Petal.Length: num  1.4 1.4 1.3 1.5 1.4 1.7 1.4 1.5 1.4 1.5 ...\n $ Petal.Width : num  0.2 0.2 0.2 0.2 0.2 0.4 0.3 0.2 0.2 0.1 ...\n $ Species     : Factor w/ 3 levels \"setosa\",\"versicolor\",..: 1 1 1 1 1 1 1 1 1 1 ...\n\n\n\n\nUsefull stuff\n\nThe output an be voluminous.\n\n\nstr(\n  lm(height~weight, data= women)\n)\n\n\nglimpse() is often more useful. ] .related-functions[]\n\n\n\nCommon Problems\n\n\nRelated Functions\nNA"
+    "text": "str()\n\nstr(thingy)\n\n\n\nWhat it does\n\nUseful you to see information on the structure of any. It is somewhat useful for datasets.\n\n\n\nDemo code\n\nstr(iris)\n\n'data.frame':   150 obs. of  5 variables:\n $ Sepal.Length: num  5.1 4.9 4.7 4.6 5 5.4 4.6 5 4.4 4.9 ...\n $ Sepal.Width : num  3.5 3 3.2 3.1 3.6 3.9 3.4 3.4 2.9 3.1 ...\n $ Petal.Length: num  1.4 1.4 1.3 1.5 1.4 1.7 1.4 1.5 1.4 1.5 ...\n $ Petal.Width : num  0.2 0.2 0.2 0.2 0.2 0.4 0.3 0.2 0.2 0.1 ...\n $ Species     : Factor w/ 3 levels \"setosa\",\"versicolor\",..: 1 1 1 1 1 1 1 1 1 1 ...\n\n\n\n\nUsefull stuff\n\nThe output an be voluminous.\n\n\nstr(\n  lm(height~weight, data= women)\n)\n\n\nglimpse() is often more useful. ]\n\n\n\nCommon Problems\n\n\nRelated Functions\nNA"
   },
   {
     "objectID": "notes/Class3/dplyr::filter.html",
     "href": "notes/Class3/dplyr::filter.html",
     "title": "BST623 functions",
     "section": "",
-    "text": "dplyr::filter()\n.center[filter(tableName, logical test)] + Use filter() to pick rows/records. + Inside the () you put a logic check. + filter() keeps rows/records where the logic check is true.\n\nlaryngectomy %>%\n  filter(death == 1)  # the people who died\nlaryngectomy %>%\n  filter(is.na(pathology))  # people missing pathology\nlaryngectomy %>%\n  filter(!is.na(pathology))  # people not missing pathology\nlaryngectomy %>%\n  filter(pathology %in% c(1, 2)) # people with values of 1 or 2\n\n\nNA\n\n\n\nWhat it does\nNA\n\n\nDemo code\nNA\n\n\nUsefull stuff\nNA\n\n\nCommon Problems\nNA\n\n\nRelated Functions\nNA"
+    "text": "dplyr::filter()\n\nfilter(tableName, logical test)\n\n\n\nWhat it does\n\nUse filter() to pick rows/records.\nInside the () you put a logic check.\nfilter() keeps rows/records where the logic check is true.\n\n\n\nDemo code\n\nlaryngectomy %>%\n  filter(death == 1)  # the people who died\nlaryngectomy %>%\n  filter(is.na(pathology))  # people missing pathology\nlaryngectomy %>%\n  filter(!is.na(pathology))  # people not missing pathology\nlaryngectomy %>%\n  filter(pathology %in% c(1, 2)) # people with values of 1 or 2\n\n\n\nUsefull stuff\n\n\nCommon Problems\nNA\n\n\nRelated Functions\nNA"
   },
   {
     "objectID": "notes/Class3/names.html",
     "href": "notes/Class3/names.html",
     "title": "BST623 functions",
     "section": "",
-    "text": "#names()\n\nnames(thingy)\n\n\nWhat it does\n\nIf you want a print the variable names in a dataset.\n\n\n\nDemo code\n\nnames(iris)\n\n[1] \"Sepal.Length\" \"Sepal.Width\"  \"Petal.Length\" \"Petal.Width\"  \"Species\"     \n\n\n\n\nUsefull stuff\n.related-functions[] + I frequently use it with dput()\n\ndput(names(iris))\n\nc(\"Sepal.Length\", \"Sepal.Width\", \"Petal.Length\", \"Petal.Width\", \n\"Species\")\n\n\n\n\nCommon Problems\n\n\nRelated Functions\nNA"
+    "text": "#names()\n\nnames(thingy)\n\n\nWhat it does\n\nIf you want a print the variable names in a dataset.\n\n\n\nDemo code\n\nnames(iris)\n\n[1] \"Sepal.Length\" \"Sepal.Width\"  \"Petal.Length\" \"Petal.Width\"  \"Species\"     \n\n\n\n\nUsefull stuff\n\n\nCommon Problems\n\nI frequently use it with dput()\n\n\ndput(names(iris))\n\nc(\"Sepal.Length\", \"Sepal.Width\", \"Petal.Length\", \"Petal.Width\", \n\"Species\")\n\n\n\n\nRelated Functions\nNA"
   },
   {
     "objectID": "notes/Class3/?.html",
     "href": "notes/Class3/?.html",
     "title": "BST623 functions",
     "section": "",
-    "text": "?\n\n?thingy\n\n\n\nWhat it does\n\nOpen the help file for an object that you don’t understand. It is useful to find variable definitions for some datasets and some function argument details.\n\n\n\nDemo code\n\n?women\n\n\n\nUsefull stuff\n\nNote: There is no help file for for men. ?men .\n\n\n?men\n\nNo documentation for 'men' in specified packages and libraries:\nyou could try '??men'\n\n\n.related-functions[] + ?? does a broader search in the local documentation.\n\n\nCommon Problems\n\n\nRelated Functions\nNA"
+    "text": "?\n\n?thingy\n\n\n\nWhat it does\n\nOpen the help file for an object that you don’t understand. It is useful to find variable definitions for some datasets and some function argument details.\n\n\n\nDemo code\n\n?women\n\n\n\nUsefull stuff\n\nNote: There is no help file for for men. ?men .\n\n\n?men\n\nNo documentation for 'men' in specified packages and libraries:\nyou could try '??men'\n\n\n\n\nCommon Problems\n\n?? does a broader search in the local documentation.\n\n\n\nRelated Functions\nNA"
   },
   {
     "objectID": "notes/Class3/c.html",
     "href": "notes/Class3/c.html",
     "title": "BST623 functions",
     "section": "",
-    "text": "c() is smart! \\(_1\\)\n\nRemember from “topic 1” that R pays attention to the class/type objects.\nc() will notice if the parts that you are combining are numbers or text and it will make the object the correct class/type. .pull-left-36[\n\n\nages <- c(17, 18, 40, 39)\nclass(ages)\n\n[1] \"numeric\"\n\nages\n\n[1] 17 18 40 39\n\n\n]  – .pull-right-60[\n\nages <- c(\"seventeen\", \"eighteen\", \"forty\", \"thirty nine\")\nclass(ages)\n\n[1] \"character\"\n\nages\n\n[1] \"seventeen\"   \"eighteen\"    \"forty\"       \"thirty nine\"\n\n\n]\n\nNA\n\n\n\nWhat it does\nNA\n\n\nDemo code\nNA\n\n\nUsefull stuff\nNA\n\n\nCommon Problems\nNA\n\n\nRelated Functions\nNA"
+    "text": "c() is smart! \\(_1\\)\n\n\n{.center}\n\n\n\nWhat it does\n\nRemember from “topic 1” that R pays attention to the class/type objects.\nc() will notice if the parts that you are combining are numbers or text and it will make the object the correct class/type.\n\n\n\nDemo code\n.pull-left-36[\n\nages <- c(17, 18, 40, 39)\nclass(ages)\n\n[1] \"numeric\"\n\nages\n\n[1] 17 18 40 39\n\n\n]  – .pull-right-60[\n\nages <- c(\"seventeen\", \"eighteen\", \"forty\", \"thirty nine\")\nclass(ages)\n\n[1] \"character\"\n\nages\n\n[1] \"seventeen\"   \"eighteen\"    \"forty\"       \"thirty nine\"\n\n\n]\n\n\nUsefull stuff\nNA\n\n\nCommon Problems\nNA\n\n\nRelated Functions\nNA"
   },
   {
     "objectID": "notes/Class3/dplyr::select.html",
     "href": "notes/Class3/dplyr::select.html",
     "title": "BST623 functions",
     "section": "",
-    "text": "dplyr::select()\n.center[select(*dataset*, *variables*)] + Use select() to choose variables to keep in a new dataset.\n\nlaryngectomy %>%\n  `select(age, gender, death_fu)`\ncomplications <- laryngectomy %>%\n   select(complications`:`comp_2plus)\n\n\nselect() does not do autocomplete.\nYou can refer to variables by position number. The first variable is 1. 🤢.\nYou can .red[remove/exclude] unwanted variables with a -:\n\n\nwithoutComplicationVars <- laryngectomy |> \n   select(`-`(complications:comp_2plus))\n\n\nNA\n\n\n\nWhat it does\nNA\n\n\nDemo code\nNA\n\n\nUsefull stuff\nNA\n\n\nCommon Problems\nNA\n\n\nRelated Functions\nNA"
-  },
-  {
-    "objectID": "notes/Class3/New Pipe.html",
-    "href": "notes/Class3/New Pipe.html",
-    "title": "BST623 functions",
-    "section": "",
-    "text": "New Pipe |>\n\nthing |> thing\n\n\n\nWhat it does\n\nThe base R pipe, |>, is designed to pass an object into the first argument of another function.\n\n\n\nDemo code\n\nmtcars |> subset(cyl == 4) |> head()\n\n\n\nUsefull stuff\n\nThis pipe is faster than the magrittr pipe (i.e., %>%).\nIt can not redirect to any argument other than the first.\nIt is of limited use because many critical functions (e.g., lm() and plot()) do not take a dataset as the first argument.\n\n.related-functions[]\n\n\nCommon Problems\n\n\nRelated Functions\nNA"
+    "text": "dplyr::select()\n\nselect(dataset, variables)\n\n\n\nWhat it does\n\nUse select() to choose variables to keep in a new dataset.\n\n\n\nDemo code\n\nlaryngectomy |> \n  `select(age, gender, death_fu)`\ncomplications <- laryngectomy |> \n   select(complications`:`comp_2plus)\n\n\n\nUsefull stuff\n\nselect() does not do autocomplete.\nYou can refer to variables by position number. The first variable is 1. 🤢.\nYou can .red[remove/exclude] unwanted variables with a -:\n\n\nwithoutComplicationVars <- laryngectomy |> \n   select(`-`(complications:comp_2plus))\n\n\n\nCommon Problems\nNA\n\n\nRelated Functions\nNA"
   },
   {
     "objectID": "notes/Class3/dplyr::rename.html",
     "href": "notes/Class3/dplyr::rename.html",
     "title": "BST623 functions",
     "section": "",
-    "text": "dplyr::rename()\nYou can easily tweak a variable’s name with: .center[rename(tableName, newName = oldName)] .small[\n\nlaryngectomy |> \n  rename(sex = gender)  # from gender to sex\n\n# A tibble: 123 × 32\n     age   sex recur_s…¹ trt_mod int_stg recur…² preop…³ nk_di…⁴ Later…⁵ mic_v…⁶\n   <dbl> <dbl>     <dbl>   <dbl>   <dbl>   <dbl>   <dbl>   <dbl>   <dbl>   <dbl>\n 1    54     1         2       1       2       3       1       2      NA       2\n 2    73     1         1       2       3       3       1       1       1       2\n 3    74     1         1       1       2       2       1       2      NA       2\n 4    58     1         1       2       2       3       3       1       1       1\n 5    70     1         2       1       1       4       2       1       1       2\n 6    60     1         2       1       1       4       1       1       1       1\n 7    61     1         2       2       4       3       3       1       1       2\n 8    73     1         3       1       1       3       1       1       1       2\n 9    83     1         2       1       2       2       2       1       1       2\n10    63     1         3       1       2       4       2       1       2       2\n# … with 113 more rows, 22 more variables: pec_flap <dbl>, pathology <dbl>,\n#   path_stg <dbl>, complications <dbl>, fistula <dbl>, wound_inf <dbl>,\n#   dehiscence <dbl>, wound_comp <dbl>, chyle_leak <dbl>, hematoma <dbl>,\n#   revision_proc <dbl>, flap_fail <dbl>, periop_death <dbl>, med_comp <dbl>,\n#   comp_2plus <dbl>, hosp_stay <dbl>, death <dbl>, recur <dbl>, sor <dbl>,\n#   length_fu <dbl>, death_fu <dbl>, recur_fu <dbl>, and abbreviated variable\n#   names ¹​recur_site, ²​recur_stg, ³​preop_Img_mod, ⁴​nk_dissection, …\n\n\n]\n\nNA\n\n\n\nWhat it does\nNA\n\n\nDemo code\nNA\n\n\nUsefull stuff\nNA\n\n\nCommon Problems\nNA\n\n\nRelated Functions\nNA"
+    "text": "dplyr::rename()\n\n\nYou can easily tweak a variable’s name with:rename(tableName, newName = oldName) {.center}\n\n\n\nWhat it does\n\n\nDemo code\n\nlaryngectomy |> \n  rename(sex = gender)  # from gender to sex\n\n# A tibble: 123 × 32\n     age   sex recur_s…¹ trt_mod int_stg recur…² preop…³ nk_di…⁴ Later…⁵ mic_v…⁶\n   <dbl> <dbl>     <dbl>   <dbl>   <dbl>   <dbl>   <dbl>   <dbl>   <dbl>   <dbl>\n 1    54     1         2       1       2       3       1       2      NA       2\n 2    73     1         1       2       3       3       1       1       1       2\n 3    74     1         1       1       2       2       1       2      NA       2\n 4    58     1         1       2       2       3       3       1       1       1\n 5    70     1         2       1       1       4       2       1       1       2\n 6    60     1         2       1       1       4       1       1       1       1\n 7    61     1         2       2       4       3       3       1       1       2\n 8    73     1         3       1       1       3       1       1       1       2\n 9    83     1         2       1       2       2       2       1       1       2\n10    63     1         3       1       2       4       2       1       2       2\n# … with 113 more rows, 22 more variables: pec_flap <dbl>, pathology <dbl>,\n#   path_stg <dbl>, complications <dbl>, fistula <dbl>, wound_inf <dbl>,\n#   dehiscence <dbl>, wound_comp <dbl>, chyle_leak <dbl>, hematoma <dbl>,\n#   revision_proc <dbl>, flap_fail <dbl>, periop_death <dbl>, med_comp <dbl>,\n#   comp_2plus <dbl>, hosp_stay <dbl>, death <dbl>, recur <dbl>, sor <dbl>,\n#   length_fu <dbl>, death_fu <dbl>, recur_fu <dbl>, and abbreviated variable\n#   names ¹​recur_site, ²​recur_stg, ³​preop_Img_mod, ⁴​nk_dissection, …\n\n\n]\n\n\nUsefull stuff\n\n\nCommon Problems\nNA\n\n\nRelated Functions\nNA"
+  },
+  {
+    "objectID": "notes/Class3/newpipe.html",
+    "href": "notes/Class3/newpipe.html",
+    "title": "BST623 functions",
+    "section": "",
+    "text": "New Pipe |>\n\nthing |> thing\n\n\n\nWhat it does\n\nThe base R pipe, |>, is designed to pass an object into the first argument of another function.\n\n\n\nDemo code\n\nmtcars |> subset(cyl == 4) |> head()\n\n\n\nUsefull stuff\n\nThis pipe is faster than the magrittr pipe (i.e., %>%).\nIt can not redirect to any argument other than the first.\nIt is of limited use because many critical functions (e.g., lm() and plot()) do not take a dataset as the first argument.\n\n\n\nCommon Problems\n\n\nRelated Functions\nNA"
   },
   {
     "objectID": "notes/Class3/tibble::tibble.html",
     "href": "notes/Class3/tibble::tibble.html",
     "title": "BST623 functions",
     "section": "",
-    "text": "tibble::tibble()\n.center[tibble(thing(s))] .small[ + The tibble() function will convert base R vectors or a data.frame into a tidyverse tibble\n\nmtcars <- as_tibble(mtcars)\nfam <-\n  tibble(\n    \\`First Name` = c(\"Raymond\", \"Lori\", \"Mary\", \"Andrew\", \"Ella\", \"Snowy\", \"Mia\", \"Crab\"),\n    \\`Last Name` = c(rep(\"Balise\", 4), \"Johnson\", rep(\"Balise\", 3)),\n    species = c(rep(\"h. sapiens\", 5), c(\"canis lupus familiaris\", 2), \"anomuran decapod crustaceans\")\n  )\n\n\ntibbles have a useful print method.\ntibbles do not use row names. Convert row names to a variable with rownames_to_column()\nThey do not accept partial matching (i.e., fam$F does not work).\ntibbles do not automatically change data.\n\nCharacter variables do not become factors!\nColumn names are not converted to base names (e.g. spaces are allowed). ]\n\n\n\nNA\n\n\n\nWhat it does\nNA\n\n\nDemo code\nNA\n\n\nUsefull stuff\nNA\n\n\nCommon Problems\nNA\n\n\nRelated Functions\nNA"
+    "text": "tibble::tibble()\n\ntibble(thing(s))\n{.center}\n\n\n\nWhat it does\n\nThe tibble() function will convert base R vectors or a data.frame into a tidyverse tibble\n\n\n\nDemo code\n\nmtcars <- as_tibble(mtcars)\nfam <-\n  tibble(\n    \\`First Name` = c(\"Raymond\", \"Lori\", \"Mary\", \"Andrew\", \"Ella\", \"Snowy\", \"Mia\", \"Crab\"),\n    \\`Last Name` = c(rep(\"Balise\", 4), \"Johnson\", rep(\"Balise\", 3)),\n    species = c(rep(\"h. sapiens\", 5), c(\"canis lupus familiaris\", 2), \"anomuran decapod crustaceans\")\n  )\n\n\n\nUsefull stuff\n\ntibbles have a useful print method.\ntibbles do not use row names. Convert row names to a variable with rownames_to_column()\nThey do not accept partial matching (i.e., fam$F does not work).\ntibbles do not automatically change data.\n\nCharacter variables do not become factors!\nColumn names are not converted to base names (e.g. spaces are allowed). ]\n\n\n\n\nCommon Problems\nNA\n\n\nRelated Functions\nNA"
   },
   {
     "objectID": "notes/Class1/%>%.html",

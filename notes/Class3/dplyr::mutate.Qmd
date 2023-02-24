@@ -30,7 +30,6 @@ mtcars |>
   )
 ```
 ]
-.related-functions[]
   
  
 # Common Problems 

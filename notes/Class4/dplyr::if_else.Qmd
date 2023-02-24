@@ -5,26 +5,28 @@
  
 # What it does 
 
-+ `if_else()` checks the truth of a logic *check* on a variable/vector and returns the *true* argument if it is true or the *false* argument otherwise.
++ `if_else()` checks the truth of a logic *check* on a variable/vector and returns the *true* argument if it is true or the *false* argument if it is not true.
   
  
 # Demo code 
 
 ```{r eval=FALSE}
-if_else(mtcars$am == 0, "Automatic", "Manual")
+laryngectomy |> 
+  mutate(  # does the initial stage agree with final pathology staging?
+    path_result = if_else(int_stg != path_stg, "Changed", "Same")
+  ) |> 
+  select(int_stg, path_stg, path_result)
 ```
   
  
 # Usefull stuff 
 
 + The logic check can involve any number of variables.
-+ [`if_else()`]{.blue} is often used with [`dplyr::mutate()`]{.blue}
 + [`if_else()`]{.blue} is dangerous because unexpected values can be binned in the *false* level/group.
   
  
 # Common Problems 
-
-  
+NA  
  
 # Related Functions 
 NA  

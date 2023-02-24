@@ -1,0 +1,57 @@
+# [`tally()`]{.blue}
+ 
+ 
+### [tally]{.blue}(dataset, variable){.center} 
+ 
+# What it does 
+
+It adds up the values:
+  
+ 
+# Demo code 
+
+
+```{r theTallyTable, eval = FALSE}
+sexVars <- laryngectomy |> 
+  mutate(isMale = 2 - gender ) |> 
+  mutate(sex = as.character(isMale)) |> 
+  mutate(sex = fct_recode(sex,
+                          "Female" = "0",
+                          "Male" = "1"))
+  sexVars %>% `tally(gender)`  # adds up 1s and 2s
+  sexVars %>% `tally(isMale)`  # adds up 0s and 1s
+# sexVars %>% tally(sex)  # can't sum up "Male" and "Female"
+```
+]
+
+```{r include=FALSE, warning=FALSE, message=FALSE}
+library(tidyverse)
+laryngectomy <- lr4ds::laryngectomy
+```
+```{r theTallyTableOut, echo=FALSE}
+sexVars <- laryngectomy |> 
+  mutate(isMale = 2 - gender ) |> 
+  mutate(sex = as.character(isMale)) |> 
+  mutate(sex = fct_recode(sex,
+                          "Female" = "0",
+                          "Male" = "1"))
+  sexVars |>  tally(gender)  # adds up 1s and 2s
+  sexVars |>  tally(isMale)  # adds up 0s and 1s
+```
+]
+  
+ 
+# Usefull stuff 
+
+???
+This was a good trick...
+r theTallyTable, eval = FALSE
+r theTallyTableOut, ref.label="theTallyTable", echo=FALSE
+  
+ 
+# Common Problems 
+
+  
+ 
+# Related Functions 
+NA  

@@ -1,7 +1,16 @@
 # [`tibble::tribble()`]{.blue}
-.center[[`tribble`]{.blue}`(thing(s))`]
-.small[
+ 
+ 
+### [tribble]{.blue}(thing(s))
+{.center} 
+ 
+# What it does 
+
 +  The [`tribble()`]{.blue} function let you enter rows of data.
+  
+ 
+# Demo code 
+
 ```{r eval=FALSE}
 fam <-
   tribble(
@@ -11,23 +20,17 @@ fam <-
     "Crab",    "anomuran decapod crustaceans"
   )
 ```
+  
+ 
+# Usefull stuff 
+
 * Remember the names have a + [`~`]{.blue} prefix.
 * Every element (except the last) is followed by a comma.
 * You can use spacing to make the code easier to read.
+.related-functions[]
 See "fun facts on the tibble slide.
 ]
- 
- 
-### NA{.center} 
- 
-# What it does 
-NA  
- 
-# Demo code 
-NA  
- 
-# Usefull stuff 
-NA  
+  
  
 # Common Problems 
 NA  

@@ -1,0 +1,32 @@
+# [`dplyr::transmute()`]{.blue}
+ 
+ 
+### laryngectomy %>% [transmute]{.blue}(hadND = 2 - nk_dissection).demo-code[{r eval = FALSE}
+laryngectomy |> 
+  transmute(hadND = 2 - nk_dissection)
+
+{.center} 
+ 
+# What it does 
+
+[`transmute()`]{.blue} is like [`dplyr::mutate()`]{.blue} but it only keeps the variables referenced.  Because it is picking what variables to keep, you can select other variables without manipulating them.
+.useful-stuff[```{r eval = FALSE}
+laryngectomy |> 
+  transmute(
+    hadND = 2 - nk_dissection`,`
+    `nk_dissection`
+  )
+```
+  
+ 
+# Demo code 
+NA  
+ 
+# Usefull stuff 
+NA  
+ 
+# Common Problems 
+NA  
+ 
+# Related Functions 
+NA  

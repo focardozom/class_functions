@@ -1,0 +1,64 @@
+# [`count()`]{.blue}
+ 
+ 
+### [count]{.blue}(table, variables){.center} 
+ 
+# What it does 
+
+`dplyr` can do fancy summary statistics but [`count()`]{.blue} is quick, easy and useful for frequency counts:
+  
+ 
+# Demo code 
+
+
+```{r theCountTable, eval = FALSE}
+laryngectomy |> 
+  mutate(isMale = 2 - gender )  |> 
+  mutate(sex = as.character(isMale))  |> 
+  mutate(sex = fct_recode(sex,
+                          "Female" = "0",
+                          "Male" = "1"))  |> 
+  mutate(stage = fct_recode(as.character(int_stg),
+                          "T1" = "1",
+                          "T2" = "2",
+                          "T3" = "3",
+                          "T4" = "4",
+                          "Unknown" = "5")) |> 
+  `count(sex, stage)` |> 
+  arrange(sex, stage)  # this just sorts by sex then stage
+```
+]
+
+```{r include=FALSE, warning=FALSE, message=FALSE}
+library(tidyverse)
+laryngectomy <- lr4ds::laryngectomy
+```
+```{r echo=FALSE}
+laryngectomy |> 
+  mutate(isMale = 2 - gender ) |> 
+  mutate(sex = as.character(isMale)) |> 
+  mutate(sex = fct_recode(sex,
+                          "Female" = "0",
+                          "Male" = "1")) |> 
+  mutate(stage = fct_recode(as.character(int_stg),
+                          "T1" = "1",
+                          "T2" = "2",
+                          "T3" = "3",
+                          "T4" = "4",
+                          "Unknown" = "5")) |> 
+  count(sex, stage) |> 
+  arrange(sex, stage)
+```
+]
+  
+ 
+# Usefull stuff 
+
+  
+ 
+# Common Problems 
+
+  
+ 
+# Related Functions 
+NA  

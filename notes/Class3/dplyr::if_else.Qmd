@@ -20,7 +20,6 @@ if_else(mtcars$am == 0, "Automatic", "Manual")
 + The logic check can involve any number of variables.
 + [`if_else()`]{.blue} is often used with [`dplyr::mutate()`]{.blue}
 + [`if_else()`]{.blue} is dangerous because unexpected values can be binned in the *false* level/group.
-.related-functions[]
   
  
 # Common Problems 

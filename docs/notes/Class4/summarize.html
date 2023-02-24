@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>BST623 functions – quarto-inputccce77da</title>
+<title>BST623 functions – summarize</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -122,6 +122,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   }
 }</script>
 
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 </head>
 
@@ -168,9 +169,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#section" id="toc-section" class="nav-link active" data-scroll-target="#section"><span class="blue"><code>?</code></span></a>
+  <li><a href="#summarize-to-make-rowsrecords-with-statistics.-_1" id="toc-summarize-to-make-rowsrecords-with-statistics.-_1" class="nav-link active" data-scroll-target="#summarize-to-make-rowsrecords-with-statistics.-_1"><span class="blue"><code>summarize()</code></span> to make rows/records with statistics. <span class="math inline">\(_1\)</span></a>
   <ul class="collapse">
-  <li><a href="#thingy" id="toc-thingy" class="nav-link" data-scroll-target="#thingy"><span class="blue">?</span><em>thingy</em></a></li>
+  <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section"></a></li>
   </ul></li>
   <li><a href="#what-it-does" id="toc-what-it-does" class="nav-link" data-scroll-target="#what-it-does">What it does</a></li>
   <li><a href="#demo-code" id="toc-demo-code" class="nav-link" data-scroll-target="#demo-code">Demo code</a></li>
@@ -185,42 +186,54 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 
 
-<section id="section" class="level1">
-<h1><span class="blue"><code>?</code></span></h1>
-<section id="thingy" class="level3 center">
-<h3 class="center anchored" data-anchor-id="thingy"><span class="blue">?</span><em>thingy</em></h3>
+<section id="summarize-to-make-rowsrecords-with-statistics.-_1" class="level1">
+<h1><span class="blue"><code>summarize()</code></span> to make rows/records with statistics. <span class="math inline">\(_1\)</span></h1>
+<section id="section" class="level3">
+<h3 class="anchored" data-anchor-id="section"></h3>
+<p><span class="blue">summarize</span>(tableName, newName = aggregateFunction)<br>
+<span class="blue">summarize</span>(tableName, aSum = sum(a), anAvg = mean(b), theVar = var(b)){.center}</p>
 </section>
 </section>
 <section id="what-it-does" class="level1">
 <h1>What it does</h1>
 <ul>
-<li>Open the help file for an object that you don’t understand. It is useful to find variable definitions for some datasets and some function argument details.</li>
+<li>Make a new dataset with summary statistics</li>
+<li>Use it to take a vector and output a single number</li>
+<li>Only keeps the new variables</li>
+<li>Base aggregate functions
+<ul>
+<li>min max mean median quantile sd var IQR diff length sum</li>
+</ul></li>
+<li>dplyr aggregate functions
+<ul>
+<li>first last nth n n_distinct</li>
+</ul></li>
 </ul>
 </section>
 <section id="demo-code" class="level1">
 <h1>Demo code</h1>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>?women</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>laryngectomy <span class="sc">|&gt;</span> </span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>{{  <span class="fu">summarize</span>(<span class="at">theMinFU =</span> <span class="fu">min</span>(length_fu),<span class="er">}}</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>{{            theMeanFU <span class="ot">=</span> <span class="fu">mean</span>(length_fu),}}</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>{{            theMaxFU <span class="ot">=</span> <span class="fu">max</span>(length_fu)<span class="er">)</span>}}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<p>]</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 3
+  theMinFU theMeanFU theMaxFU
+     &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;
+1        6     1148.     4441</code></pre>
+</div>
+</div>
+<p>] ]</p>
 </section>
 <section id="usefull-stuff" class="level1">
 <h1>Usefull stuff</h1>
-<ul>
-<li>Note: There is no help file for for men. <span class="blue"><code>?</code></span>men .</li>
-</ul>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>?men</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>No documentation for 'men' in specified packages and libraries:
-you could try '??men'</code></pre>
-</div>
-</div>
 </section>
 <section id="common-problems" class="level1">
 <h1>Common Problems</h1>
-<ul>
-<li><span class="blue"><code>??</code></span> does a broader search in the local documentation.</li>
-</ul>
 </section>
 <section id="related-functions" class="level1">
 <h1>Related Functions</h1>
