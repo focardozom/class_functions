@@ -18,7 +18,6 @@
 scales::comma(9001)
 ```
 + This is extremely useful when preparing R Markdown reports.
-.related-functions[]
   
  
 # Common Problems 

@@ -19,7 +19,6 @@ rUM::make_project("./")
 # Usefull stuff 
 
 + It is probably easier to use the New Project Wizard from the File menu and choose Research Project Template.
-.related-functions[]
   
  
 # Common Problems 

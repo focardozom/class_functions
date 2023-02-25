@@ -23,7 +23,6 @@ R.Version()
 R.version.string
 ```
 + This is useful for extracting the version of R for publications: `stringr::word(R.version.string, 1, 3)`
-.related-functions[]
   
  
 # Common Problems 

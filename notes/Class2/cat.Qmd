@@ -29,8 +29,7 @@ cat("Ray said ", '"', words, '".')
   
  
 # Common Problems 
-
-  
+NA  
  
 # Related Functions 
 NA  

@@ -25,7 +25,6 @@ nrow(medicaldata::covid_testing) %>%
 + Many functions can be connected in a pipeline.
 + Start code after a pipe on a new line.
 + Indent all lines of code two spaces after the first pipe.
-.related-functions[]
   
  
 # Common Problems 

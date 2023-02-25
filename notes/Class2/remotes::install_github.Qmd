@@ -22,7 +22,6 @@ remotes::install_github("RaymondBalise/rUM")
 + You will need tools to build packages.
   + These tools ship with Mac.
   + On Windows you will need to install [Rtools](https://cran.r-project.org/bin/windows/Rtools/rtools40.html)
-.related-functions[]
   
  
 # Common Problems 

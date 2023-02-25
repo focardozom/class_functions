@@ -23,7 +23,6 @@ mean(TRUE)
  
 # Usefull stuff 
 
-.related-functions[]
   
  
 # Common Problems 

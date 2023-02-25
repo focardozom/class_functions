@@ -11,9 +11,9 @@
 # Demo code 
 
 ```{r eval = FALSE}
-laryngectomy |> 
+laryngectomy %>%
   `select(age, gender, death_fu)`
-complications <- laryngectomy |> 
+complications <- laryngectomy %>%
    select(complications`:`comp_2plus)
 ```
   

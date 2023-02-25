@@ -21,7 +21,6 @@ suppressMessages(library(h2o))
 + It may be clearer to write: [`library(*package*, quietly = TRUE)`]{.blue}.
 + This helps with packages that are chatty even when using the `quietly = TRUE` argument to [`library()`]{.blue}.
 + This prevents many messages from showing up in R Markdown output without suppressing other critical messages.
-.related-functions[]
   
  
 # Common Problems 

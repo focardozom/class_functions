@@ -20,7 +20,6 @@ options(dplyr.summarise.inform = FALSE)
  
 # Usefull stuff 
 
-.related-functions[]
   
  
 # Common Problems 

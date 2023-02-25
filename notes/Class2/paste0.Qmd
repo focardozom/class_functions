@@ -20,22 +20,20 @@ words <- "Hi Mom"
 paste0("Ray said ", '"', words, '".')
 ```
 ]
-.related-functions[]
   
+ 
+# Usefull stuff 
+
 .pull-right[
-+ The .blue[`paste()`] function puts a space between words.
-+ The .blue[`glue::glue()`] function is an excellent alternative.
++ The [`paste()`]{.blue} function puts a space between words.
++ The [`glue::glue()`]{.blue} function is an excellent alternative.
 ```{r, comment=""}
 words <- "Hi Mom"
 glue::glue('Ray said "{words}".')
 ```
 ]
 ]
-.common-problems[]
   
- 
-# Usefull stuff 
-NA  
  
 # Common Problems 
 NA  

@@ -19,7 +19,6 @@ stringr::word(wisdom, 7, 9)
 # Usefull stuff 
 
 + This is useful for extracting the version of R for publications: `stringr::word(R.version.string, 1, 3)`
-.related-functions[]
   
  
 # Common Problems 

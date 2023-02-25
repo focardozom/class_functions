@@ -23,7 +23,6 @@ scales::comma(
   nrow(medicaldata::covid_testing)
 )
 ```
-.related-functions[]
   
  
 # Common Problems 
